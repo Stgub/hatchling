@@ -12,42 +12,46 @@ import FBSDKLoginKit
 
 class SignInVC: UIViewController {
     
-    @IBOutlet weak var fbBtn: ShadowAndPillBtn!
+    @IBOutlet weak var birthdayScreen: UIView!
+    @IBOutlet weak var genderScreen: UIView!
+    @IBOutlet weak var emailLogInScreen: UIView!
     
-    @IBOutlet weak var emailSignInScreen: UIView!
     @IBAction func emailBtnTapped(_ sender: Any) {
-        emailSignInScreen.isHidden = false
+        birthdayScreen.isHidden = false
     }
-    @IBAction func backBtnTapped(_ sender: Any) {
-        emailSignInScreen.isHidden = true
+    
+    @IBAction func bdayBackBtnTapped(_ sender: Any) {
+        birthdayScreen.isHidden = true
     }
+    
+    @IBAction func bdayNextBtnTapped(_ sender: Any) {
+        genderScreen.isHidden = false
+    }
+    
+    @IBAction func genderBackBtnTapped(_ sender: Any) {
+        genderScreen.isHidden = true
+    }
+    
+    @IBAction func genderNextBtnTapped(_ sender: Any) {
+        emailLogInScreen.isHidden = false
+    }
+    
+    @IBAction func emailBackBtnTapped(_ sender: Any) {
+        emailLogInScreen.isHidden = true
+    }
+    
+    
 
-    @IBAction func emailLogInBtnTapped(_ sender: Any) {
-    }
     
     
     @IBAction func fbBtnTapped(_ sender: Any) {
-        let fbLoginManager = FBSDKLoginManager()
         
-        fbLoginManager.logIn(withReadPermissions: ["email"], from: self)  { (result, error) in
-            print("logging in")
-            if error != nil {
-                print(" Chuck - unable to authenticate with Facebook \(error)")
-            } else if result?.isCancelled == true {
-                print(" Chuck - User cancelled Facebook Authentication")
-            
-            } else {
-                print(" Chuck - Successfully authenticated with Facebook")
-            
-            }
-        
-        }
     }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let loginButton = FBSDKLoginButton()
+ 
         //loginButton.center = view.center
         //view.addSubview(loginButton)
         
