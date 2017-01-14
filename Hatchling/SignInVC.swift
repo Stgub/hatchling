@@ -10,21 +10,7 @@ import UIKit
 
 
 class SignInVC: UIViewController {
-    
-    @IBOutlet weak var fbBtn: ShadowAndPillBtn!
-    
-    @IBOutlet weak var emailSignInScreen: UIView!
-    @IBAction func emailBtnTapped(_ sender: Any) {
-        emailSignInScreen.isHidden = false
-    }
-    @IBAction func backBtnTapped(_ sender: Any) {
-        emailSignInScreen.isHidden = true
-    }
-
-    @IBAction func emailLogInBtnTapped(_ sender: Any) {
-    }
-    
-    
+      
     @IBAction func fbBtnTapped(_ sender: Any) {
 
     }
