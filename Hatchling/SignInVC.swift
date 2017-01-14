@@ -9,6 +9,10 @@
 import UIKit
 
 class SignInVC: UIViewController {
+    
+    @IBAction func fbBtnTapped(_ sender: Any) {
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +20,6 @@ class SignInVC: UIViewController {
         print("Fuck yeah we are developing")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
