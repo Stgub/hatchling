@@ -4,11 +4,8 @@
 target 'Hatchling' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Parse'
-  pod 'ParseUI'
-  pod 'FBSDKLoginKit'
+
   # Pods for Hatchling
-  
 
   target 'HatchlingTests' do
     inherit! :search_paths
