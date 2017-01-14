@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */; };
+		19167F061E29EDC7003EFC98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F051E29EDC7003EFC98 /* Constants.swift */; };
 		194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090D51E29C23E00502FB4 /* AppDelegate.swift */; };
 		194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090D71E29C23E00502FB4 /* SignInVC.swift */; };
 		194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090D91E29C23E00502FB4 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAndPillBtn.swift; sourceTree = "<group>"; };
+		19167F051E29EDC7003EFC98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		194090D21E29C23E00502FB4 /* Hatchling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194090D51E29C23E00502FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194090D71E29C23E00502FB4 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19167F041E29EDAB003EFC98 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				19167F051E29EDC7003EFC98 /* Constants.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		194090C91E29C23E00502FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 		194090D41E29C23E00502FB4 /* Hatchling */ = {
 			isa = PBXGroup;
 			children = (
+				19167F041E29EDAB003EFC98 /* Utilities */,
 				194091031E29C75500502FB4 /* Model */,
 				194091041E29C76A00502FB4 /* Controller */,
 				194091051E29C77800502FB4 /* View */,
@@ -146,6 +159,7 @@
 		194091051E29C77800502FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -295,8 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */,
 				194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */,
 				194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */,
+				19167F061E29EDC7003EFC98 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
