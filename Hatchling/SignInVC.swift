@@ -14,6 +14,10 @@ import ParseFacebookUtilsV4
 
 
 class SignInVC: UIViewController {
+    
+    @IBAction func fbBtnTapped(_ sender: Any) {
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +25,6 @@ class SignInVC: UIViewController {
         print("Fuck yeah we are developing")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     private func facebookLogIn(){
         print("\(self) - Facebook login pressed")
     }
@@ -90,6 +90,7 @@ class SignInVC: UIViewController {
                 self.performSegue(withIdentifier: "loggedIn", sender: self)
             }
         }
+
 
 }
 

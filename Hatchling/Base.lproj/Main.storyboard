@@ -22,28 +22,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sdcsdfsdf" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-cB-NQy">
-                                <rect key="frame" x="139" y="115" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hatchling" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6c-mm-5OL">
+                                <rect key="frame" x="49" y="97" width="277" height="77"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JgY-8D-oGP"/>
-                                    <constraint firstAttribute="width" constant="97" id="xAv-o7-0dz"/>
+                                    <constraint firstAttribute="height" constant="77" id="5sy-DF-wUb"/>
+                                    <constraint firstAttribute="width" constant="277" id="KxT-vj-wvi"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZg-sW-SlV">
+                                <rect key="frame" x="49" y="343" width="277" height="46"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="mi4-2a-vmK"/>
+                                    <constraint firstAttribute="width" constant="277" id="z0P-Os-V8X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J3I-ra-8ey"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.49019607843137253" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qWF-cB-NQy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="HfM-sv-j6m"/>
-                            <constraint firstItem="qWF-cB-NQy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="95" id="LaM-ua-noP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qWF-cB-NQy" secondAttribute="bottom" constant="522" id="jkO-MU-D5i"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qWF-cB-NQy" secondAttribute="trailing" constant="123" id="lQ3-YQ-7Mg"/>
+                            <constraint firstItem="fZg-sW-SlV" firstAttribute="top" secondItem="z6c-mm-5OL" secondAttribute="bottom" constant="169" id="69H-Q0-tbz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fZg-sW-SlV" secondAttribute="trailing" constant="33" id="ExU-pb-DDt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z6c-mm-5OL" secondAttribute="trailing" constant="33" id="LIG-Qy-jjH"/>
+                            <constraint firstItem="z6c-mm-5OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="baC-Mp-n5y"/>
+                            <constraint firstItem="z6c-mm-5OL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="77" id="fs8-m4-rwO"/>
+                            <constraint firstItem="fZg-sW-SlV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="gfc-x6-9mM"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
