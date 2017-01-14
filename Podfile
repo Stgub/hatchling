@@ -11,7 +11,7 @@ target 'Hatchling' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
-  
+  pod 'SwiftKeychainWrapper'
   target 'HatchlingTests' do
     inherit! :search_paths
     # Pods for testing

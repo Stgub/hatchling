@@ -10,8 +10,11 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
+    
+    let loggedInSegue = "loggedInSegue"
     
     @IBOutlet weak var birthdayScreen: UIView!
     @IBOutlet weak var genderScreen: UIView!
@@ -63,6 +66,9 @@ class SignInVC: UIViewController {
                     print("Chuck: Email signin error - \(error)")
                 }else {
                     print("Chuck: Email authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 }
             })
         }
@@ -95,21 +101,33 @@ class SignInVC: UIViewController {
                     print("Chuck: Unabe to authenticate with Firebase - \(error)")
                 } else {
                     print("Chuck: Succesfully authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 }
             })
         
         
         
     }
-
+    func completeSignIn(id:String){
+        // for automatic sign in
+        let KeychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Chuck: Data saved to keycahain \(KeychainResult)")
+        performSegue(withIdentifier: self.loggedInSegue, sender: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        //loginButton.center = view.center
-        //view.addSubview(loginButton)
+
         
         // Do any additional setup after loading the view, typically from a nib.
         print("Fuck yeah we are developing")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let _  = KeychainWrapper.standard.string(forKey: KEY_UID ){
+            print("CHUCK: ID found in keychain")
+            performSegue(withIdentifier: self.loggedInSegue, sender: self)
+        }
     }
 }

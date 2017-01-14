@@ -444,11 +444,12 @@
                         <outlet property="emailLogInScreen" destination="gFE-AA-BdV" id="PmF-3o-qtE"/>
                         <outlet property="genderScreen" destination="0pJ-57-cSM" id="Wm8-uP-IVR"/>
                         <outlet property="pwdField" destination="scY-kS-ZoH" id="dhQ-wa-wfd"/>
+                        <segue destination="zm1-zO-6De" kind="show" identifier="loggedInSegue" id="dZ1-zk-HtI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="124" y="123"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="IeY-hH-LXT">
