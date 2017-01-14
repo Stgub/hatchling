@@ -4,31 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bolts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKCoreKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKLoginKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Parse.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ParseUI.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Hatchling.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,37 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>44CAD6CE523055ED339E87154473A254</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>44EB182EC87CC587F7F8C8D134C95C68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51CB0AF616C6306147B99C320EB6D3ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A23A98E3587C077FB6980F40AA41ED74</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A760316124FD796EF09C09479E9F0021</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BC5000D645EEAF961C85907CDC796FE1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
+		<key>A8162AB97A1FA3518C9B46E49ABA0F30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
