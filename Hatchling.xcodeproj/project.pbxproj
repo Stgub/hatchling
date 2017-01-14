@@ -14,10 +14,9 @@
 		194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090D91E29C23E00502FB4 /* Main.storyboard */; };
 		194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194090DC1E29C23E00502FB4 /* Assets.xcassets */; };
 		194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */; };
-		194090EB1E29C23E00502FB4 /* HatchlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090EA1E29C23E00502FB4 /* HatchlingTests.swift */; };
-		194090F61E29C23E00502FB4 /* HatchlingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090F51E29C23E00502FB4 /* HatchlingUITests.swift */; };
 		195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */; };
 		195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A231E2A1009006CE51D /* RoundPic.swift */; };
+		56DF43161E2AA29300A6A7C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DF43151E2AA29300A6A7C5 /* GoogleService-Info.plist */; };
 		96E6A8578EF3B6CE0EF5FAF4 /* Pods_HatchlingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */; };
 		B5F79CC5EFD33B1B04142363 /* Pods_HatchlingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */; };
 		DF17966F15291021AF6EE98D /* Pods_Hatchling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */; };
@@ -54,15 +53,12 @@
 		194090DF1E29C23E00502FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194090E11E29C23E00502FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194090E61E29C23E00502FB4 /* HatchlingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194090EA1E29C23E00502FB4 /* HatchlingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchlingTests.swift; sourceTree = "<group>"; };
-		194090EC1E29C23E00502FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194090F11E29C23E00502FB4 /* HatchlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194090F51E29C23E00502FB4 /* HatchlingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchlingUITests.swift; sourceTree = "<group>"; };
-		194090F71E29C23E00502FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swipeCardShadowRoundCorner.swift; sourceTree = "<group>"; };
 		195D2A231E2A1009006CE51D /* RoundPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundPic.swift; sourceTree = "<group>"; };
 		27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.release.xcconfig"; sourceTree = "<group>"; };
 		517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling.debug.xcconfig"; sourceTree = "<group>"; };
+		56DF43151E2AA29300A6A7C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hatchling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D6B3C571B1C750012DCCA2 /* Pods-HatchlingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				194090D41E29C23E00502FB4 /* Hatchling */,
-				194090E91E29C23E00502FB4 /* HatchlingTests */,
-				194090F41E29C23E00502FB4 /* HatchlingUITests */,
 				194090D31E29C23E00502FB4 /* Products */,
 				560ECCF41E29D6DF0061F1E7 /* Frameworks */,
 				62A081AE836759C7A90F1D0E /* Pods */,
@@ -138,27 +132,10 @@
 				194090D91E29C23E00502FB4 /* Main.storyboard */,
 				194090DC1E29C23E00502FB4 /* Assets.xcassets */,
 				194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */,
+				56DF43151E2AA29300A6A7C5 /* GoogleService-Info.plist */,
 				194090E11E29C23E00502FB4 /* Info.plist */,
 			);
 			path = Hatchling;
-			sourceTree = "<group>";
-		};
-		194090E91E29C23E00502FB4 /* HatchlingTests */ = {
-			isa = PBXGroup;
-			children = (
-				194090EA1E29C23E00502FB4 /* HatchlingTests.swift */,
-				194090EC1E29C23E00502FB4 /* Info.plist */,
-			);
-			path = HatchlingTests;
-			sourceTree = "<group>";
-		};
-		194090F41E29C23E00502FB4 /* HatchlingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				194090F51E29C23E00502FB4 /* HatchlingUITests.swift */,
-				194090F71E29C23E00502FB4 /* Info.plist */,
-			);
-			path = HatchlingUITests;
 			sourceTree = "<group>";
 		};
 		194091031E29C75500502FB4 /* Model */ = {
@@ -330,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */,
+				56DF43161E2AA29300A6A7C5 /* GoogleService-Info.plist in Resources */,
 				194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */,
 				194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */,
 			);
@@ -507,7 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194090EB1E29C23E00502FB4 /* HatchlingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +492,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194090F61E29C23E00502FB4 /* HatchlingUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
