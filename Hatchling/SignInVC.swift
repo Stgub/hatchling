@@ -10,15 +10,22 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
+    
+    let loggedInSegue = "loggedInSegue"
     
     @IBOutlet weak var birthdayScreen: UIView!
     @IBOutlet weak var genderScreen: UIView!
     @IBOutlet weak var emailLogInScreen: UIView!
     
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var pwdField: UITextField!
+    
     @IBAction func emailBtnTapped(_ sender: Any) {
         birthdayScreen.isHidden = false
+        
     }
     
     @IBAction func bdayBackBtnTapped(_ sender: Any) {
@@ -39,8 +46,33 @@ class SignInVC: UIViewController {
     
     @IBAction func emailBackBtnTapped(_ sender: Any) {
         emailLogInScreen.isHidden = true
+
     }
     
+    @IBAction func emailLoginBtnTapped(_ sender: Any) {
+        
+        if let email = emailField.text, let pwd = pwdField.text{
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                
+                if error != nil {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            print("Chuck: Unable to authenticate with firebase using email to create new")
+                        } else {
+                            print("Chuck: Successfully authenticated with Firebase and email")
+                        }
+                    })
+                    
+                    print("Chuck: Email signin error - \(error)")
+                }else {
+                    print("Chuck: Email authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
+                }
+            })
+        }
+    }
     
 
     
@@ -69,21 +101,33 @@ class SignInVC: UIViewController {
                     print("Chuck: Unabe to authenticate with Firebase - \(error)")
                 } else {
                     print("Chuck: Succesfully authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 }
             })
         
         
         
     }
-
+    func completeSignIn(id:String){
+        // for automatic sign in
+        let KeychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Chuck: Data saved to keycahain \(KeychainResult)")
+        performSegue(withIdentifier: self.loggedInSegue, sender: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        //loginButton.center = view.center
-        //view.addSubview(loginButton)
+
         
         // Do any additional setup after loading the view, typically from a nib.
         print("Fuck yeah we are developing")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let _  = KeychainWrapper.standard.string(forKey: KEY_UID ){
+            print("CHUCK: ID found in keychain")
+            performSegue(withIdentifier: self.loggedInSegue, sender: self)
+        }
     }
 }
