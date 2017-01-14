@@ -538,6 +538,7 @@
 				194090FC1E29C23E00502FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		194090FD1E29C23E00502FB4 /* Build configuration list for PBXNativeTarget "HatchlingTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +547,7 @@
 				194090FF1E29C23E00502FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		194091001E29C23E00502FB4 /* Build configuration list for PBXNativeTarget "HatchlingUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +556,7 @@
 				194091021E29C23E00502FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
