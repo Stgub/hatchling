@@ -81,6 +81,7 @@
 				194090E91E29C23E00502FB4 /* HatchlingTests */,
 				194090F41E29C23E00502FB4 /* HatchlingUITests */,
 				194090D31E29C23E00502FB4 /* Products */,
+				560ECCF41E29D6DF0061F1E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +148,14 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		560ECCF41E29D6DF0061F1E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			path = HatchlingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
