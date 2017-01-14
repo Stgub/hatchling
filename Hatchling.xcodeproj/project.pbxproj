@@ -16,6 +16,9 @@
 		194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */; };
 		194090EB1E29C23E00502FB4 /* HatchlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090EA1E29C23E00502FB4 /* HatchlingTests.swift */; };
 		194090F61E29C23E00502FB4 /* HatchlingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090F51E29C23E00502FB4 /* HatchlingUITests.swift */; };
+		96E6A8578EF3B6CE0EF5FAF4 /* Pods_HatchlingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */; };
+		B5F79CC5EFD33B1B04142363 /* Pods_HatchlingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */; };
+		DF17966F15291021AF6EE98D /* Pods_Hatchling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01F5569F136A69002CD2CE5E /* Pods-HatchlingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B5A5D44C46A3ACF57DB4C7B /* Pods-HatchlingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAndPillBtn.swift; sourceTree = "<group>"; };
 		19167F051E29EDC7003EFC98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		194090D21E29C23E00502FB4 /* Hatchling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +57,12 @@
 		194090F11E29C23E00502FB4 /* HatchlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194090F51E29C23E00502FB4 /* HatchlingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchlingUITests.swift; sourceTree = "<group>"; };
 		194090F71E29C23E00502FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.release.xcconfig"; sourceTree = "<group>"; };
+		517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling.debug.xcconfig"; sourceTree = "<group>"; };
+		8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hatchling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D6B3C571B1C750012DCCA2 /* Pods-HatchlingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C853FCD74FF5E2AD5523184E /* Pods-Hatchling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchling.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF17966F15291021AF6EE98D /* Pods_Hatchling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E6A8578EF3B6CE0EF5FAF4 /* Pods_HatchlingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F79CC5EFD33B1B04142363 /* Pods_HatchlingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +109,7 @@
 				194090F41E29C23E00502FB4 /* HatchlingUITests */,
 				194090D31E29C23E00502FB4 /* Products */,
 				560ECCF41E29D6DF0061F1E7 /* Frameworks */,
+				62A081AE836759C7A90F1D0E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,9 +183,25 @@
 		560ECCF41E29D6DF0061F1E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */,
+				08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */,
+				8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */,
 			);
 			name = Frameworks;
 			path = HatchlingTests;
+			sourceTree = "<group>";
+		};
+		62A081AE836759C7A90F1D0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */,
+				C853FCD74FF5E2AD5523184E /* Pods-Hatchling.release.xcconfig */,
+				B8D6B3C571B1C750012DCCA2 /* Pods-HatchlingTests.debug.xcconfig */,
+				27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */,
+				01F5569F136A69002CD2CE5E /* Pods-HatchlingUITests.debug.xcconfig */,
+				0B5A5D44C46A3ACF57DB4C7B /* Pods-HatchlingUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 194090FA1E29C23E00502FB4 /* Build configuration list for PBXNativeTarget "Hatchling" */;
 			buildPhases = (
+				E3973031E488D578C6236208 /* [CP] Check Pods Manifest.lock */,
 				194090CE1E29C23E00502FB4 /* Sources */,
 				194090CF1E29C23E00502FB4 /* Frameworks */,
 				194090D01E29C23E00502FB4 /* Resources */,
+				68CCB46626251A2771C4BD8E /* [CP] Embed Pods Frameworks */,
+				C3F34E8973D77EB491700725 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 194090FD1E29C23E00502FB4 /* Build configuration list for PBXNativeTarget "HatchlingTests" */;
 			buildPhases = (
+				1C84DE01756C42CE6961D591 /* [CP] Check Pods Manifest.lock */,
 				194090E21E29C23E00502FB4 /* Sources */,
 				194090E31E29C23E00502FB4 /* Frameworks */,
 				194090E41E29C23E00502FB4 /* Resources */,
+				75166585731146BF7E530A28 /* [CP] Embed Pods Frameworks */,
+				C9FE8D8C21703912B60EF061 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 194091001E29C23E00502FB4 /* Build configuration list for PBXNativeTarget "HatchlingUITests" */;
 			buildPhases = (
+				7D8E859E2B69B80DA4425934 /* [CP] Check Pods Manifest.lock */,
 				194090ED1E29C23E00502FB4 /* Sources */,
 				194090EE1E29C23E00502FB4 /* Frameworks */,
 				194090EF1E29C23E00502FB4 /* Resources */,
+				30B9FF393359244FDC7DAE90 /* [CP] Embed Pods Frameworks */,
+				76F8FACB18839927A66A5AC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +344,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C84DE01756C42CE6961D591 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		30B9FF393359244FDC7DAE90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68CCB46626251A2771C4BD8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75166585731146BF7E530A28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76F8FACB18839927A66A5AC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D8E859E2B69B80DA4425934 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3F34E8973D77EB491700725 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9FE8D8C21703912B60EF061 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3973031E488D578C6236208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		194090CE1E29C23E00502FB4 /* Sources */ = {
@@ -462,6 +641,7 @@
 		};
 		194090FB1E29C23E00502FB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T4B85P4F7X;
@@ -475,6 +655,7 @@
 		};
 		194090FC1E29C23E00502FB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C853FCD74FF5E2AD5523184E /* Pods-Hatchling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T4B85P4F7X;
@@ -488,6 +669,7 @@
 		};
 		194090FE1E29C23E00502FB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D6B3C571B1C750012DCCA2 /* Pods-HatchlingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +685,7 @@
 		};
 		194090FF1E29C23E00502FB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +701,7 @@
 		};
 		194091011E29C23E00502FB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01F5569F136A69002CD2CE5E /* Pods-HatchlingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T4B85P4F7X;
@@ -532,6 +716,7 @@
 		};
 		194091021E29C23E00502FB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B5A5D44C46A3ACF57DB4C7B /* Pods-HatchlingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T4B85P4F7X;
