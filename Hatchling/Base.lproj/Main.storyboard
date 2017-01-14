@@ -473,7 +473,7 @@
         <!--Feed-->
         <scene sceneID="7Cu-gP-OX9">
             <objects>
-                <viewController id="Yq9-zU-ffv" sceneMemberID="viewController">
+                <viewController id="Yq9-zU-ffv" customClass="FeedVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jg-GF-ypF"/>
                         <viewControllerLayoutGuide type="bottom" id="Kw1-M9-Jjl"/>
@@ -723,6 +723,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="feedImgGray" selectedImage="feedImg" id="Ctl-iK-hSZ"/>
+                    <connections>
+                        <outlet property="swipeCardView" destination="2RO-qh-LDl" id="Z7p-nN-fxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-CU-s0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
