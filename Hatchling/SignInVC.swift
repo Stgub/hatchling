@@ -17,6 +17,9 @@ class SignInVC: UIViewController {
     @IBOutlet weak var genderScreen: UIView!
     @IBOutlet weak var emailLogInScreen: UIView!
     
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var pwdField: UITextField!
+    
     @IBAction func emailBtnTapped(_ sender: Any) {
         birthdayScreen.isHidden = false
     }
@@ -39,6 +42,10 @@ class SignInVC: UIViewController {
     
     @IBAction func emailBackBtnTapped(_ sender: Any) {
         emailLogInScreen.isHidden = true
+        
+        if let email = emailField.text, let pwd = pwdField.text{
+            
+        }
     }
     
     
