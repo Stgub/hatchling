@@ -445,7 +445,7 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--Item 2-->
+        <!--Create-->
         <scene sceneID="IeY-hH-LXT">
             <objects>
                 <viewController id="ueC-hZ-sty" sceneMemberID="viewController">
@@ -458,7 +458,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="glc-B3-3E2"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="createImgGray" selectedImage="createImg" id="glc-B3-3E2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oue-gx-ec9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -633,6 +633,14 @@
                                         </constraints>
                                         <state key="normal" image="Instagram-v051916_200"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZd-VM-xo4">
+                                        <rect key="frame" x="231" y="440" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="k6i-65-wDQ"/>
+                                            <constraint firstAttribute="height" constant="25" id="ojx-xo-uSd"/>
+                                        </constraints>
+                                        <state key="normal" image="kickstartericon"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9w-zb-85p">
                                         <rect key="frame" x="91" y="492" width="95" height="12"/>
                                         <constraints>
@@ -641,6 +649,14 @@
                                         </constraints>
                                         <state key="normal" image="kickstarter"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-yN-0Q4">
+                                        <rect key="frame" x="266" y="440" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="cwc-yl-oAr"/>
+                                            <constraint firstAttribute="width" constant="25" id="huE-3F-IQm"/>
+                                        </constraints>
+                                        <state key="normal" image="icon-indiegogo"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -648,6 +664,8 @@
                                     <constraint firstItem="lSg-un-Efh" firstAttribute="centerY" secondItem="FAv-zj-XA0" secondAttribute="centerY" id="1c8-H5-i8x"/>
                                     <constraint firstItem="Cfh-vX-XiY" firstAttribute="top" secondItem="EjJ-6g-HHb" secondAttribute="bottom" constant="18" id="5BB-GQ-dXC"/>
                                     <constraint firstItem="iJD-in-CQ4" firstAttribute="leading" secondItem="Cfh-vX-XiY" secondAttribute="trailing" constant="42" id="747-Np-8IU"/>
+                                    <constraint firstItem="lZd-VM-xo4" firstAttribute="leading" secondItem="aas-Ry-Gj3" secondAttribute="trailing" constant="10" id="8eL-bc-98z"/>
+                                    <constraint firstItem="dnH-yN-0Q4" firstAttribute="leading" secondItem="lZd-VM-xo4" secondAttribute="trailing" constant="10" id="Aoc-ml-ecF"/>
                                     <constraint firstItem="KYj-L1-YbU" firstAttribute="leading" secondItem="2RO-qh-LDl" secondAttribute="leading" constant="18" id="Dbt-rg-oYD"/>
                                     <constraint firstItem="0M2-yd-dJA" firstAttribute="top" secondItem="Cfh-vX-XiY" secondAttribute="bottom" constant="18" id="Eck-Sx-UH2"/>
                                     <constraint firstItem="aas-Ry-Gj3" firstAttribute="leading" secondItem="FIF-Jb-jdO" secondAttribute="trailing" constant="10" id="KfV-5L-muN"/>
@@ -666,6 +684,7 @@
                                     <constraint firstItem="KYj-L1-YbU" firstAttribute="top" secondItem="Mxx-fP-GrM" secondAttribute="bottom" constant="12" id="bqj-Zc-dq1"/>
                                     <constraint firstItem="Mxx-fP-GrM" firstAttribute="top" secondItem="2RO-qh-LDl" secondAttribute="top" id="cCk-B7-g1x"/>
                                     <constraint firstItem="iYc-gu-6Gm" firstAttribute="centerY" secondItem="lSg-un-Efh" secondAttribute="centerY" id="eFa-ai-gt4"/>
+                                    <constraint firstItem="lZd-VM-xo4" firstAttribute="centerY" secondItem="aas-Ry-Gj3" secondAttribute="centerY" id="ef3-c6-qKQ"/>
                                     <constraint firstItem="lSg-un-Efh" firstAttribute="leading" secondItem="FAv-zj-XA0" secondAttribute="trailing" constant="10" id="fO5-SX-c17"/>
                                     <constraint firstItem="Kaa-hg-zhd" firstAttribute="leading" secondItem="iYc-gu-6Gm" secondAttribute="trailing" constant="4" id="fju-Na-e4Q"/>
                                     <constraint firstItem="FAv-zj-XA0" firstAttribute="centerY" secondItem="KYj-L1-YbU" secondAttribute="centerY" id="gTw-0l-VzK"/>
@@ -674,6 +693,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Kaa-hg-zhd" secondAttribute="trailing" constant="12" id="isZ-bl-889"/>
                                     <constraint firstItem="o9w-zb-85p" firstAttribute="leading" secondItem="kEe-a0-gTy" secondAttribute="leading" id="k6M-RO-c55"/>
                                     <constraint firstItem="OoO-kM-Wfg" firstAttribute="leading" secondItem="2RO-qh-LDl" secondAttribute="leading" constant="18" id="kTn-i9-YMw"/>
+                                    <constraint firstItem="dnH-yN-0Q4" firstAttribute="centerY" secondItem="lZd-VM-xo4" secondAttribute="centerY" id="mcV-O1-oix"/>
                                     <constraint firstItem="GUP-ei-i9R" firstAttribute="leading" secondItem="kEe-a0-gTy" secondAttribute="trailing" constant="10" id="o4O-Dv-ei9"/>
                                     <constraint firstItem="hOa-zt-SLn" firstAttribute="centerY" secondItem="EjJ-6g-HHb" secondAttribute="centerY" id="ogi-7K-DOl"/>
                                     <constraint firstAttribute="trailing" secondItem="OoO-kM-Wfg" secondAttribute="trailing" constant="12" id="qj7-XZ-3rB"/>
@@ -696,7 +716,7 @@
                             <constraint firstAttribute="trailing" secondItem="7Fh-aN-Kiv" secondAttribute="trailing" id="mub-AH-gK4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="feedImg" id="Ctl-iK-hSZ"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feedImgGray" selectedImage="feedImg" id="Ctl-iK-hSZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-CU-s0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -728,9 +748,14 @@
         <image name="backBtn" width="15" height="25"/>
         <image name="checkIcon" width="26" height="21"/>
         <image name="commentIcon" width="26" height="26"/>
+        <image name="createImg" width="23" height="26"/>
+        <image name="createImgGray" width="23" height="26"/>
         <image name="downCarrot" width="19" height="12"/>
         <image name="feedImg" width="20" height="22"/>
+        <image name="feedImgGray" width="20" height="22"/>
+        <image name="icon-indiegogo" width="175" height="176"/>
         <image name="kickstarter" width="320" height="40"/>
+        <image name="kickstartericon" width="116" height="116"/>
         <image name="sendIcon" width="24" height="24"/>
         <image name="square-facebook-512" width="512" height="512"/>
     </resources>
