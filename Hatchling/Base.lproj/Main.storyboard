@@ -341,6 +341,9 @@
                                                         <state key="normal" title="Log in">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="emailLoginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADS-ts-n3M"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.43529411759999997" green="0.49019607840000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>

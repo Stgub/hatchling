@@ -22,6 +22,7 @@ class SignInVC: UIViewController {
     
     @IBAction func emailBtnTapped(_ sender: Any) {
         birthdayScreen.isHidden = false
+        
     }
     
     @IBAction func bdayBackBtnTapped(_ sender: Any) {
@@ -42,12 +43,30 @@ class SignInVC: UIViewController {
     
     @IBAction func emailBackBtnTapped(_ sender: Any) {
         emailLogInScreen.isHidden = true
-        
-        if let email = emailField.text, let pwd = pwdField.text{
-            
-        }
+
     }
     
+    @IBAction func emailLoginBtnTapped(_ sender: Any) {
+        
+        if let email = emailField.text, let pwd = pwdField.text{
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                
+                if error != nil {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            print("Chuck: Unable to authenticate with firebase using email to create new")
+                        } else {
+                            print("Chuck: Successfully authenticated with Firebase and email")
+                        }
+                    })
+                    
+                    print("Chuck: Email signin error - \(error)")
+                }else {
+                    print("Chuck: Email authenticated with Firebase")
+                }
+            })
+        }
+    }
     
 
     
