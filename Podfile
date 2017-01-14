@@ -6,7 +6,9 @@ target 'Hatchling' do
   use_frameworks!
   pod 'Parse'
   pod 'ParseUI'
+  pod 'FBSDKLoginKit'
   # Pods for Hatchling
+  
 
   target 'HatchlingTests' do
     inherit! :search_paths

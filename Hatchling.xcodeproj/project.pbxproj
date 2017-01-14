@@ -130,11 +130,11 @@
 		194090D41E29C23E00502FB4 /* Hatchling */ = {
 			isa = PBXGroup;
 			children = (
+				194090D51E29C23E00502FB4 /* AppDelegate.swift */,
 				19167F041E29EDAB003EFC98 /* Utilities */,
 				194091031E29C75500502FB4 /* Model */,
 				194091041E29C76A00502FB4 /* Controller */,
 				194091051E29C77800502FB4 /* View */,
-				194090D51E29C23E00502FB4 /* AppDelegate.swift */,
 				194090D91E29C23E00502FB4 /* Main.storyboard */,
 				194090DC1E29C23E00502FB4 /* Assets.xcassets */,
 				194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */,
@@ -287,7 +287,7 @@
 				TargetAttributes = {
 					194090D11E29C23E00502FB4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = T4B85P4F7X;
+						DevelopmentTeam = Y436CAXHW3;
 						ProvisioningStyle = Automatic;
 					};
 					194090E51E29C23E00502FB4 = {
@@ -652,8 +652,9 @@
 			baseConfigurationReference = 517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IdeaShare.Hatchling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -666,8 +667,9 @@
 			baseConfigurationReference = C853FCD74FF5E2AD5523184E /* Pods-Hatchling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IdeaShare.Hatchling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
