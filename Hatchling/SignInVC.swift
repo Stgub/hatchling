@@ -60,6 +60,10 @@ class SignInVC: UIViewController {
                             print("Chuck: Unable to authenticate with firebase using email to create new")
                         } else {
                             print("Chuck: Successfully authenticated with Firebase and email")
+                            if let user = user {
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
+                            }
                         }
                     })
                     
@@ -67,7 +71,8 @@ class SignInVC: UIViewController {
                 }else {
                     print("Chuck: Email authenticated with Firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                 }
             })
@@ -102,16 +107,15 @@ class SignInVC: UIViewController {
                 } else {
                     print("Chuck: Succesfully authenticated with Firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": credential.provider]
+                        self.completeSignIn(id: user.uid,userData: userData)
                     }
                 }
             })
-        
-        
-        
     }
-    func completeSignIn(id:String){
+    func completeSignIn(id:String, userData:Dictionary<String, String>){
         // for automatic sign in
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let KeychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Chuck: Data saved to keycahain \(KeychainResult)")
         performSegue(withIdentifier: self.loggedInSegue, sender: nil)
@@ -119,9 +123,6 @@ class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        // Do any additional setup after loading the view, typically from a nib.
         print("Fuck yeah we are developing")
     }
     override func viewDidAppear(_ animated: Bool) {

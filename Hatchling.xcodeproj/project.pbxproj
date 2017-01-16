@@ -18,6 +18,7 @@
 		195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A231E2A1009006CE51D /* RoundPic.swift */; };
 		56DF43191E2AAD0100A6A7C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DF43181E2AAD0100A6A7C5 /* GoogleService-Info.plist */; };
 		56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */; };
+		56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF431D1E2C078800A6A7C5 /* DataService.swift */; };
 		96E6A8578EF3B6CE0EF5FAF4 /* Pods_HatchlingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */; };
 		B5F79CC5EFD33B1B04142363 /* Pods_HatchlingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */; };
 		DF17966F15291021AF6EE98D /* Pods_Hatchling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */; };
@@ -62,6 +63,7 @@
 		56DF43171E2AA91C00A6A7C5 /* Hatchling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hatchling.entitlements; sourceTree = "<group>"; };
 		56DF43181E2AAD0100A6A7C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		56DF431D1E2C078800A6A7C5 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hatchling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D6B3C571B1C750012DCCA2 /* Pods-HatchlingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		194090D41E29C23E00502FB4 /* Hatchling */ = {
 			isa = PBXGroup;
 			children = (
+				56DF431C1E2C076000A6A7C5 /* Services */,
 				56DF43171E2AA91C00A6A7C5 /* Hatchling.entitlements */,
 				194090D51E29C23E00502FB4 /* AppDelegate.swift */,
 				19167F041E29EDAB003EFC98 /* Utilities */,
@@ -177,6 +180,14 @@
 			);
 			name = Frameworks;
 			path = HatchlingTests;
+			sourceTree = "<group>";
+		};
+		56DF431C1E2C076000A6A7C5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56DF431D1E2C078800A6A7C5 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		62A081AE836759C7A90F1D0E /* Pods */ = {
@@ -489,6 +500,7 @@
 				195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */,
 				194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */,
 				19167F061E29EDC7003EFC98 /* Constants.swift in Sources */,
+				56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
