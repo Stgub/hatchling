@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190B84FD1E2D764400E5CC6A /* SignUpOrLogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B84FC1E2D764400E5CC6A /* SignUpOrLogInVC.swift */; };
+		190B84FF1E2D768600E5CC6A /* SignUpFBorEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B84FE1E2D768600E5CC6A /* SignUpFBorEmailVC.swift */; };
+		190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */; };
+		190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */; };
+		190B85051E2D772500E5CC6A /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */; };
+		190B85091E2D7B1E00E5CC6A /* SignUpConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85081E2D7B1E00E5CC6A /* SignUpConfirmVC.swift */; };
+		190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850A1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift */; };
+		190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850C1E2D7BCF00E5CC6A /* LogInEmailVC.swift */; };
+		190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */; };
 		19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */; };
 		19167F061E29EDC7003EFC98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F051E29EDC7003EFC98 /* Constants.swift */; };
 		194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090D51E29C23E00502FB4 /* AppDelegate.swift */; };
@@ -45,6 +54,15 @@
 		01F5569F136A69002CD2CE5E /* Pods-HatchlingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5A5D44C46A3ACF57DB4C7B /* Pods-HatchlingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		190B84FC1E2D764400E5CC6A /* SignUpOrLogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpOrLogInVC.swift; sourceTree = "<group>"; };
+		190B84FE1E2D768600E5CC6A /* SignUpFBorEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFBorEmailVC.swift; sourceTree = "<group>"; };
+		190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
+		190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBdayVC.swift; sourceTree = "<group>"; };
+		190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderVC.swift; sourceTree = "<group>"; };
+		190B85081E2D7B1E00E5CC6A /* SignUpConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpConfirmVC.swift; sourceTree = "<group>"; };
+		190B850A1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInFBorEmailVC.swift; sourceTree = "<group>"; };
+		190B850C1E2D7BCF00E5CC6A /* LogInEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInEmailVC.swift; sourceTree = "<group>"; };
+		190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPWVC.swift; sourceTree = "<group>"; };
 		19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAndPillBtn.swift; sourceTree = "<group>"; };
 		19167F051E29EDC7003EFC98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		194090D21E29C23E00502FB4 /* Hatchling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +175,15 @@
 			children = (
 				194090D71E29C23E00502FB4 /* SignInVC.swift */,
 				56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */,
+				190B84FC1E2D764400E5CC6A /* SignUpOrLogInVC.swift */,
+				190B84FE1E2D768600E5CC6A /* SignUpFBorEmailVC.swift */,
+				190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */,
+				190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */,
+				190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */,
+				190B85081E2D7B1E00E5CC6A /* SignUpConfirmVC.swift */,
+				190B850A1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift */,
+				190B850C1E2D7BCF00E5CC6A /* LogInEmailVC.swift */,
+				190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -493,12 +520,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */,
+				190B85091E2D7B1E00E5CC6A /* SignUpConfirmVC.swift in Sources */,
+				190B84FF1E2D768600E5CC6A /* SignUpFBorEmailVC.swift in Sources */,
 				19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */,
+				190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */,
 				56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */,
 				194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */,
+				190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */,
+				190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */,
 				195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */,
 				195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */,
+				190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */,
+				190B84FD1E2D764400E5CC6A /* SignUpOrLogInVC.swift in Sources */,
 				194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */,
+				190B85051E2D772500E5CC6A /* SignUpGenderVC.swift in Sources */,
 				19167F061E29EDC7003EFC98 /* Constants.swift in Sources */,
 				56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */,
 			);
