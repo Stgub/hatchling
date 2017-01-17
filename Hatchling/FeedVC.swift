@@ -42,6 +42,17 @@ class FeedVC: UIViewController {
     }
 
     
+    @IBAction func signOutBtnTapped(_ sender: Any) {
+       
+        try! FIRAuth.auth()!.signOut()
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateViewController(withIdentifier: "intialVC") 
+            self.present(vc, animated: false, completion: nil)
+        }
+    }
+    
+    
+    
     
     //MARK: - Gestures
     func wasDragged(_ gesture: UIPanGestureRecognizer)

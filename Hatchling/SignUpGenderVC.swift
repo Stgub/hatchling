@@ -9,15 +9,45 @@
 import UIKit
 
 class SignUpGenderVC: UIViewController {
-
+    
+    var profile = EmailLoginProfile()
     override func viewDidLoad() {
         super.viewDidLoad()
+             print("Chuck: Signing up \(profile.fullName) with email \(profile.email) and password \(profile.password) and birthdate \(profile.birthdate)")
+    }
+    
+    
+    @IBOutlet weak var maleBtn: UIButton!
+
+    @IBOutlet weak var femaleBtn: UIButton!
+    
+    @IBAction func maleBtnTapped(_ sender: Any) {
+        maleBtn.setTitleColor(UIColor.black, for: .normal)
+        femaleBtn.setTitleColor(UIColor.white, for: .normal)
+        profile.gender = "male"
+    }
+    @IBAction func femaleBtnTapped(_ sender: Any) {
+        femaleBtn.setTitleColor(UIColor.black, for: .normal)
+        maleBtn.setTitleColor(UIColor.white, for: .normal)
+        profile.gender = "female"
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+    //toSignUpConfirmSegue
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        if profile.gender == "" {
+            let alertController = UIAlertController(title: "Gender not choosen", message: "Please choose one", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
+            
+
+        } else {
+            self.performSegue(withIdentifier: "toSignUpConfirmSegue", sender: self)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,14 +55,20 @@ class SignUpGenderVC: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let dest = segue.destination
+        switch(dest){
+        case is SignUpConfirmVC:
+            print("going to confirm")
+            let destVC = dest as! SignUpConfirmVC
+            destVC.profile = profile
+        default:
+            print("default switch statement")
+        }
     }
-    */
+    
 
 }
