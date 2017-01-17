@@ -7,17 +7,43 @@
 //
 
 import UIKit
-
+import Firebase
 class ForgotPWVC: UIViewController {
-
+    var email:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if email != "" {
+            emailField.text = email
+        }
     }
     
+    @IBOutlet weak var emailField: UITextField!
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func sendEmailBtnTapped(_ sender: Any) {
+        if emailField.text != "" {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: emailField.text!, completion: { (error) in
+            if error != nil {
+                print("Chuck: Reset email error - \(error)")
+            } else {
+                let alertController = UIAlertController(title: "Reset password", message: "Email sent", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+        })
+        } else {
+            let alertController = UIAlertController(title: "No email input", message: "Please provide email", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
