@@ -7,27 +7,43 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedVC: UIViewController {
 
     @IBOutlet weak var swipeCardView: swipeCardShadowRoundCorner!
     var originalCenter:CGPoint!
+    
+     var posts:[Post] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         originalCenter = swipeCardView.center
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(FeedVC.wasDragged(_:)))
         swipeCardView.addGestureRecognizer(swipeGesture)
 
-        // Do any additional setup after loading the view.
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot.value)
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    print("SNAP: \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDict)
+                        self.posts.append(post)
+                        
+                    }
+                } 
+                
+            }
+            //RELOAD DATA i.e. self.tableview.reloadData()
+            
+        })        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
-    //MARK: -Gestures
+    //MARK: - Gestures
     func wasDragged(_ gesture: UIPanGestureRecognizer)
     {
         let translation = gesture.translation(in: self.view)
