@@ -24,6 +24,7 @@
 		194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */; };
 		195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */; };
 		195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A231E2A1009006CE51D /* RoundPic.swift */; };
+		1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */; };
 		56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */; };
 		56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */; };
 		56DC213A1E2DBB4A004EC2FD /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */; };
@@ -78,6 +79,7 @@
 		194090F11E29C23E00502FB4 /* HatchlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swipeCardShadowRoundCorner.swift; sourceTree = "<group>"; };
 		195D2A231E2A1009006CE51D /* RoundPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundPic.swift; sourceTree = "<group>"; };
+		1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerFontWhite.swift; sourceTree = "<group>"; };
 		27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.release.xcconfig"; sourceTree = "<group>"; };
 		517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling.debug.xcconfig"; sourceTree = "<group>"; };
 		56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseHowVC.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */,
 				195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */,
 				195D2A231E2A1009006CE51D /* RoundPic.swift */,
+				1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */,
 				190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */,
 				56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */,
+				1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */,
 				194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */,
 				190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */,
 				190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */,
