@@ -35,12 +35,14 @@ class FeedVC: UIViewController {
      var posts:[Post] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // TEMPORARY
+        if let usrImg = userImage {
+            posterImage.image = usrImg
+        }
         originalCenter = swipeCardView.center
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(FeedVC.wasDragged(_:)))
         swipeCardView.addGestureRecognizer(swipeGesture)
         //Downloads posts data and sets and observer for if anything chanages
-        //DataService.ds.REF_POSTS.
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
@@ -66,7 +68,7 @@ class FeedVC: UIViewController {
         }
     }
     func nextPost(){
-        if posts.count < 1 {
+        if posts.count > 1 {
             let post = posts[1]
             showPost(post:post)
         }
@@ -83,6 +85,10 @@ class FeedVC: UIViewController {
     }
     func configurePost(post: Post, img: UIImage? = nil) {
          likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        // TEMPORARY
+        if let usrImg = userImage {
+            posterImage.image = usrImg
+        }
         
          self.postCaption.text = post.caption
          self.postLikes.text = "\(post.likes)"

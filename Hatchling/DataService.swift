@@ -18,7 +18,7 @@ struct userDataTypes {
     static let birthday = "birthday"
     
 }
-var userImage = UIImage() //SHOULDNT BE HERE JUST TEMPORARY
+var userImage:UIImage! //SHOULDNT BE HERE JUST TEMPORARY
 
 
 let DB_BASE = FIRDatabase.database().reference() // gives the URL of the root of the db, also in the google plist

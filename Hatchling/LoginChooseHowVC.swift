@@ -39,44 +39,49 @@ class LoginChooseHowVC: UIViewController {
                 //Authenticatre with Firebase
                 var userData = [userDataTypes.provider: credential.provider]
                 if((FBSDKAccessToken.current()) != nil){
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name,  email, gender, picture, user_birthday"]).start(completionHandler:
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name,  email, gender, birthday, picture.type(large)"]).start(completionHandler:
                         { (connection, result, error) -> Void in
-                            print(result)
-                            if let result = result as? NSDictionary {
-                                if let birthday = result["user_birthday"] as? String{
-                                    userData[userDataTypes.birthday] = birthday
-                                } else { print("Chuck: Could'nt grab FB birthday")}
-                                if let email = result["email"] as? String{
-                                    userData[userDataTypes.email] = email
-                                } else { print("Chuck: Could'nt grab FB email")}
-                                if let name = result["name"] as? String {
-                                    userData[userDataTypes.name] = name
-                                } else { print("Chuck: Could'nt grab FB name")}
-
-                                if let gender = result["gender"] as? String {
-                                    userData[userDataTypes.gender] = gender
-                                } else { print("Chuck: Could'nt grab FB gender")}
-                                if let picture = result["picture"] as? NSDictionary {
-                                    let data = picture["data"] as! NSDictionary
-                                    let imgURL = data["url"]
-                                    let url = NSURL(string:imgURL as! String)
-                                    let urlRequest = NSURLRequest(url: url! as URL)
-                                    
-                                    NSURLConnection.sendAsynchronousRequest(urlRequest as URLRequest, queue: OperationQueue.main) {
-                                        (response:URLResponse?, data:Data?, error:Error?) -> Void in
-                                        if error == nil {
-                                            if let image = UIImage(data: data!) {
-                                                userImage = image
-                                                print("Chuck: successfully got facebook image")
-                                            } else { print("Chuck: Could not get facebook image from data") }
-                                        } else {
-                                            print("Chuck: error with laoding facebook image")
-                                        }
-                                    }
-                                } else { print("Chuck : No facebook image grabbed") }
-                                    
+                            print("Chuck: Graph request connection? \(connection)")
+                            if error != nil {
+                                print("Chuck: Error with FB graph request - \(error)")
                             } else {
-                                print("Chuck: Could'nt cast result to NSDictionary")
+                                print("Chuck: Result from FB graph request - \(result)")
+                                if let result = result as? NSDictionary {
+                                    if let birthday = result["birthday"] as? String{
+                                        userData[userDataTypes.birthday] = birthday
+                                    } else { print("Chuck: Could'nt grab FB birthday")}
+                                    if let email = result["email"] as? String{
+                                        userData[userDataTypes.email] = email
+                                    } else { print("Chuck: Could'nt grab FB email")}
+                                    if let name = result["name"] as? String {
+                                        userData[userDataTypes.name] = name
+                                    } else { print("Chuck: Could'nt grab FB name")}
+
+                                    if let gender = result["gender"] as? String {
+                                        userData[userDataTypes.gender] = gender
+                                    } else { print("Chuck: Could'nt grab FB gender")}
+                                    if let picture = result["picture"] as? NSDictionary {
+                                        let data = picture["data"] as! NSDictionary
+                                        let imgURL = data["url"]
+                                        let url = NSURL(string:imgURL as! String)
+                                        let urlRequest = NSURLRequest(url: url! as URL)
+                                        
+                                        NSURLConnection.sendAsynchronousRequest(urlRequest as URLRequest, queue: OperationQueue.main) {
+                                            (response:URLResponse?, data:Data?, error:Error?) -> Void in
+                                            if error == nil {
+                                                if let image = UIImage(data: data!) {
+                                                    userImage = image
+                                                    print("Chuck: successfully got facebook image")
+                                                } else { print("Chuck: Could not get facebook image from data") }
+                                            } else {
+                                                print("Chuck: error with laoding facebook image")
+                                            }
+                                        }
+                                    } else { print("Chuck : No facebook image grabbed") }
+                                        
+                                } else {
+                                    print("Chuck: Could'nt cast result to NSDictionary")
+                                }
                             }
                             
                         self.firebaseAuth(credential,userData:userData)
