@@ -24,8 +24,8 @@ class SignupChooseHowVC: UIViewController {
     
     @IBAction func fbBtnTapped(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
-        
-        facebookLogin.logIn(withReadPermissions: [ "email"], from: self) { (result, error) in
+            // can also get first or last name from public profile
+        facebookLogin.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if error != nil {
                 print("Chuck: Unable to authenticate with Facebook - \(error)")
             } else if result?.isCancelled == true {
@@ -48,6 +48,7 @@ class SignupChooseHowVC: UIViewController {
             } else {
                 print("Chuck: Succesfully authenticated with Firebase")
                 if let user = user {
+                    print("CHUCK user data - \(credential)")
                     let userData = ["provider": credential.provider]
                     self.completeSignIn(id: user.uid,userData: userData)
                 }
