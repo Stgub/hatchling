@@ -13,7 +13,7 @@
         <!--SignInorLogIn-->
         <scene sceneID="PWQ-rV-Xsq">
             <objects>
-                <viewController storyboardIdentifier="intialVC" id="9O3-qe-q9W" userLabel="SignInorLogIn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="intialVC" id="9O3-qe-q9W" userLabel="SignInorLogIn" customClass="SignUpOrLogInViewController" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2C7-Zv-Awb"/>
                         <viewControllerLayoutGuide type="bottom" id="YId-5U-ide"/>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oue-gx-ec9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="394"/>
+            <point key="canvasLocation" x="2546" y="394"/>
         </scene>
         <!--Feed-->
         <scene sceneID="7Cu-gP-OX9">
@@ -199,6 +199,7 @@
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iYc-gu-6Gm">
                                         <rect key="frame" x="279" y="240" width="26" height="21"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissolvable energy tablets that enhance your focus without the jitters or crash" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-kM-Wfg">
                                         <rect key="frame" x="18" y="285" width="315" height="39"/>
@@ -382,10 +383,21 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="feedImgGray" selectedImage="feedImg" id="Ctl-iK-hSZ"/>
                     <connections>
+                        <outlet property="postCaption" destination="OoO-kM-Wfg" id="kcr-fM-djb"/>
+                        <outlet property="postImage" destination="Mxx-fP-GrM" id="NVe-ZV-eXe"/>
+                        <outlet property="postLikes" destination="Kaa-hg-zhd" id="LQU-0f-Nka"/>
+                        <outlet property="postTitle" destination="KYj-L1-YbU" id="jtT-46-Jb2"/>
+                        <outlet property="posterImage" destination="EjJ-6g-HHb" id="cbq-WM-64x"/>
+                        <outlet property="posterName" destination="hOa-zt-SLn" id="YYh-Pb-ZLN"/>
                         <outlet property="swipeCardView" destination="2RO-qh-LDl" id="Z7p-nN-fxb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-CU-s0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="udc-e6-2XN">
+                    <connections>
+                        <action selector="likeTapped:" destination="Yq9-zU-ffv" id="opX-Lu-JJF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2708" y="-456"/>
         </scene>
@@ -1549,7 +1561,7 @@
         <image name="square-facebook-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q6E-VX-d3L"/>
+        <segue reference="sXS-xK-sQP"/>
         <segue reference="gzO-7S-YSP"/>
     </inferredMetricsTieBreakers>
 </document>

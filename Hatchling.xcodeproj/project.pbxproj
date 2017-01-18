@@ -7,18 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190B84FF1E2D768600E5CC6A /* SignUpFBorEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B84FE1E2D768600E5CC6A /* SignUpFBorEmailVC.swift */; };
 		190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */; };
 		190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */; };
 		190B85051E2D772500E5CC6A /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */; };
 		190B85091E2D7B1E00E5CC6A /* SignUpConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85081E2D7B1E00E5CC6A /* SignUpConfirmVC.swift */; };
-		190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850A1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift */; };
 		190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850C1E2D7BCF00E5CC6A /* LogInEmailVC.swift */; };
 		190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */; };
 		19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */; };
 		19167F061E29EDC7003EFC98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F051E29EDC7003EFC98 /* Constants.swift */; };
 		194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090D51E29C23E00502FB4 /* AppDelegate.swift */; };
-		194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090D71E29C23E00502FB4 /* SignInVC.swift */; };
 		194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090D91E29C23E00502FB4 /* Main.storyboard */; };
 		194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194090DC1E29C23E00502FB4 /* Assets.xcassets */; };
 		194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */; };
@@ -27,6 +24,7 @@
 		56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */; };
 		56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */; };
 		56DC213A1E2DBB4A004EC2FD /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */; };
+		56DC213C1E2EF69E004EC2FD /* SignUpOrLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC213B1E2EF69E004EC2FD /* SignUpOrLogInViewController.swift */; };
 		56DF43191E2AAD0100A6A7C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DF43181E2AAD0100A6A7C5 /* GoogleService-Info.plist */; };
 		56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */; };
 		56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF431D1E2C078800A6A7C5 /* DataService.swift */; };
@@ -57,19 +55,16 @@
 		01F5569F136A69002CD2CE5E /* Pods-HatchlingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5A5D44C46A3ACF57DB4C7B /* Pods-HatchlingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.release.xcconfig"; sourceTree = "<group>"; };
-		190B84FE1E2D768600E5CC6A /* SignUpFBorEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFBorEmailVC.swift; sourceTree = "<group>"; };
 		190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBdayVC.swift; sourceTree = "<group>"; };
 		190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderVC.swift; sourceTree = "<group>"; };
 		190B85081E2D7B1E00E5CC6A /* SignUpConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpConfirmVC.swift; sourceTree = "<group>"; };
-		190B850A1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInFBorEmailVC.swift; sourceTree = "<group>"; };
 		190B850C1E2D7BCF00E5CC6A /* LogInEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInEmailVC.swift; sourceTree = "<group>"; };
 		190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPWVC.swift; sourceTree = "<group>"; };
 		19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAndPillBtn.swift; sourceTree = "<group>"; };
 		19167F051E29EDC7003EFC98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		194090D21E29C23E00502FB4 /* Hatchling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194090D51E29C23E00502FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		194090D71E29C23E00502FB4 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		194090DA1E29C23E00502FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		194090DC1E29C23E00502FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		194090DF1E29C23E00502FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +78,7 @@
 		56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseHowVC.swift; sourceTree = "<group>"; };
 		56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginChooseHowVC.swift; sourceTree = "<group>"; };
 		56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
+		56DC213B1E2EF69E004EC2FD /* SignUpOrLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpOrLogInViewController.swift; sourceTree = "<group>"; };
 		56DF43171E2AA91C00A6A7C5 /* Hatchling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hatchling.entitlements; sourceTree = "<group>"; };
 		56DF43181E2AAD0100A6A7C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -211,15 +207,13 @@
 		56DC21301E2D9DC5004EC2FD /* LogIn/SignIn Flow */ = {
 			isa = PBXGroup;
 			children = (
-				194090D71E29C23E00502FB4 /* SignInVC.swift */,
+				56DC213B1E2EF69E004EC2FD /* SignUpOrLogInViewController.swift */,
 				56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */,
 				56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */,
-				190B84FE1E2D768600E5CC6A /* SignUpFBorEmailVC.swift */,
 				190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */,
 				190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */,
 				190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */,
 				190B85081E2D7B1E00E5CC6A /* SignUpConfirmVC.swift */,
-				190B850A1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift */,
 				190B850C1E2D7BCF00E5CC6A /* LogInEmailVC.swift */,
 				190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */,
 			);
@@ -324,7 +318,7 @@
 				TargetAttributes = {
 					194090D11E29C23E00502FB4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = T4B85P4F7X;
+						DevelopmentTeam = Y436CAXHW3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -538,16 +532,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */,
+				56DC213C1E2EF69E004EC2FD /* SignUpOrLogInViewController.swift in Sources */,
 				190B85091E2D7B1E00E5CC6A /* SignUpConfirmVC.swift in Sources */,
 				56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */,
-				190B84FF1E2D768600E5CC6A /* SignUpFBorEmailVC.swift in Sources */,
 				56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */,
 				19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */,
 				190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */,
 				56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */,
-				194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */,
 				190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */,
-				190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */,
 				195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */,
 				195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */,
 				190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */,
@@ -708,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hatchling/Hatchling.entitlements;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -724,7 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hatchling/Hatchling.entitlements;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
