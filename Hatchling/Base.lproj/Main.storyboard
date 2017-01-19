@@ -1048,7 +1048,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fbBtnTapped:" destination="o3K-uB-eab" eventType="touchUpInside" id="1tt-Ry-uvg"/>
+                                    <action selector="fbBtnTapped:" destination="o3K-uB-eab" eventType="touchUpInside" id="NYS-1M-Z1d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1157,7 +1157,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fbBtnTapped:" destination="ZGb-aW-cNb" eventType="touchUpInside" id="A2n-44-ewl"/>
+                                    <action selector="fbBtnTapped:" destination="ZGb-aW-cNb" eventType="touchUpInside" id="DAU-3u-TXQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIj-7I-ID8" userLabel="backBtn">
@@ -2900,7 +2900,7 @@
         <image name="square-facebook-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="GkQ-Gt-fDm"/>
         <segue reference="gzO-7S-YSP"/>
-        <segue reference="sXS-xK-sQP"/>
     </inferredMetricsTieBreakers>
 </document>

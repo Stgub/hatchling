@@ -40,9 +40,11 @@ class FeedVC: UIViewController {
         if let usrImg = userImage {
             posterImage.image = usrImg
         }
+        //Swipe gesture stuff
         originalCenter = swipeCardView.center
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(FeedVC.wasDragged(_:)))
         swipeCardView.addGestureRecognizer(swipeGesture)
+        
         //Downloads posts data and sets and observer for if anything chanages
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -57,7 +59,6 @@ class FeedVC: UIViewController {
                 } 
                 
             }
-            //RELOAD DATA i.e. self.tableview.reloadData()
             
         })        // Do any additional setup after loading the view.
     }
