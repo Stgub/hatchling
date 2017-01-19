@@ -2481,9 +2481,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Tqt-rg-RZc" secondAttribute="height" multiplier="290:181" id="VMD-Yy-tMC"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="etO-5u-sbr" appends="YES" id="jye-6y-7uO"/>
-                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukj-5V-hfC" userLabel="backBtn">
                                 <rect key="frame" x="15" y="35" width="15" height="25"/>
@@ -2503,9 +2500,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hzv-qF-n4d" secondAttribute="height" multiplier="1:1" id="TxG-Zb-S8g"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="aPm-1K-S4a" appends="YES" id="j0w-CI-L5R"/>
-                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.49019607840000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -2530,20 +2524,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="createImgGray" id="UgK-zp-oyh"/>
-                    <connections>
-                        <outlet property="logoPicImgAdd" destination="Hzv-qF-n4d" id="lmP-SK-AVN"/>
-                        <outlet property="prodPicImgAddOut" destination="Tqt-rg-RZc" id="QKX-6f-aFs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUb-dx-E7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="etO-5u-sbr" userLabel="Tap Gesture Recognizer Product">
                     <connections>
-                        <action selector="addProductImgTapped:" destination="ezo-Wq-J0I" id="DfZ-ne-kiJ"/>
+                        <action selector="addProductImgTapped:" destination="ezo-Wq-J0I" id="ezW-3S-7vp"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="aPm-1K-S4a" userLabel="Tap Gesture Recognizer Logo">
+                <tapGestureRecognizer id="PUq-xE-anz" userLabel="Tap Gesture Recognizer Logo">
                     <connections>
-                        <action selector="addLogoImgTapped:" destination="ezo-Wq-J0I" id="oGf-ju-st2"/>
+                        <action selector="addLogoImgTapped:" destination="ezo-Wq-J0I" id="lmO-6j-vr8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
