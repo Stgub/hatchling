@@ -21,6 +21,9 @@ class SignupChooseHowVC: UIViewController {
     }
 
     
+    @IBAction func backBtnTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func fbBtnTapped(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
