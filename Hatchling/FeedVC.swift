@@ -14,20 +14,17 @@ class FeedVC: UIViewController {
 
     
     @IBOutlet weak var postImage: UIImageView!
-    
     @IBOutlet weak var postTitle: UILabel!
-    
     @IBOutlet weak var posterImage: RoundPic!
-    
     @IBOutlet weak var posterName: UILabel!
     @IBOutlet weak var postStage: UILabel!
-    
     @IBOutlet weak var postLikes: UILabel!
     @IBOutlet weak var postCaption: UILabel!
     
     
     @IBOutlet weak var swipeCardView: swipeCardShadowRoundCorner!
     var originalCenter:CGPoint! //used for swiping to return to the original position
+    var currentUserLikesRef:FIRDatabaseReference!
     var likesRef: FIRDatabaseReference! // used  for updating likes when tapped
     var currentPost:Post!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
@@ -35,7 +32,11 @@ class FeedVC: UIViewController {
      var posts:[Post] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Used to access the users likes
+        currentUserLikesRef = DataService.ds.REF_USER_CURRENT.child("likes")
+
         // TEMPORARY
+
         if let usrImg = userImage {
             posterImage.image = usrImg
         }
@@ -51,7 +52,7 @@ class FeedVC: UIViewController {
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
-                        
+                        self.nextPost()
                     }
                 } 
                 
@@ -84,7 +85,6 @@ class FeedVC: UIViewController {
         
     }
     func configurePost(post: Post, img: UIImage? = nil) {
-         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         // TEMPORARY
         if let usrImg = userImage {
             posterImage.image = usrImg
@@ -93,6 +93,7 @@ class FeedVC: UIViewController {
          self.postCaption.text = post.caption
          self.postLikes.text = "\(post.likes)"
          self.posterName.text = post.name
+        
         
         if img != nil {
             self.postImage.image = img
@@ -112,8 +113,8 @@ class FeedVC: UIViewController {
                 }
             })
         }
-        
-        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        //single event just checks once if it has been liked instead of constant observation
+        currentUserLikesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 print("post not liked")
                 //self.postLikes.image = UIImage(named: "empty-heart")
@@ -127,18 +128,22 @@ class FeedVC: UIViewController {
 
 
     @IBAction func likeTapped(_ sender: Any) {
-        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        print("Like button tapped")
+        currentUserLikesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 //self.likeImg.image = UIImage(named: "filled-heart")
                 self.currentPost.adjustLikes(addLike: true)
-                self.likesRef.setValue(true)
+                self.currentUserLikesRef.child(self.currentPost.postKey).setValue(true)
+                
+                
             } else {
                 //self.likeImg.image = UIImage(named: "empty-heart")
                 self.currentPost.adjustLikes(addLike: false)
-                self.likesRef.removeValue()
+                self.currentUserLikesRef.child(self.currentPost.postKey).removeValue()
             }
         })
     }
+ 
 
     @IBAction func signOutBtnTapped(_ sender: Any) {
        
@@ -182,14 +187,6 @@ class FeedVC: UIViewController {
             view.center  = originalCenter
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

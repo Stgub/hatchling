@@ -679,7 +679,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RO-qh-LDl" userLabel="swipeCardView" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="15" y="80" width="345" height="523"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-fP-GrM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-fP-GrM">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="215"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" priority="700" constant="215" id="629-ca-uxo"/>
@@ -721,9 +721,12 @@
                                         </constraints>
                                         <state key="normal" image="sendIcon"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iYc-gu-6Gm">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iYc-gu-6Gm">
                                         <rect key="frame" x="279" y="240" width="26" height="21"/>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="HnT-o2-aSj" appends="YES" id="Sr2-ba-GnC"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissolvable energy tablets that enhance your focus without the jitters or crash" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-kM-Wfg">
                                         <rect key="frame" x="18" y="285" width="315" height="39"/>
@@ -929,9 +932,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-CU-s0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="udc-e6-2XN">
+                <tapGestureRecognizer id="HnT-o2-aSj">
                     <connections>
-                        <action selector="likeTapped:" destination="Yq9-zU-ffv" id="opX-Lu-JJF"/>
+                        <action selector="likeTapped:" destination="Yq9-zU-ffv" id="Klb-yo-uex"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
