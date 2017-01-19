@@ -56,6 +56,8 @@
 	<string>363826413996479</string>
 	<key>FacebookDisplayName</key>
 	<string>hatchling</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access to photos is required for posting</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

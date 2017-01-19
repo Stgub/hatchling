@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
-    <device id="retina4_0" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+    <device id="retina4_7" orientation="portrait">
+
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +15,7 @@
         <!--SignInorLogIn-->
         <scene sceneID="PWQ-rV-Xsq">
             <objects>
-                <viewController storyboardIdentifier="intialVC" id="9O3-qe-q9W" userLabel="SignInorLogIn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="intialVC" id="9O3-qe-q9W" userLabel="SignInorLogIn" customClass="SignUpOrLogInViewController" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2C7-Zv-Awb"/>
                         <viewControllerLayoutGuide type="bottom" id="YId-5U-ide"/>
@@ -920,8 +921,14 @@
                                         </constraints>
                                         <state key="normal" image="sendIcon"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iYc-gu-6Gm">
-                                        <rect key="frame" x="224" y="200.5" width="26" height="21"/>
+
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iYc-gu-6Gm">
+                                        <rect key="frame" x="279" y="240" width="26" height="21"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="HnT-o2-aSj" appends="YES" id="Sr2-ba-GnC"/>
+                                        </connections>
+
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dissolvable energy tablets that enhance your focus without the jitters or crash" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-kM-Wfg">
                                         <rect key="frame" x="18" y="240.5" width="260" height="39"/>
@@ -1117,10 +1124,21 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="feedImgGray" selectedImage="feedImg" id="Ctl-iK-hSZ"/>
                     <connections>
+                        <outlet property="postCaption" destination="OoO-kM-Wfg" id="kcr-fM-djb"/>
+                        <outlet property="postImage" destination="Mxx-fP-GrM" id="NVe-ZV-eXe"/>
+                        <outlet property="postLikes" destination="Kaa-hg-zhd" id="LQU-0f-Nka"/>
+                        <outlet property="postTitle" destination="KYj-L1-YbU" id="jtT-46-Jb2"/>
+                        <outlet property="posterImage" destination="EjJ-6g-HHb" id="cbq-WM-64x"/>
+                        <outlet property="posterName" destination="hOa-zt-SLn" id="YYh-Pb-ZLN"/>
                         <outlet property="swipeCardView" destination="2RO-qh-LDl" id="Z7p-nN-fxb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-CU-s0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HnT-o2-aSj">
+                    <connections>
+                        <action selector="likeTapped:" destination="Yq9-zU-ffv" id="Klb-yo-uex"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2708" y="-456"/>
         </scene>
@@ -1218,7 +1236,7 @@
                                 </constraints>
                                 <state key="normal" image="backBtn"/>
                                 <connections>
-                                    <action selector="backBtnTapped:" destination="o3K-uB-eab" eventType="touchUpInside" id="opd-k7-UoU"/>
+                                    <action selector="backBtnTapped:" destination="o3K-uB-eab" eventType="touchUpInside" id="sAm-Cr-4Q0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRr-4b-qRO" customClass="ShadowAndPillBtn" customModule="Hatchling" customModuleProvider="target">
@@ -1233,7 +1251,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fbBtnTapped:" destination="o3K-uB-eab" eventType="touchUpInside" id="1tt-Ry-uvg"/>
+                                    <action selector="fbBtnTapped:" destination="o3K-uB-eab" eventType="touchUpInside" id="NYS-1M-Z1d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1342,7 +1360,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fbBtnTapped:" destination="ZGb-aW-cNb" eventType="touchUpInside" id="A2n-44-ewl"/>
+                                    <action selector="fbBtnTapped:" destination="ZGb-aW-cNb" eventType="touchUpInside" id="DAU-3u-TXQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIj-7I-ID8" userLabel="backBtn">
@@ -1353,7 +1371,7 @@
                                 </constraints>
                                 <state key="normal" image="backBtn"/>
                                 <connections>
-                                    <action selector="backBtnTapped:" destination="ZGb-aW-cNb" eventType="touchUpInside" id="csH-Rm-ppP"/>
+                                    <action selector="backBtnTapped:" destination="ZGb-aW-cNb" eventType="touchUpInside" id="adP-mf-Udq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -3096,7 +3114,7 @@
         <image name="square-facebook-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Evz-FW-air"/>
-        <segue reference="Q6E-VX-d3L"/>
+        <segue reference="GkQ-Gt-fDm"/>
+        <segue reference="gzO-7S-YSP"/>
     </inferredMetricsTieBreakers>
 </document>
