@@ -37,6 +37,7 @@ class CreateProductDetails: UIViewController {
     }
     @IBOutlet weak var fundraisingBtnOut: UIButton!
     @IBAction func fundraisingBtn(_ sender: Any) {
+        prodStageLabel.text = "fundraising"
     }
     @IBOutlet weak var developmentBtnOut: UIButton!
     @IBAction func developmentBtn(_ sender: Any) {
