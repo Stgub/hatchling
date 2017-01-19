@@ -22,6 +22,12 @@
 		194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090D91E29C23E00502FB4 /* Main.storyboard */; };
 		194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194090DC1E29C23E00502FB4 /* Assets.xcassets */; };
 		194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */; };
+		1945BBB51E2FB96000575C8F /* ButtonTextLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBB41E2FB96000575C8F /* ButtonTextLeft.swift */; };
+		1945BBB81E30306900575C8F /* CreateProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBB71E30306900575C8F /* CreateProductDetails.swift */; };
+		1945BBBA1E307D1C00575C8F /* productDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBB91E307D1C00575C8F /* productDescription.swift */; };
+		1945BBBC1E307FE200575C8F /* productPics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBBB1E307FE200575C8F /* productPics.swift */; };
+		1945BBBE1E30802900575C8F /* productConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBBD1E30802900575C8F /* productConnections.swift */; };
+		1945BBC01E30808900575C8F /* productConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBBF1E30808900575C8F /* productConfirm.swift */; };
 		195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */; };
 		195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A231E2A1009006CE51D /* RoundPic.swift */; };
 		1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */; };
@@ -77,6 +83,12 @@
 		194090E11E29C23E00502FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194090E61E29C23E00502FB4 /* HatchlingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194090F11E29C23E00502FB4 /* HatchlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1945BBB41E2FB96000575C8F /* ButtonTextLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTextLeft.swift; sourceTree = "<group>"; };
+		1945BBB71E30306900575C8F /* CreateProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProductDetails.swift; sourceTree = "<group>"; };
+		1945BBB91E307D1C00575C8F /* productDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productDescription.swift; sourceTree = "<group>"; };
+		1945BBBB1E307FE200575C8F /* productPics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productPics.swift; sourceTree = "<group>"; };
+		1945BBBD1E30802900575C8F /* productConnections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productConnections.swift; sourceTree = "<group>"; };
+		1945BBBF1E30808900575C8F /* productConfirm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productConfirm.swift; sourceTree = "<group>"; };
 		195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swipeCardShadowRoundCorner.swift; sourceTree = "<group>"; };
 		195D2A231E2A1009006CE51D /* RoundPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundPic.swift; sourceTree = "<group>"; };
 		1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerFontWhite.swift; sourceTree = "<group>"; };
@@ -183,6 +195,7 @@
 		194091041E29C76A00502FB4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1945BBB61E302E5000575C8F /* Create/Submit Flow */,
 				56DC21301E2D9DC5004EC2FD /* LogIn/SignIn Flow */,
 				56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */,
 			);
@@ -196,8 +209,21 @@
 				195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */,
 				195D2A231E2A1009006CE51D /* RoundPic.swift */,
 				1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */,
+				1945BBB41E2FB96000575C8F /* ButtonTextLeft.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		1945BBB61E302E5000575C8F /* Create/Submit Flow */ = {
+			isa = PBXGroup;
+			children = (
+				1945BBB71E30306900575C8F /* CreateProductDetails.swift */,
+				1945BBB91E307D1C00575C8F /* productDescription.swift */,
+				1945BBBB1E307FE200575C8F /* productPics.swift */,
+				1945BBBD1E30802900575C8F /* productConnections.swift */,
+				1945BBBF1E30808900575C8F /* productConfirm.swift */,
+			);
+			name = "Create/Submit Flow";
 			sourceTree = "<group>";
 		};
 		560ECCF41E29D6DF0061F1E7 /* Frameworks */ = {
@@ -540,8 +566,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1945BBB81E30306900575C8F /* CreateProductDetails.swift in Sources */,
 				190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */,
 				190B85091E2D7B1E00E5CC6A /* SignUpConfirmVC.swift in Sources */,
+				1945BBBE1E30802900575C8F /* productConnections.swift in Sources */,
 				56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */,
 				190B84FF1E2D768600E5CC6A /* SignUpFBorEmailVC.swift in Sources */,
 				56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */,
@@ -549,12 +577,16 @@
 				190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */,
 				56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */,
 				1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */,
+				1945BBC01E30808900575C8F /* productConfirm.swift in Sources */,
 				194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */,
 				190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */,
 				190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */,
+				1945BBBC1E307FE200575C8F /* productPics.swift in Sources */,
 				195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */,
 				195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */,
 				190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */,
+				1945BBBA1E307D1C00575C8F /* productDescription.swift in Sources */,
+				1945BBB51E2FB96000575C8F /* ButtonTextLeft.swift in Sources */,
 				194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */,
 				56DF43201E2C279A00A6A7C5 /* Post.swift in Sources */,
 				56DC213A1E2DBB4A004EC2FD /* GeneralFunctions.swift in Sources */,
