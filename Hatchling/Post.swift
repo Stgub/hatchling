@@ -15,6 +15,7 @@ struct postDataTypes{
     static let likes = "likes"
     static let imgUrl = "imgUrl"
     static let name = "name"
+    static let stage = "stage"
 }
 class Post {
     private var _name: String!
@@ -23,6 +24,7 @@ class Post {
     private var _likes: Int!
     private var _postKey: String!
     private var _postRef: FIRDatabaseReference!
+    private var _stage:String!
 
     var caption :String {
         return _caption
@@ -39,6 +41,10 @@ class Post {
     var name:String {
         return _name
     }
+    var stage:String {
+        return _stage
+    }
+
     init(caption:String , imageUrl: String , likes: Int){
         self._caption = caption
         self._imageUrl = imageUrl
@@ -57,6 +63,9 @@ class Post {
         }
         if let name = postData[postDataTypes.name] as? String {
             self._name = name
+        }
+        if let stage = postData[postDataTypes.stage] as? String {
+            self._stage = stage
         }
         _postRef = DataService.ds.REF_POSTS.child(_postKey)
 
