@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1277,9 +1277,6 @@
                             <constraint firstItem="WDj-J0-YU8" firstAttribute="top" secondItem="Zjj-uy-yJ8" secondAttribute="bottom" constant="2" id="wCz-ic-Xwq"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="zm1-zO-6De" kind="show" identifier="loggedInWithFacebookSegue" id="GkQ-Gt-fDm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsm-Fx-5uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1397,9 +1394,6 @@
                             <constraint firstItem="EIj-7I-ID8" firstAttribute="leading" secondItem="zpe-ZJ-gN9" secondAttribute="leadingMargin" constant="15" id="qfo-oA-eST"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="zm1-zO-6De" kind="show" identifier="signedUpWithFacebookSegue" id="sXS-xK-sQP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lnw-jC-0Ns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1551,7 +1545,6 @@
                     <connections>
                         <outlet property="emailField" destination="WFK-TA-TD7" id="G2i-Yh-B47"/>
                         <outlet property="passwordField" destination="5yc-Sp-Ngt" id="ILa-7M-T6k"/>
-                        <segue destination="zm1-zO-6De" kind="show" identifier="loggedInWithEmailSegue" id="4gk-31-zms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SF8-jd-voL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2524,18 +2517,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="createImgGray" id="UgK-zp-oyh"/>
+                    <connections>
+                        <outlet property="logoPicture" destination="Hzv-qF-n4d" id="TZC-Um-2iW"/>
+                        <outlet property="productPicture" destination="Tqt-rg-RZc" id="Dfm-tD-C09"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUb-dx-E7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="etO-5u-sbr" userLabel="Tap Gesture Recognizer Product">
-                    <connections>
-                        <action selector="addProductImgTapped:" destination="ezo-Wq-J0I" id="ezW-3S-7vp"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="PUq-xE-anz" userLabel="Tap Gesture Recognizer Logo">
-                    <connections>
-                        <action selector="addLogoImgTapped:" destination="ezo-Wq-J0I" id="lmO-6j-vr8"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5199.375" y="55.985915492957744"/>
         </scene>
@@ -3108,7 +3095,6 @@
         <image name="square-facebook-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GkQ-Gt-fDm"/>
         <segue reference="gzO-7S-YSP"/>
     </inferredMetricsTieBreakers>
 </document>

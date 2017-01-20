@@ -571,10 +571,7 @@
 				190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */,
 				56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */,
 				1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */,
-
 				1945BBC01E30808900575C8F /* productConfirm.swift in Sources */,
-				194090D81E29C23E00502FB4 /* SignInVC.swift in Sources */,
-				190B850B1E2D7B9B00E5CC6A /* LogInFBorEmailVC.swift in Sources */,
 				1945BBBC1E307FE200575C8F /* productPics.swift in Sources */,
 				190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */,
 				195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */,
@@ -804,6 +801,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T4B85P4F7X;
 				INFOPLIST_FILE = HatchlingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IdeaShare.HatchlingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -819,6 +817,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T4B85P4F7X;
 				INFOPLIST_FILE = HatchlingUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IdeaShare.HatchlingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
