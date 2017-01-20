@@ -10,10 +10,21 @@ import UIKit
 
 class productConnections: UIViewController {
     
+    var newProduct:[String:Any]!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+
+    
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "toProductConfirmSegue", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +38,20 @@ class productConnections: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let dest = segue.destination
+        switch(dest){
+        case is productConfirm:
+            let destVC = dest as! productConfirm
+            destVC.newProduct = newProduct
+        default:
+            print("Default in switch statment")
+        }
+    
     }
-    */
+    
 
 }

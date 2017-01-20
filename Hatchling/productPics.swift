@@ -9,7 +9,7 @@
 import UIKit
 
 class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
+    var newProduct:[String:Any]!
     var imagePicked:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,15 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
         present(productImagePicker, animated: true, completion: nil)
     }
 
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        
+        //NEED TO PUT SOMETHIGN IN TO MAKE SURE THEY PICKED SOMETHIGN OR HAVE A DEFAULT IMAGe
+        let productImg = productPicture.image
+        let logoImg = logoPicture.image
+        newProduct[postDataTypes.productImg] = productImg
+        newProduct[postDataTypes.logoImg] = logoImg
+        performSegue(withIdentifier: "toProductConnectionsSegue", sender: self)
+    }
     
     //MARK: - Delegates
     func imagePickerController(_ picker: UIImagePickerController,
@@ -66,14 +75,18 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let dest = segue.destination
+        switch(dest){
+        case is productConnections:
+            let destVC = dest as! productConnections
+            destVC.newProduct = newProduct
+        default:
+            print("Default in switch statment")
+        }
     }
-    */
-
+    
 }

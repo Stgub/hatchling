@@ -9,11 +9,31 @@
 import UIKit
 
 class productDescription: UIViewController {
+    var newProduct:[String: Any]!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 
+    
+    @IBOutlet weak var shortProdDescriptionField: textViewRoundCorners!
+    @IBOutlet weak var longProdDescriptionField: textViewRoundCorners!
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        let shortDescript = shortProdDescriptionField.text
+        let longDescript = longProdDescriptionField.text
+        if shortDescript == "" || longDescript == "" {
+            presentUIAlert(title: "Field not filled out", message: "Please fill out both descriptions")
+        } else {
+            newProduct[postDataTypes.shortDescript] = shortDescript
+            newProduct[postDataTypes.longDescript] = longDescript
+            self.performSegue(withIdentifier: "toCreateProductPicsSegue", sender: self)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +47,28 @@ class productDescription: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let dest = segue.destination
+        switch(dest){
+        case is productPics:
+            let destVC = dest as! productPics
+            destVC.newProduct = newProduct
+        default:
+            print("Default in switch statment")
+        }
     }
-    */
+    
+    func presentUIAlert(title:String, message:String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
 
 }

@@ -10,6 +10,14 @@ import UIKit
 
 class CreateProductDetails: UIViewController {
     
+    private var newProduct =  [String: Any]()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+
+    
     @IBAction func backBtnATapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -19,6 +27,7 @@ class CreateProductDetails: UIViewController {
     @IBOutlet weak var prodCategoriesLabel: UILabel!
     @IBOutlet weak var prodTalentLabel: UILabel!
     
+    @IBOutlet weak var prodNameLabel: UITextField!
     
     //Option Backgrounds
     @IBOutlet weak var stageBackImg: UIImageView!
@@ -220,7 +229,23 @@ class CreateProductDetails: UIViewController {
     }
 
     
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        let prodStage = prodStageLabel.text
+        let prodCategories = prodCategoriesLabel.text
+        let prodTalent = prodTalentLabel.text
+        let prodName = prodNameLabel.text
+        if prodStage == "" || prodCategories == "" || prodTalent == "" {
+            presentUIAlert(title: "Sections not filled out", message: "Please fill out all sections")
+        } else {
+            newProduct[postDataTypes.name] = prodName
+            newProduct[postDataTypes.prodStage] = prodStage
+            newProduct[postDataTypes.prodCategories] = prodCategories
+            newProduct[postDataTypes.prodTalent] = prodTalent
+ 
+            self.performSegue(withIdentifier: "toCreateDescriptionSegue", sender: self)
+        }
 
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -233,14 +258,30 @@ class CreateProductDetails: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let dest = segue.destination
+        switch(dest){
+        case is productDescription:
+            let destVC = dest as! productDescription
+            destVC.newProduct = newProduct
+        default:
+            print("Default in switch statment")
+        }
     }
-    */
+    
+    func presentUIAlert(title:String, message:String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+ 
 
 }
