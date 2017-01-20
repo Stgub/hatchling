@@ -62,23 +62,25 @@ class FeedVC: UIViewController {
             
         })        // Do any additional setup after loading the view.
     }
-
+    var index = 0
     func previousPost(){
-        if posts.count > 0 {
-            let post = posts[0]
+        if index - 1 > 0 {
+            index -= 1
+            let post = posts[index]
             showPost(post: post)
         }
     }
     func nextPost(){
-        if posts.count > 1 {
-            let post = posts[1]
+        if index + 1 < posts.count {
+            index += 1
+            let post = posts[index]
             showPost(post:post)
         }
 
     }
     func showPost(post:Post){
         currentPost = post
-        if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+        if let img = FeedVC.imageCache.object(forKey: post.productUrl as NSString) {
             self.configurePost(post: post, img: img)
         } else {
             self.configurePost(post: post)
@@ -91,7 +93,7 @@ class FeedVC: UIViewController {
             posterImage.image = usrImg
         }
         
-         self.postCaption.text = post.caption
+         self.postCaption.text = post.shortDescript
     //   self.postLikes.text = "\(post.likes)"
          self.posterName.text = post.name
         
@@ -99,7 +101,7 @@ class FeedVC: UIViewController {
         if img != nil {
             self.postImage.image = img
         } else {
-            let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
+            let ref = FIRStorage.storage().reference(forURL: post.productUrl)
             ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
                 if error != nil {
                     print("Chuck: Unable to download image from Firebase storage")
@@ -108,7 +110,7 @@ class FeedVC: UIViewController {
                     if let imgData = data {
                         if let img = UIImage(data: imgData) {
                             self.postImage.image = img
-                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+                            FeedVC.imageCache.setObject(img, forKey: post.productUrl as NSString)
                         }
                     }
                 }
