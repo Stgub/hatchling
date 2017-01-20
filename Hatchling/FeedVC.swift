@@ -92,7 +92,7 @@ class FeedVC: UIViewController {
         }
         
          self.postCaption.text = post.caption
-         self.postLikes.text = "\(post.likes)"
+    //   self.postLikes.text = "\(post.likes)"
          self.posterName.text = post.name
         
         
