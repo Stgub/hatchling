@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -2451,7 +2451,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBM-ZT-7ic">
-                                <rect key="frame" x="138" y="465" width="44" height="41"/>
+                                <rect key="frame" x="138" y="474" width="44" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Uyp-Ph-pFx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                 <state key="normal" title="next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2462,7 +2465,7 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoPic" translatesAutoresizingMaskIntoConstraints="NO" id="Tqt-rg-RZc" userLabel="ProdPic">
-                                <rect key="frame" x="15" y="120" width="290" height="181"/>
+                                <rect key="frame" x="15" y="120" width="290" height="180.5"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Tqt-rg-RZc" secondAttribute="height" multiplier="290:181" id="VMD-Yy-tMC"/>
@@ -2481,10 +2484,11 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProdPic" translatesAutoresizingMaskIntoConstraints="NO" id="Hzv-qF-n4d" userLabel="LogoPic" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
-                                <rect key="frame" x="110" y="336" width="100" height="100"/>
+                                <rect key="frame" x="110" y="340.5" width="100" height="100"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Hzv-qF-n4d" secondAttribute="height" multiplier="1:1" id="TxG-Zb-S8g"/>
+                                    <constraint firstAttribute="width" constant="100" id="J9k-Fh-sFe"/>
+                                    <constraint firstAttribute="height" constant="100" id="f2W-3L-rFS"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -2492,21 +2496,19 @@
                         <constraints>
                             <constraint firstItem="Tqt-rg-RZc" firstAttribute="leading" secondItem="cpH-Ww-ao7" secondAttribute="leading" constant="15" id="07N-Hi-EYB"/>
                             <constraint firstItem="KBM-ZT-7ic" firstAttribute="centerX" secondItem="cpH-Ww-ao7" secondAttribute="centerX" id="5ej-cR-Jfn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hzv-qF-n4d" secondAttribute="trailing" constant="94" id="7v8-4N-RCO"/>
+                            <constraint firstItem="Hzv-qF-n4d" firstAttribute="top" secondItem="Tqt-rg-RZc" secondAttribute="bottom" constant="40" id="9U2-6A-j0L"/>
                             <constraint firstItem="Tqt-rg-RZc" firstAttribute="centerX" secondItem="cpH-Ww-ao7" secondAttribute="centerX" id="Gyj-uk-wct"/>
                             <constraint firstItem="MEE-fB-IWu" firstAttribute="top" secondItem="NBI-vo-mHl" secondAttribute="bottom" constant="20" id="Iij-bp-J4f"/>
                             <constraint firstItem="MEE-fB-IWu" firstAttribute="centerX" secondItem="cpH-Ww-ao7" secondAttribute="centerX" id="JMf-iW-drL"/>
                             <constraint firstItem="ukj-5V-hfC" firstAttribute="top" secondItem="Je1-XX-X4D" secondAttribute="bottom" constant="15" id="L7Z-p4-PEf"/>
-                            <constraint firstItem="Hzv-qF-n4d" firstAttribute="top" secondItem="Tqt-rg-RZc" secondAttribute="bottom" constant="35" id="NEs-AC-L7h"/>
                             <constraint firstItem="ukj-5V-hfC" firstAttribute="leading" secondItem="cpH-Ww-ao7" secondAttribute="leading" constant="15" id="S5J-S6-7ju"/>
-                            <constraint firstItem="Hzv-qF-n4d" firstAttribute="leading" secondItem="cpH-Ww-ao7" secondAttribute="leadingMargin" constant="94" id="agR-bz-L1h"/>
                             <constraint firstAttribute="trailing" secondItem="Tqt-rg-RZc" secondAttribute="trailing" constant="15" id="dFN-vi-OrE"/>
+                            <constraint firstItem="F6W-bC-wvz" firstAttribute="top" secondItem="KBM-ZT-7ic" secondAttribute="bottom" constant="30" id="fXe-8N-YkO"/>
                             <constraint firstItem="Tqt-rg-RZc" firstAttribute="top" secondItem="MEE-fB-IWu" secondAttribute="bottom" constant="20" id="iaM-Eq-4bW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NBI-vo-mHl" secondAttribute="trailing" constant="5" id="kC8-19-q3N"/>
                             <constraint firstItem="NBI-vo-mHl" firstAttribute="leading" secondItem="cpH-Ww-ao7" secondAttribute="leadingMargin" constant="5" id="rXc-wj-SA2"/>
                             <constraint firstItem="NBI-vo-mHl" firstAttribute="top" secondItem="Je1-XX-X4D" secondAttribute="bottom" id="tN7-x5-LKl"/>
                             <constraint firstItem="Hzv-qF-n4d" firstAttribute="centerX" secondItem="cpH-Ww-ao7" secondAttribute="centerX" id="u8c-Hg-uN1"/>
-                            <constraint firstItem="KBM-ZT-7ic" firstAttribute="top" secondItem="Hzv-qF-n4d" secondAttribute="bottom" constant="29" id="wJP-cz-EHc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="createImgGray" id="UgK-zp-oyh"/>
@@ -3102,10 +3104,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="16" width="288" height="79.5"/>
+                                                    <rect key="frame" x="16" y="16" width="288" height="79"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Globe-512" translatesAutoresizingMaskIntoConstraints="NO" id="J5C-Z6-T5R" userLabel="Logo" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="8" width="63.5" height="63.5"/>
+                                                            <rect key="frame" x="8" y="8" width="63" height="63"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grit Energy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWB-zR-1Mt">
                                                             <rect key="frame" x="79" y="8" width="84" height="28"/>
@@ -3117,7 +3119,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adfafndsjkf asdk vksdvksdvksvk; sk; ks jn jo . jsoj js jos o . ln ksvds ojv" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK1-Qg-gLx">
-                                                            <rect key="frame" x="79" y="31.5" width="201" height="40"/>
+                                                            <rect key="frame" x="79" y="31" width="201" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="2sM-kE-Efx"/>
                                                             </constraints>
