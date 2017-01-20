@@ -15,6 +15,7 @@
 		190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */; };
 		19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */; };
 		19167F061E29EDC7003EFC98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19167F051E29EDC7003EFC98 /* Constants.swift */; };
+		192481591E31ABCA0020B5DD /* textViewRoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192481581E31ABCA0020B5DD /* textViewRoundCorners.swift */; };
 		194090D61E29C23E00502FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194090D51E29C23E00502FB4 /* AppDelegate.swift */; };
 		194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090D91E29C23E00502FB4 /* Main.storyboard */; };
 		194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194090DC1E29C23E00502FB4 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		190B850E1E2D7BF500E5CC6A /* ForgotPWVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPWVC.swift; sourceTree = "<group>"; };
 		19167F021E29ED3A003EFC98 /* ShadowAndPillBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAndPillBtn.swift; sourceTree = "<group>"; };
 		19167F051E29EDC7003EFC98 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		192481581E31ABCA0020B5DD /* textViewRoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textViewRoundCorners.swift; sourceTree = "<group>"; };
 		194090D21E29C23E00502FB4 /* Hatchling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hatchling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194090D51E29C23E00502FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194090DA1E29C23E00502FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				195D2A231E2A1009006CE51D /* RoundPic.swift */,
 				1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */,
 				1945BBB41E2FB96000575C8F /* ButtonTextLeft.swift */,
+				192481581E31ABCA0020B5DD /* textViewRoundCorners.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */,
 				19167F031E29ED3A003EFC98 /* ShadowAndPillBtn.swift in Sources */,
 				190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */,
+				192481591E31ABCA0020B5DD /* textViewRoundCorners.swift in Sources */,
 				56DF431B1E2AC02C00A6A7C5 /* FeedVC.swift in Sources */,
 				1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */,
 				1945BBC01E30808900575C8F /* productConfirm.swift in Sources */,
