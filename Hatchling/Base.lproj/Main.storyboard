@@ -923,7 +923,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EjJ-6g-HHb" userLabel="ProfilePic" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EjJ-6g-HHb" userLabel="ProfilePic" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="15" y="275.5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="1mf-h8-HgF"/>
@@ -1029,7 +1029,7 @@
                                         </constraints>
                                         <state key="normal" image="icon-indiegogo"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIG-SX-2YI" userLabel="Logo" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIG-SX-2YI" userLabel="Logo" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="15" y="182.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vIG-SX-2YI" secondAttribute="height" multiplier="1:1" id="K6t-zK-EFc"/>
@@ -2347,7 +2347,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mYd-dC-R6w">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mYd-dC-R6w" customClass="textViewRoundCorners" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="30" y="145" width="260" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2357,7 +2357,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-fM-kVI">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-fM-kVI" customClass="textViewRoundCorners" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="30" y="253" width="260" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2487,7 +2487,7 @@
                                     <action selector="backBtnTapped:" destination="ezo-Wq-J0I" eventType="touchUpInside" id="mbT-FU-Ha8"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProdPic" translatesAutoresizingMaskIntoConstraints="NO" id="Hzv-qF-n4d" userLabel="LogoPic">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProdPic" translatesAutoresizingMaskIntoConstraints="NO" id="Hzv-qF-n4d" userLabel="LogoPic" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="110" y="336" width="100" height="100"/>
                                 <gestureRecognizers/>
                                 <constraints>

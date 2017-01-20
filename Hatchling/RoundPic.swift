@@ -11,7 +11,8 @@ import UIKit
 class RoundPic: UIImageView {
 
     override func awakeFromNib() {
-        layer.cornerRadius = self.frame.width / 2
+        self.layer.cornerRadius = self.frame.width / 2
+        self.clipsToBounds = true
     }
 
 }
