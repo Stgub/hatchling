@@ -132,14 +132,7 @@ class CreateProductDetails: UIViewController {
     
     //Choose buttons tapped and x buttons tapped
     @IBAction func ProdStageBtnTapped(_ sender: Any) {
-        stageBackImg.isHidden = false
-        ideationBtnOutlet.isHidden = false
-        validationBtnOut.isHidden = false
-        fundraisingBtnOut.isHidden = false
-        developmentBtnOut.isHidden = false
-        iterationBtnOut.isHidden = false
-        launchBtnOut.isHidden = false
-        stageXBtnOut.isHidden = false
+        
     }
     @IBAction func stageXBtnTapped(_ sender: Any) {
         stageBackImg.isHidden = true
