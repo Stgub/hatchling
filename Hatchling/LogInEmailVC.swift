@@ -10,12 +10,20 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class LogInEmailVC: UIViewController {
+class LogInEmailVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emailField.delegate = self
+        self.passwordField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
