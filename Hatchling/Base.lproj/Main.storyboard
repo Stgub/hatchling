@@ -290,16 +290,11 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="Ijn-ol-p9m" userLabel="CategoryBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slJ-FO-nwT">
-                                        <rect key="frame" x="116" y="39" width="63" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title="Fashion">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c8-Ow-K0K" userLabel="categoryX">
+                                        <rect key="frame" x="291" y="15" width="14" height="22"/>
+                                        <state key="normal" image="Xsymbol"/>
                                         <connections>
-                                            <action selector="fashionBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="8hC-Fc-z7w"/>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="Sy3-eo-6O0"/>
+                                            <action selector="categoriesXBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Rgw-s3-4Vp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqk-fp-fh1">
@@ -310,20 +305,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="artBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="8Bk-vr-TBu"/>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="B1g-6v-Zgf"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdx-O3-dPJ">
-                                        <rect key="frame" x="31" y="90" width="70" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title="Outdoor">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="AEI-U7-Bha"/>
-                                            <action selector="outdoorBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Sj1-QL-EZv"/>
+                                            <action selector="categoryBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="zLj-S8-PQY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2R7-gC-Yuf">
@@ -334,20 +316,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="aQ6-5j-iGH"/>
-                                            <action selector="gamesBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="4EP-Zq-oNn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gV2-qq-hpx">
-                                        <rect key="frame" x="228" y="138" width="34" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title="Film">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="5Kf-ig-vqP"/>
-                                            <action selector="filmBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="bjU-wy-kt1"/>
+                                            <action selector="categoryBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="yP2-PJ-oDv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brg-dr-sxc">
@@ -358,20 +327,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="yon-By-Jf1"/>
-                                            <action selector="foodBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="SV9-3k-dFC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vp-kR-cPx">
-                                        <rect key="frame" x="109" y="128" width="73" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title="Music">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="pnt-lR-pm1"/>
-                                            <action selector="musicBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="jUd-IZ-zze"/>
+                                            <action selector="categoryBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="oav-4p-Iij"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQy-Mc-Gqr">
@@ -382,15 +338,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="gyK-AF-8ib"/>
-                                            <action selector="techBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="lkk-RF-cuR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c8-Ow-K0K" userLabel="categoryX">
-                                        <rect key="frame" x="291" y="15" width="14" height="22"/>
-                                        <state key="normal" image="Xsymbol"/>
-                                        <connections>
-                                            <action selector="categoriesXBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Rgw-s3-4Vp"/>
+                                            <action selector="categoryBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="xbN-Pv-LnG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goM-Al-uux">
@@ -401,8 +349,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="designBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="oNR-qA-Bwr"/>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="4lA-cy-2Ch"/>
+                                            <action selector="categoryBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="vOg-Pc-ROM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -423,6 +370,13 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="7P1-Hd-8vZ" userLabel="NeedsBackground">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uX-5s-AUC" userLabel="x">
+                                        <rect key="frame" x="291" y="15" width="14" height="22"/>
+                                        <state key="normal" image="Xsymbol"/>
+                                        <connections>
+                                            <action selector="needsXBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="f4g-3O-V1l"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwj-hT-hGz">
                                         <rect key="frame" x="252" y="103" width="33" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -430,10 +384,6 @@
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="clearBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="CID-jL-0kR"/>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="dnx-8R-mnX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGl-bL-ioB">
                                         <rect key="frame" x="144" y="20" width="33" height="32"/>
@@ -443,8 +393,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="E8g-r6-d84"/>
-                                            <action selector="salesBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Wt1-5L-Z6R"/>
+                                            <action selector="needBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="nex-TW-yYd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1j-Q8-6HI">
@@ -455,8 +404,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="cPi-69-cyy"/>
-                                            <action selector="financeBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="C6k-Zd-yHA"/>
+                                            <action selector="needBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Qkp-RE-PhC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDT-Xt-DPS">
@@ -467,8 +415,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="m9V-ig-24x"/>
-                                            <action selector="marketingBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="KcJ-kw-ZRN"/>
+                                            <action selector="needBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="fnO-4A-0oe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1t-YO-5zd">
@@ -479,7 +426,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="fundraisingBtn1:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="FMg-52-nYk"/>
+                                            <action selector="needBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="YVr-6F-L4P"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mh-Zj-939">
@@ -490,15 +437,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="entrepreneurBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Q3C-fO-g3u"/>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="5PB-5i-9HJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uX-5s-AUC" userLabel="x">
-                                        <rect key="frame" x="291" y="15" width="14" height="22"/>
-                                        <state key="normal" image="Xsymbol"/>
-                                        <connections>
-                                            <action selector="needsXBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="f4g-3O-V1l"/>
+                                            <action selector="needBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="1IH-0L-cIW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -534,8 +473,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="QAv-sb-wwh"/>
-                                            <action selector="ideationBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="Bbx-Yr-w7c"/>
+                                            <action selector="stageBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="qjD-V3-IUU"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRI-bv-O93">
@@ -546,7 +484,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="fundraisingBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="hjz-3m-Dgn"/>
+                                            <action selector="stageBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="hEJ-lH-KrY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB9-NX-iDc">
@@ -557,8 +495,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="developmentBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="EWh-Aw-HJf"/>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="ACv-bD-iLk"/>
+                                            <action selector="stageBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="ycq-5j-RPO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wZ-nW-QDm">
@@ -569,8 +506,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="dJZ-YD-gtP"/>
-                                            <action selector="iterationBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="aTc-wn-dte"/>
+                                            <action selector="stageBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="lzF-J7-uuf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl6-je-zEm">
@@ -581,8 +517,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="XVH-tt-kQf"/>
-                                            <action selector="launchBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="0Nm-yC-1dK"/>
+                                            <action selector="stageBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="yEh-hH-hj6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-mP-etN">
@@ -593,8 +528,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="5ja-Lx-8qr"/>
-                                            <action selector="validationBtn:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="9fg-4x-BKg"/>
+                                            <action selector="stageBtnTapped:" destination="PR9-Yo-NAz" eventType="touchUpInside" id="2NW-M2-Eas"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -650,37 +584,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="createImgGray" id="dQo-VL-heZ"/>
                     <connections>
-                        <outlet property="artBtnOut" destination="Lqk-fp-fh1" id="Rqp-jf-Syo"/>
-                        <outlet property="categoriesXBtnOut" destination="9c8-Ow-K0K" id="afk-rM-XJg"/>
                         <outlet property="categoryView" destination="JyD-7o-zC5" id="Ifj-PR-p74"/>
-                        <outlet property="clearBtnOut" destination="lwj-hT-hGz" id="15K-sJ-b5X"/>
-                        <outlet property="designBtnOut" destination="goM-Al-uux" id="til-bw-8qk"/>
-                        <outlet property="developmentBtnOut" destination="pB9-NX-iDc" id="D1Q-1k-x3b"/>
-                        <outlet property="entrepreneurBtnOut" destination="4Mh-Zj-939" id="KWn-mP-qgr"/>
-                        <outlet property="fashionBtnOut" destination="slJ-FO-nwT" id="RDl-aN-M78"/>
-                        <outlet property="filmBtnOut" destination="gV2-qq-hpx" id="1lF-Rd-lTH"/>
-                        <outlet property="financeBtnOut" destination="t1j-Q8-6HI" id="1jl-RO-hLh"/>
-                        <outlet property="foodBtnOut" destination="brg-dr-sxc" id="VBN-ks-zdw"/>
-                        <outlet property="fundraisingBtnOut" destination="GRI-bv-O93" id="xtr-5N-Ucg"/>
-                        <outlet property="fundraisingBtnOut1" destination="M1t-YO-5zd" id="quh-zK-nCk"/>
-                        <outlet property="gamesBtnOut" destination="2R7-gC-Yuf" id="shW-HG-vhk"/>
-                        <outlet property="ideationBtnOutlet" destination="Zp7-q5-SoS" id="ndS-f0-9JD"/>
-                        <outlet property="iterationBtnOut" destination="6wZ-nW-QDm" id="OyM-CH-PFq"/>
-                        <outlet property="launchBtnOut" destination="wl6-je-zEm" id="DbT-sk-c5D"/>
-                        <outlet property="marketingBtnOut" destination="cDT-Xt-DPS" id="bOu-vS-xK0"/>
-                        <outlet property="musicBtnOut" destination="0Vp-kR-cPx" id="BY7-uo-ZC1"/>
                         <outlet property="needsView" destination="OuW-dn-zHH" id="99x-jE-pH7"/>
-                        <outlet property="needsXBtnOut" destination="6uX-5s-AUC" id="4VW-0w-msy"/>
-                        <outlet property="outdoorBtnOut" destination="fdx-O3-dPJ" id="gtI-Dq-6Vm"/>
                         <outlet property="prodCategoriesLabel" destination="YCV-zd-e9d" id="sER-t6-I7m"/>
                         <outlet property="prodNameLabel" destination="93J-i4-BkK" id="Zxn-bd-7My"/>
                         <outlet property="prodStageLabel" destination="10J-OB-efH" id="GXQ-qr-pqY"/>
                         <outlet property="prodTalentLabel" destination="CiD-qi-Xmo" id="Izy-V0-va3"/>
-                        <outlet property="salesBtnOut" destination="LGl-bL-ioB" id="dIX-rj-fZV"/>
                         <outlet property="stageView" destination="KEj-se-9IA" id="8Ji-25-0xV"/>
-                        <outlet property="stageXBtnOut" destination="hSk-CW-gfF" id="3cx-mY-WOO"/>
-                        <outlet property="techBtnOut" destination="lQy-Mc-Gqr" id="AwC-QQ-Y8e"/>
-                        <outlet property="validationBtnOut" destination="nzc-mP-etN" id="tt4-Jx-86B"/>
                         <segue destination="SYr-75-V02" kind="show" identifier="toCreateDescriptionSegue" id="c2d-7h-fxc"/>
                     </connections>
                 </viewController>
@@ -3004,7 +2914,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
+                        <outlet property="creatorPicture" destination="a6E-4S-zYt" id="Twm-2b-3vW"/>
                         <outlet property="logoImageView" destination="X8a-fI-5CA" id="zoC-rx-IsC"/>
+                        <outlet property="prodCategoriesLabel" destination="FGS-zR-V5n" id="A3s-Na-0HQ"/>
+                        <outlet property="prodCreatorLabel" destination="AzF-5x-93L" id="ypl-3I-Xor"/>
+                        <outlet property="prodLongDescriptLabel" destination="TmU-iU-fNc" id="9sl-xC-UTX"/>
+                        <outlet property="prodNameLabel" destination="WOt-nP-Sxc" id="Jkk-hX-Esa"/>
+                        <outlet property="prodNeedsLabel" destination="f43-ie-bwn" id="pV5-ST-mo7"/>
+                        <outlet property="prodShortDescriptLAbel" destination="myR-Jh-bUN" id="lW5-P6-rqf"/>
+                        <outlet property="prodStageLabel" destination="xxJ-5O-jTe" id="05i-hG-9F6"/>
                         <outlet property="productImageView" destination="bO7-tX-Cqz" id="FOB-CK-fgL"/>
                         <segue destination="fhi-Wo-Ugb" kind="show" identifier="toPostedSegue" id="pDt-pz-xs2"/>
                     </connections>

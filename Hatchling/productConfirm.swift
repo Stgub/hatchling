@@ -16,12 +16,40 @@ class productConfirm: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var creatorPicture: RoundPic!
+    @IBOutlet weak var prodNameLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
 
     @IBOutlet weak var logoImageView: RoundPic!
+    
+    @IBOutlet weak var prodCategoriesLabel: UILabel!
+    @IBOutlet weak var prodLongDescriptLabel: UILabel!
+    
+    @IBOutlet weak var prodShortDescriptLAbel: UILabel!
+    @IBOutlet weak var prodCreatorLabel: UILabel!
+    @IBOutlet weak var prodStageLabel: UILabel!
+    @IBOutlet weak var prodNeedsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let prodImg = newProduct[postDataTypes.productImg]  {
+            productImageView.image = prodImg as! UIImage
+        }
+        if let logoImg = newProduct[postDataTypes.logoImg] {
+            logoImageView.image = logoImg as! UIImage
+        }
+        if let productNeeds = newProduct[postDataTypes.prodTalent] {
+            prodNeedsLabel.text = productNeeds as? String
+        }
+        let shortDescript = newProduct[postDataTypes.shortDescript]
+        let longDescript = newProduct[postDataTypes.longDescript]
+        let productName = newProduct[postDataTypes.name]
+        let productCategories = newProduct[postDataTypes.prodCategories]
+        
+        prodShortDescriptLAbel.text  = shortDescript as? String
+        prodLongDescriptLabel.text = longDescript as? String
+        prodNameLabel.text = productName as? String
+        prodCategoriesLabel.text = productCategories as? String
+        
         // Do any additional setup after loading the view.
     }
 

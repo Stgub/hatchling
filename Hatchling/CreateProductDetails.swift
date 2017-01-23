@@ -35,100 +35,19 @@ class CreateProductDetails: UIViewController {
 
     //Option Buttons Outlet and Action
         //Stage
-    @IBOutlet weak var ideationBtnOutlet: UIButton!
-    @IBAction func ideationBtn(_ sender: Any) {
-        prodStageLabel.text = "ideation"
-    }
-    @IBOutlet weak var validationBtnOut: UIButton!
-    @IBAction func validationBtn(_ sender: Any) {
-        prodStageLabel.text = "validation"
-    }
-    @IBOutlet weak var fundraisingBtnOut: UIButton!
-    @IBAction func fundraisingBtn(_ sender: Any) {
-        prodStageLabel.text = "fundraising"
-    }
-    @IBOutlet weak var developmentBtnOut: UIButton!
-    @IBAction func developmentBtn(_ sender: Any) {
-        prodStageLabel.text = "development"
-    }
-    @IBOutlet weak var iterationBtnOut: UIButton!
-    @IBAction func iterationBtn(_ sender: Any) {
-        prodStageLabel.text = "iteration"
-    }
-    @IBOutlet weak var launchBtnOut: UIButton!
-    @IBAction func launchBtn(_ sender: Any) {
-        prodStageLabel.text = "launch"
-    }
-    @IBOutlet weak var stageXBtnOut: UIButton!
-        //Categories
-    @IBOutlet weak var fashionBtnOut: UIButton!
-    @IBAction func fashionBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "fashion"
-    }
-    @IBOutlet weak var artBtnOut: UIButton!
-    @IBAction func artBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "art"
-    }
-    @IBOutlet weak var outdoorBtnOut: UIButton!
-    @IBAction func outdoorBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "outdoor"
-    }
-    @IBOutlet weak var gamesBtnOut: UIButton!
-    @IBAction func gamesBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "games"
-    }
-    @IBOutlet weak var filmBtnOut: UIButton!
-    @IBAction func filmBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "film"
-    }
-    @IBOutlet weak var foodBtnOut: UIButton!
-    @IBAction func foodBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "food"
-    }
-    @IBOutlet weak var musicBtnOut: UIButton!
-    @IBAction func musicBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "music"
-    }
-    @IBOutlet weak var techBtnOut: UIButton!
-    @IBAction func techBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "tech"
-    }
-    @IBOutlet weak var designBtnOut: UIButton!
-    @IBAction func designBtn(_ sender: Any) {
-        prodCategoriesLabel.text = "design"
-    }
-    @IBOutlet weak var categoriesXBtnOut: UIButton!
-        //Needs
-    @IBOutlet weak var clearBtnOut: UIButton!
-    @IBAction func clearBtn(_ sender: Any) {
-        prodTalentLabel.text = ""
-    }
-    @IBOutlet weak var salesBtnOut: UIButton!
-    @IBAction func salesBtn(_ sender: Any) {
-        prodTalentLabel.text = "sales"
-    }
-    @IBOutlet weak var financeBtnOut: UIButton!
-    @IBAction func financeBtn(_ sender: Any) {
-        prodTalentLabel.text = "finance"
-    }
-    @IBOutlet weak var marketingBtnOut: UIButton!
-    @IBAction func marketingBtn(_ sender: Any) {
-        prodTalentLabel.text = "marketing"
-    }
-    @IBOutlet weak var fundraisingBtnOut1: UIButton!
-    @IBAction func fundraisingBtn1(_ sender: Any) {
-        prodTalentLabel.text = "fundraising"
-    }
-    @IBOutlet weak var entrepreneurBtnOut: UIButton!
-    @IBAction func entrepreneurBtn(_ sender: Any) {
-        prodTalentLabel.text = "entrepreneur"
-    }
-    @IBOutlet weak var needsXBtnOut: UIButton!
 
-
-    
-    
-    
+    @IBAction func categoryBtnTapped(_ sender: UIButton) {
+        let text = (sender.titleLabel?.text)!
+        prodCategoriesLabel.text?.append("\(text) ")
+    }
+    @IBAction func needBtnTapped(_ sender: UIButton) {
+        let text = (sender.titleLabel?.text)!
+        prodTalentLabel.text?.append("\(text) ")
+    }
+    @IBAction func stageBtnTapped(_ sender: UIButton) {
+        let text = (sender.titleLabel?.text)!
+        prodStageLabel.text?.append("\(text) ")
+    }
     //Choose buttons tapped and x buttons tapped
     @IBAction func ProdStageBtnTapped(_ sender: Any) {
         categoryView.isHidden = true
