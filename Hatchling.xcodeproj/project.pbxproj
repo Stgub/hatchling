@@ -350,7 +350,7 @@
 				TargetAttributes = {
 					194090D11E29C23E00502FB4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = T4B85P4F7X;
+						DevelopmentTeam = Y436CAXHW3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -740,7 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hatchling/Hatchling.entitlements;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -756,7 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hatchling/Hatchling.entitlements;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
