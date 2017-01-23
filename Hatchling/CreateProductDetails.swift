@@ -22,6 +22,9 @@ class CreateProductDetails: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var stageView: UIView!
+    @IBOutlet weak var needsView: UIView!
+    @IBOutlet weak var categoryView: UIView!
     //Labels
     @IBOutlet weak var prodStageLabel: UILabel!
     @IBOutlet weak var prodCategoriesLabel: UILabel!
@@ -29,10 +32,6 @@ class CreateProductDetails: UIViewController {
     
     @IBOutlet weak var prodNameLabel: UITextField!
     
-    //Option Backgrounds
-    @IBOutlet weak var stageBackImg: UIImageView!
-    @IBOutlet weak var categoriesBackImg: UIImageView!
-    @IBOutlet weak var needsBackImg: UIImageView!
 
     //Option Buttons Outlet and Action
         //Stage
@@ -132,93 +131,32 @@ class CreateProductDetails: UIViewController {
     
     //Choose buttons tapped and x buttons tapped
     @IBAction func ProdStageBtnTapped(_ sender: Any) {
+        categoryView.isHidden = true
+        stageView.isHidden = false
+        needsView.isHidden = true
         
     }
     @IBAction func stageXBtnTapped(_ sender: Any) {
-        stageBackImg.isHidden = true
-        ideationBtnOutlet.isHidden = true
-        validationBtnOut.isHidden = true
-        fundraisingBtnOut.isHidden = true
-        developmentBtnOut.isHidden = true
-        iterationBtnOut.isHidden = true
-        launchBtnOut.isHidden = true
-        stageXBtnOut.isHidden = true
+        stageView.isHidden = true
     }
     @IBAction func prodCategoriesBtnTapped(_ sender: Any) {
-        stageBackImg.isHidden = true
-        ideationBtnOutlet.isHidden = true
-        validationBtnOut.isHidden = true
-        fundraisingBtnOut.isHidden = true
-        developmentBtnOut.isHidden = true
-        iterationBtnOut.isHidden = true
-        launchBtnOut.isHidden = true
-        stageXBtnOut.isHidden = true
-        
-        categoriesBackImg.isHidden = false
-        fashionBtnOut.isHidden = false
-        techBtnOut.isHidden = false
-        designBtnOut.isHidden = false
-        artBtnOut.isHidden = false
-        foodBtnOut.isHidden = false
-        musicBtnOut.isHidden = false
-        outdoorBtnOut.isHidden = false
-        gamesBtnOut.isHidden = false
-        filmBtnOut.isHidden = false
-        categoriesXBtnOut.isHidden = false
+        categoryView.isHidden = false
+        stageView.isHidden = true
+        needsView.isHidden = true
+
     }
     @IBAction func categoriesXBtnTapped(_ sender: Any) {
-        categoriesBackImg.isHidden = true
-        fashionBtnOut.isHidden = true
-        techBtnOut.isHidden = true
-        designBtnOut.isHidden = true
-        artBtnOut.isHidden = true
-        foodBtnOut.isHidden = true
-        musicBtnOut.isHidden = true
-        outdoorBtnOut.isHidden = true
-        gamesBtnOut.isHidden = true
-        filmBtnOut.isHidden = true
-        categoriesXBtnOut.isHidden = true
+        categoryView.isHidden = true
+
     }
     @IBAction func needsBtnTapped(_ sender: Any) {
-        categoriesBackImg.isHidden = true
-        fashionBtnOut.isHidden = true
-        techBtnOut.isHidden = true
-        designBtnOut.isHidden = true
-        artBtnOut.isHidden = true
-        foodBtnOut.isHidden = true
-        musicBtnOut.isHidden = true
-        outdoorBtnOut.isHidden = true
-        gamesBtnOut.isHidden = true
-        filmBtnOut.isHidden = true
-        categoriesXBtnOut.isHidden = true
-        stageBackImg.isHidden = true
-        ideationBtnOutlet.isHidden = true
-        validationBtnOut.isHidden = true
-        fundraisingBtnOut.isHidden = true
-        developmentBtnOut.isHidden = true
-        iterationBtnOut.isHidden = true
-        launchBtnOut.isHidden = true
-        stageXBtnOut.isHidden = true
-        
-        needsBackImg.isHidden = false
-        fundraisingBtnOut1.isHidden = false
-        financeBtnOut.isHidden = false
-        marketingBtnOut.isHidden = false
-        entrepreneurBtnOut.isHidden = false
-        salesBtnOut.isHidden = false
-        clearBtnOut.isHidden = false
-        needsXBtnOut.isHidden = false
+        categoryView.isHidden = true
+        stageView.isHidden = true
+        needsView.isHidden = false
         
     }
     @IBAction func needsXBtnTapped(_ sender: Any) {
-        needsBackImg.isHidden = true
-        fundraisingBtnOut1.isHidden = true
-        financeBtnOut.isHidden = true
-        marketingBtnOut.isHidden = true
-        entrepreneurBtnOut.isHidden = true
-        salesBtnOut.isHidden = true
-        clearBtnOut.isHidden = true
-        needsXBtnOut.isHidden = true
+        needsView.isHidden = true
     }
 
     
