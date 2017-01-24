@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -597,7 +597,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqC-ng-dna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3638" y="394"/>
-
         </scene>
         <!--Account-->
         <scene sceneID="VGC-pl-BdP">
@@ -3206,7 +3205,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender m/f/o" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOM-Ag-cnX">
-                                                            <rect key="frame" x="145" y="101" width="80" height="28"/>
+                                                            <rect key="frame" x="144" y="101" width="80" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="6He-1B-gsJ"/>
                                                                 <constraint firstAttribute="height" constant="28" id="zGX-eO-3iL"/>
@@ -3222,7 +3221,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-4X-BQX">
-                                                            <rect key="frame" x="233" y="106" width="14" height="17"/>
+                                                            <rect key="frame" x="232" y="106" width="14" height="17"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -3234,7 +3233,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiB-db-9zt">
-                                                            <rect key="frame" x="233" y="74" width="14" height="17"/>
+                                                            <rect key="frame" x="232" y="74" width="14" height="17"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -4803,14 +4802,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="ipX-Km-Qsj"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3o-fT-tdF" userLabel="backBtn">
-                                <rect key="frame" x="15" y="15" width="15" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="BWX-DI-q3P"/>
-                                    <constraint firstAttribute="height" constant="25" id="Jzp-5j-ZmO"/>
-                                </constraints>
-                                <state key="normal" image="backBtnBlue"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C56-Ph-lMf">
                                 <rect key="frame" x="94.5" y="14" width="132.5" height="43"/>
                                 <constraints>
@@ -4904,9 +4895,7 @@
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6TG-Km-eYO" secondAttribute="trailing" id="5cR-4N-dEe"/>
-                            <constraint firstItem="J3o-fT-tdF" firstAttribute="leading" secondItem="Ln4-hS-IZt" secondAttribute="leading" constant="15" id="BHU-is-CHp"/>
                             <constraint firstItem="C56-Ph-lMf" firstAttribute="centerX" secondItem="Ln4-hS-IZt" secondAttribute="centerX" id="Fvh-wD-Pwe"/>
-                            <constraint firstItem="J3o-fT-tdF" firstAttribute="top" secondItem="Ln4-hS-IZt" secondAttribute="top" constant="15" id="RMl-tv-haI"/>
                             <constraint firstItem="vb9-PH-YzY" firstAttribute="top" secondItem="6TG-Km-eYO" secondAttribute="bottom" id="VOi-vx-QfQ"/>
                             <constraint firstItem="iDd-B9-Y8w" firstAttribute="top" secondItem="Ln4-hS-IZt" secondAttribute="top" id="cXx-DA-DVM"/>
                             <constraint firstItem="6TG-Km-eYO" firstAttribute="leading" secondItem="Ln4-hS-IZt" secondAttribute="leading" id="d0K-Rp-EU2"/>
@@ -4936,6 +4925,7 @@
         <image name="Xsymbol" width="14" height="14"/>
         <image name="accountIcon" width="18" height="18"/>
         <image name="backBtn" width="15" height="25"/>
+        <image name="backBtnBlue" width="12" height="20"/>
         <image name="commentIcon" width="26" height="26"/>
         <image name="createImg" width="23" height="26"/>
         <image name="createImgGray" width="23" height="26"/>
