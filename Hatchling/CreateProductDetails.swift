@@ -32,21 +32,33 @@ class CreateProductDetails: UIViewController {
     
     @IBOutlet weak var prodNameLabel: UITextField!
     
-
+    private var stage:String = ""
+    private var categories:[String] = []
+    private var needs:[String] = []
     //Option Buttons Outlet and Action
         //Stage
 
     @IBAction func categoryBtnTapped(_ sender: UIButton) {
         let text = (sender.titleLabel?.text)!
         prodCategoriesLabel.text?.append("\(text) ")
+        categories.append(text)
     }
     @IBAction func needBtnTapped(_ sender: UIButton) {
         let text = (sender.titleLabel?.text)!
-        prodTalentLabel.text?.append("\(text) ")
+        if text.contains("Clear"){
+            prodTalentLabel.text = ""
+            needs.removeAll()
+        } else {
+            prodTalentLabel.text?.append("\(text) ")
+
+        }
+        needs.append(text)
     }
     @IBAction func stageBtnTapped(_ sender: UIButton) {
         let text = (sender.titleLabel?.text)!
-        prodStageLabel.text?.append("\(text) ")
+        prodStageLabel.text = text
+        stage = text
+
     }
     //Choose buttons tapped and x buttons tapped
     @IBAction func ProdStageBtnTapped(_ sender: Any) {
@@ -80,17 +92,15 @@ class CreateProductDetails: UIViewController {
 
     
     @IBAction func nextBtnTapped(_ sender: Any) {
-        let prodStage = prodStageLabel.text
-        let prodCategories = prodCategoriesLabel.text
-        let prodTalent = prodTalentLabel.text
+        
         let prodName = prodNameLabel.text
-        if prodStage == "" || prodCategories == "" || prodTalent == "" {
+        if prodName == "" || stage == "" || categories.count == 0 {
             presentUIAlert(title: "Sections not filled out", message: "Please fill out all sections")
         } else {
             newProduct[postDataTypes.name] = prodName
-            newProduct[postDataTypes.prodStage] = prodStage
-            newProduct[postDataTypes.prodCategories] = prodCategories
-            newProduct[postDataTypes.prodTalent] = prodTalent
+            newProduct[postDataTypes.prodStage] = stage
+            newProduct[postDataTypes.prodCategories] = categories
+            newProduct[postDataTypes.prodNeeds] = needs
  
             self.performSegue(withIdentifier: "toCreateDescriptionSegue", sender: self)
         }

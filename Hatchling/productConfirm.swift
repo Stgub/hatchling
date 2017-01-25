@@ -37,7 +37,7 @@ class productConfirm: UIViewController {
         if let logoImg = newProduct[postDataTypes.logoImg] {
             logoImageView.image = logoImg as! UIImage
         }
-        if let productNeeds = newProduct[postDataTypes.prodTalent] {
+        if let productNeeds = newProduct[postDataTypes.prodNeeds] {
             prodNeedsLabel.text = productNeeds as? String
         }
         let shortDescript = newProduct[postDataTypes.shortDescript]
@@ -124,17 +124,50 @@ class productConfirm: UIViewController {
     }
     
     func postToFirebase() {
+        //Required Values
         let shortDescript = newProduct[postDataTypes.shortDescript]
         let longDescript = newProduct[postDataTypes.longDescript]
         let productName = newProduct[postDataTypes.name]
-
-        let post: Dictionary<String, AnyObject> = [
+        let prodStage = newProduct[postDataTypes.prodStage]
+        let prodCategories = newProduct[postDataTypes.prodCategories]
+        
+        var post: Dictionary<String, AnyObject> = [
                postDataTypes.name: productName as AnyObject,
             postDataTypes.shortDescript: shortDescript as AnyObject,
+            postDataTypes.longDescript: longDescript as AnyObject,
             postDataTypes.logoUrl : logoUrl as AnyObject,
             postDataTypes.productUrl : productUrl as AnyObject,
-            postDataTypes.likes: 0 as AnyObject
+            postDataTypes.likes: 0 as AnyObject,
+            postDataTypes.prodStage : prodStage as AnyObject,
+            postDataTypes.prodCategories: prodCategories as AnyObject
         ]
+    
+        
+        //Optional Values
+        if let prodNeeds = newProduct[postDataTypes.prodNeeds]{
+            post[postDataTypes.prodNeeds] = prodNeeds as AnyObject
+        } else { print("CHUCK - no prod needs loaded to firebase")}
+        if let website = newProduct[postDataTypes.website] {
+            post[postDataTypes.website] = website as AnyObject
+        }
+        if let facebook = newProduct[postDataTypes.facebook]{
+            post[postDataTypes.facebook] = facebook as AnyObject
+
+        }
+        if let instagram = newProduct[postDataTypes.instagram]{
+            post[postDataTypes.instagram] = instagram as AnyObject
+        }
+        if let email = newProduct[postDataTypes.email] {
+            post[postDataTypes.email] = email as AnyObject
+        }
+        if let crowdfunding = newProduct[postDataTypes.crowdfunding] {
+            post[postDataTypes.crowdfunding] = crowdfunding as AnyObject
+        }
+        if let twitter = newProduct[postDataTypes.twitter] {
+            post[postDataTypes.twitter] = twitter as AnyObject
+        }
+        
+        
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
         firebasePost.setValue(post)

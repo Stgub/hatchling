@@ -22,10 +22,33 @@ struct postDataTypes{
     static let productImg = "productImg"
     static let prodStage = "prodStage"
     static let prodCategories = "prodCategories"
-    static let prodTalent = "prodTalent"
+    static let prodNeeds = "prodNeeds"
     static let totalViews = "totalViews"
+    
+    static let facebook = "facebook"
+    static let instagram = "instagram"
+    static let twitter = "twitter"
+    static let email = "email"
+    static let crowdfunding = "crowdfunding"
+    static let website = "website"
+}
+struct stageTypes {
+    static let launch = "Launch"
+    static let testing = "Testing"
+    static let development = "Development"
+    static let validation = "Validation"
+    static let fundraising = "Fundraising"
 }
 class Post {
+    
+    //Tired of doing al the extra stuff.. will change later
+    var facebook:String!
+    var instagram:String!
+    var twitter:String!
+    var email:String!
+    var crowdfunding:String!
+    var website:String!
+    
     private var _name: String!
     private var _shortDescript: String!
     private var _longDescript:String!
@@ -37,8 +60,8 @@ class Post {
     
     private var _prodStage:String!
     private var _prodCategories:String!
-    private var _prodTalent:String!
-    private var _totalViews:Int = 0 //Chuck
+    private var _prodNeeds:String!
+    private var _totalViews:Int!
     
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
@@ -70,9 +93,8 @@ class Post {
     var logoImg:UIImage { return _logoImg }
     var prodStage:String {return _prodStage}
     var prodCategories:String { return _prodCategories }
-    var prodTalent:String { return _prodTalent }
-    init(){
-    }
+    var prodNeeds:String { return _prodNeeds }
+
 
     init( postKey: String , postData: Dictionary<String, AnyObject> ){
         self._postKey = postKey
@@ -85,6 +107,8 @@ class Post {
         }
         if let likes = postData[postDataTypes.likes] as? Int{
             self._likes = Int(likes)
+        } else {
+            self._likes = 0
         }
         if let productUrl = postData[postDataTypes.productUrl] as? String{
             self._productUrl = productUrl
@@ -102,9 +126,24 @@ class Post {
             self._prodCategories = prodCategories
         }
         if let totalViews = postData[postDataTypes.totalViews] as? Int {
-            self._totalViews = totalViews
+            self._totalViews = Int(totalViews)
         } else {
             self._totalViews = 0
+        }
+        if let facebook = postData[postDataTypes.facebook] as? String {
+            self.facebook = facebook
+        }
+        if let twitter = postData[postDataTypes.twitter] as? String {
+            self.twitter = twitter
+        }
+        if let email = postData[postDataTypes.email] as? String {
+            self.email = email
+        }
+        if let crowdfunding = postData[postDataTypes.crowdfunding] as? String {
+            self.crowdfunding = crowdfunding
+        }
+        if let instagram = postData[postDataTypes.instagram] as? String {
+            self.instagram = instagram
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)
@@ -113,11 +152,13 @@ class Post {
     
     func adjustLikes(addLike: Bool) {
         if addLike {
+            print("Liked post - \(_postKey)")
             _likes = _likes + 1
         } else {
-            _likes = likes
+            print("Did not like post - \(_postKey)")
+
         }
-        _totalViews += 1 //Chuck look at this
+        _totalViews = _totalViews +  1 //Chuck look at this
         _postRef.child(postDataTypes.likes).setValue(_likes)
         _postRef.child(postDataTypes.totalViews).setValue(_totalViews)
     }
