@@ -87,12 +87,17 @@ class FeedVC: UIViewController {
         }
         
     }
+    func postWasSwiped(post: Post, wasLiked: Bool){
+        post.adjustLikes(addLike: wasLiked)
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).child(post.postKey).setValue(true)        
+        nextPost()
+    }
     func configurePost(post: Post, img: UIImage? = nil) {
         // TEMPORARY
         if let usrImg = userImage {
             posterImage.image = usrImg
         }
-        
+      
          self.postCaption.text = post.shortDescript
     //   self.postLikes.text = "\(post.likes)"
          self.posterName.text = post.name
@@ -177,11 +182,11 @@ class FeedVC: UIViewController {
         //Below decides if it is a left or right drag
         if gesture.state == UIGestureRecognizerState.ended {
             if view.center.x < 100 {
-                print("left drag - next profile")
-                self.nextPost()
+                print("left drag - dislike post")
+                self.postWasSwiped(post: currentPost, wasLiked: false)
             } else if view.center.x > self.view.bounds.width - 100 {
-                print("right drag - previous profile")
-                self.previousPost()
+                print("right drag - like post")
+                self.postWasSwiped(post: currentPost, wasLiked: true)
             }
             //Returns the view back to normal
             rotation = CGAffineTransform(rotationAngle: 0)
