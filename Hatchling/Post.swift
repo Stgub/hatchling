@@ -23,6 +23,7 @@ struct postDataTypes{
     static let prodStage = "prodStage"
     static let prodCategories = "prodCategories"
     static let prodTalent = "prodTalent"
+    static let totalViews = "totalViews"
 }
 class Post {
     private var _name: String!
@@ -37,6 +38,7 @@ class Post {
     private var _prodStage:String!
     private var _prodCategories:String!
     private var _prodTalent:String!
+    private var _totalViews:Int!
     
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
@@ -61,6 +63,9 @@ class Post {
     }
     var productImg:UIImage {
         return _productImg
+    }
+    var totalViews: Int{
+        return _totalViews
     }
     var logoImg:UIImage { return _logoImg }
     var prodStage:String {return _prodStage}
@@ -100,6 +105,9 @@ class Post {
         if let prodCategories = postData[postDataTypes.prodCategories] as? String {
             self._prodCategories = prodCategories
         }
+        if let totalViews = postData[postDataTypes.totalViews] as? Int {
+            self._totalViews = totalViews
+        }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)
 
@@ -109,9 +117,10 @@ class Post {
         if addLike {
             _likes = _likes + 1
         } else {
-            _likes = likes - 1
+            _likes = likes
         }
+        _totalViews! += 1 //Chuck look at this
         _postRef.child(postDataTypes.likes).setValue(_likes)
-        
+        _postRef.child(postDataTypes.totalViews).setValue(_totalViews)
     }
 }
