@@ -87,7 +87,7 @@ class FeedVC: UIViewController {
         }
         
     }
-    func likePost(post: Post, wasLiked: Bool){
+    func postWasSwiped(post: Post, wasLiked: Bool){
         post.adjustLikes(addLike: wasLiked)
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).child(post.postKey).setValue(true)        
         nextPost()
@@ -183,10 +183,10 @@ class FeedVC: UIViewController {
         if gesture.state == UIGestureRecognizerState.ended {
             if view.center.x < 100 {
                 print("left drag - dislike post")
-                self.likePost(post: currentPost, wasLiked: false)
+                self.postWasSwiped(post: currentPost, wasLiked: false)
             } else if view.center.x > self.view.bounds.width - 100 {
                 print("right drag - like post")
-                self.likePost(post: currentPost, wasLiked: true)
+                self.postWasSwiped(post: currentPost, wasLiked: true)
             }
             //Returns the view back to normal
             rotation = CGAffineTransform(rotationAngle: 0)

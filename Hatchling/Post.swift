@@ -38,7 +38,7 @@ class Post {
     private var _prodStage:String!
     private var _prodCategories:String!
     private var _prodTalent:String!
-    private var _totalViews:Int!
+    private var _totalViews:Int = 0 //Chuck
     
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
@@ -73,11 +73,7 @@ class Post {
     var prodTalent:String { return _prodTalent }
     init(){
     }
-    init(shortDescript:String , imageUrl: String , likes: Int){
-        self._shortDescript = shortDescript
-        self._productImg = productImg
-        self._likes = likes
-    }
+
     init( postKey: String , postData: Dictionary<String, AnyObject> ){
         self._postKey = postKey
         
@@ -107,6 +103,8 @@ class Post {
         }
         if let totalViews = postData[postDataTypes.totalViews] as? Int {
             self._totalViews = totalViews
+        } else {
+            self._totalViews = 0
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)
@@ -119,7 +117,7 @@ class Post {
         } else {
             _likes = likes
         }
-        _totalViews! += 1 //Chuck look at this
+        _totalViews += 1 //Chuck look at this
         _postRef.child(postDataTypes.likes).setValue(_likes)
         _postRef.child(postDataTypes.totalViews).setValue(_totalViews)
     }
