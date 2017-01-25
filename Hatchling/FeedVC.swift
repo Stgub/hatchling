@@ -45,8 +45,9 @@ class FeedVC: UIViewController {
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(FeedVC.wasDragged(_:)))
         swipeCardView.addGestureRecognizer(swipeGesture)
         
-        //Downloads posts data and sets and observer for if anything chanages
-        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+        //Downloads posts data
+
+        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     print("SNAP: \(snap)")
@@ -54,27 +55,22 @@ class FeedVC: UIViewController {
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
-                        self.nextPost()
                     }
-                } 
-                
+                }
             }
-            
-        })        // Do any additional setup after loading the view.
+            self.nextPost() // show first post
+        })
     }
-    var index = 0
-    func previousPost(){
-        if index - 1 > 0 {
-            index -= 1
-            let post = posts[index]
-            showPost(post: post)
-        }
-    }
+    
+    private var postIndex = 0
+
     func nextPost(){
-        if index + 1 < posts.count {
-            index += 1
-            let post = posts[index]
+        if postIndex + 1 < posts.count {
+            postIndex += 1
+            let post = posts[postIndex]
             showPost(post:post)
+        } else {
+            print("No more posts to show")
         }
 
     }
@@ -99,9 +95,7 @@ class FeedVC: UIViewController {
         }
       
          self.postCaption.text = post.shortDescript
-    //   self.postLikes.text = "\(post.likes)"
          self.posterName.text = post.name
-        
         
         if img != nil {
             self.postImage.image = img
@@ -121,36 +115,8 @@ class FeedVC: UIViewController {
                 }
             })
         }
-        //single event just checks once if it has been liked instead of constant observation
-        currentUserLikesRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                print("post not liked")
-                //self.postLikes.image = UIImage(named: "empty-heart")
-            } else {
-                print("post liked")
-                //self.postLikes.image = UIImage(named: "filled-heart")
-            }
-        })
     }
     
-
-
-    @IBAction func likeTapped(_ sender: Any) {
-        print("Like button tapped")
-        currentUserLikesRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                //self.likeImg.image = UIImage(named: "filled-heart")
-                self.currentPost.adjustLikes(addLike: true)
-                self.currentUserLikesRef.child(self.currentPost.postKey).setValue(true)
-                
-                
-            } else {
-                //self.likeImg.image = UIImage(named: "empty-heart")
-                self.currentPost.adjustLikes(addLike: false)
-                self.currentUserLikesRef.child(self.currentPost.postKey).removeValue()
-            }
-        })
-    }
  
 
     @IBAction func signOutBtnTapped(_ sender: Any) {
@@ -182,10 +148,10 @@ class FeedVC: UIViewController {
         //Below decides if it is a left or right drag
         if gesture.state == UIGestureRecognizerState.ended {
             if view.center.x < 100 {
-                print("left drag - dislike post")
+                print("left drag")
                 self.postWasSwiped(post: currentPost, wasLiked: false)
             } else if view.center.x > self.view.bounds.width - 100 {
-                print("right drag - like post")
+                print("right drag")
                 self.postWasSwiped(post: currentPost, wasLiked: true)
             }
             //Returns the view back to normal
