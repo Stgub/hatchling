@@ -17,6 +17,7 @@ struct userDataTypes {
     static let provider = "provider"
     static let birthday = "birthday"
     static let likes = "likes"
+    static let posts = "posts"
 }
 
 var userImage:UIImage! //SHOULDNT BE HERE JUST TEMPORARY

@@ -12,6 +12,7 @@ import Firebase
 
 //Strings for accessing firebase data
 struct postDataTypes{
+    static let creator = "creator"
     static let shortDescript = "shortDescription"
     static let longDescript = "longDescript"
     static let likes = "likes"
@@ -41,14 +42,15 @@ struct stageTypes {
 }
 class Post {
     
-    //Tired of doing al the extra stuff.. will change later
-    var facebook:String!
-    var instagram:String!
-    var twitter:String!
-    var email:String!
-    var crowdfunding:String!
-    var website:String!
-    
+    //social media
+    private var _facebook:String!
+    private var _instagram:String!
+    private var _twitter:String!
+    private var _email:String!
+    private var _crowdfunding:String!
+    private var _website:String!
+    //Basic
+    private var _creatorName:String! // username of the creator
     private var _name: String!
     private var _shortDescript: String!
     private var _longDescript:String!
@@ -57,18 +59,21 @@ class Post {
     private var _postRef: FIRDatabaseReference!
     private var _productUrl: String!
     private var _logoUrl: String!
-    
+    //Stage
     private var _prodStage:String!
     private var _prodCategories:String!
     private var _prodNeeds:String!
     private var _totalViews:Int!
-    
+    //Media
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
     
     var shortDescript :String { return _shortDescript }
     var longDescript:String { return _longDescript }
 
+    var creatorName: String {
+        return _creatorName
+    }
     var likes: Int {
         return _likes
     }
@@ -94,11 +99,20 @@ class Post {
     var prodStage:String {return _prodStage}
     var prodCategories:String { return _prodCategories }
     var prodNeeds:String { return _prodNeeds }
+    //socia media
+    var facebook:String { return _facebook }
+    var twitter: String { return _twitter}
+    var instagram: String {return _instagram}
+    var email :String { return _email}
+    var crowdfunding :String {return _crowdfunding}
+    var website : String { return _website}
 
 
     init( postKey: String , postData: Dictionary<String, AnyObject> ){
         self._postKey = postKey
-        
+        if let creatorName = postData[postDataTypes.creator] as? String {
+            self._creatorName = creatorName
+        }
         if let shortDescript = postData[postDataTypes.shortDescript] as? String{
             self._shortDescript = shortDescript
         }
@@ -131,19 +145,19 @@ class Post {
             self._totalViews = 0
         }
         if let facebook = postData[postDataTypes.facebook] as? String {
-            self.facebook = facebook
+            self._facebook = facebook
         }
         if let twitter = postData[postDataTypes.twitter] as? String {
-            self.twitter = twitter
+            self._twitter = twitter
         }
         if let email = postData[postDataTypes.email] as? String {
-            self.email = email
+            self._email = email
         }
         if let crowdfunding = postData[postDataTypes.crowdfunding] as? String {
-            self.crowdfunding = crowdfunding
+            self._crowdfunding = crowdfunding
         }
         if let instagram = postData[postDataTypes.instagram] as? String {
-            self.instagram = instagram
+            self._instagram = instagram
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)

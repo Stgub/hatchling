@@ -601,7 +601,7 @@
         <!--Account-->
         <scene sceneID="VGC-pl-BdP">
             <objects>
-                <viewController id="C1s-Ss-FcE" sceneMemberID="viewController">
+                <viewController id="C1s-Ss-FcE" customClass="ProfileVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MR4-pD-VQc"/>
                         <viewControllerLayoutGuide type="bottom" id="BRs-WK-2yz"/>
@@ -2995,7 +2995,7 @@
         <!--Likes-->
         <scene sceneID="mYB-qS-5OO">
             <objects>
-                <viewController id="9fg-1A-5gT" sceneMemberID="viewController">
+                <viewController id="9fg-1A-5gT" customClass="UserLikesVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iTv-Hp-lxX"/>
                         <viewControllerLayoutGuide type="bottom" id="AE3-dH-m5y"/>
@@ -3030,7 +3030,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="0Eq-e2-zXJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="likesTableViewCell" rowHeight="112" id="0Eq-e2-zXJ" customClass="LikesTableViewCell" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
@@ -3093,8 +3093,17 @@
                                                 <constraint firstItem="7Hl-9y-QJh" firstAttribute="top" secondItem="qNU-dA-yLJ" secondAttribute="topMargin" constant="8" id="wCI-VB-un6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="prodName" destination="DWB-zR-1Mt" id="Siu-aj-Q8M"/>
+                                            <outlet property="prodShortDescript" destination="aK1-Qg-gLx" id="DvF-PI-3cS"/>
+                                            <outlet property="prodoLogoImg" destination="J5C-Z6-T5R" id="d7o-rH-np3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9fg-1A-5gT" id="I40-sr-IeY"/>
+                                    <outlet property="delegate" destination="9fg-1A-5gT" id="hP5-1n-V63"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3117,7 +3126,7 @@
         <!--myProducts-->
         <scene sceneID="vLA-Qf-KLT">
             <objects>
-                <viewController id="9zc-zJ-epR" userLabel="myProducts" sceneMemberID="viewController">
+                <viewController id="9zc-zJ-epR" userLabel="myProducts" customClass="UserPostsVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2iZ-xJ-usb"/>
                         <viewControllerLayoutGuide type="bottom" id="Oup-PU-3h1"/>
@@ -3156,7 +3165,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="159" id="kfr-tW-wkn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postsTableViewCell" rowHeight="159" id="kfr-tW-wkn" customClass="PostsTableViewCell" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
@@ -3289,8 +3298,18 @@
                                                 <constraint firstItem="Gkk-Pg-Hxi" firstAttribute="top" secondItem="OD2-pY-8JH" secondAttribute="topMargin" constant="8" id="vEu-Wv-YGY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="prodLikes" destination="Ohu-76-Lbg" id="J38-gv-nLf"/>
+                                            <outlet property="prodLogo" destination="ti7-ds-Mh3" id="ihx-o9-Dwr"/>
+                                            <outlet property="prodName" destination="KfK-fF-DxY" id="6MA-oG-3HW"/>
+                                            <outlet property="prodViews" destination="FBY-JS-qOC" id="73N-2c-wsw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9zc-zJ-epR" id="LFX-D1-cXR"/>
+                                    <outlet property="delegate" destination="9zc-zJ-epR" id="AVi-wv-HCt"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3309,6 +3328,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Likes" image="likegray" selectedImage="like" id="Haf-4E-COQ"/>
+                    <connections>
+                        <outlet property="tableView" destination="SnP-oq-htj" id="JVb-eI-7gs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53X-MU-TCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3636,7 +3658,7 @@
         <!--detailedProductScreen-->
         <scene sceneID="srh-hq-SDK">
             <objects>
-                <viewController id="5vJ-SB-0FR" userLabel="detailedProductScreen" customClass="productConfirm" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5vJ-SB-0FR" userLabel="detailedProductScreen" customClass="PostDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cR4-Kr-KrW"/>
                         <viewControllerLayoutGuide type="bottom" id="Qd5-sR-bRc"/>
@@ -3899,12 +3921,21 @@
                     <connections>
                         <outlet property="creatorPicture" destination="L1P-BK-HuQ" id="mym-gj-vzP"/>
                         <outlet property="logoImageView" destination="p0A-cF-iGc" id="ZJ5-6i-139"/>
+                        <outlet property="prodCategories" destination="ZVM-Ds-Iuc" id="cec-dZ-98C"/>
                         <outlet property="prodCategoriesLabel" destination="ZVM-Ds-Iuc" id="CkP-ZF-Lix"/>
+                        <outlet property="prodCreatorImg" destination="L1P-BK-HuQ" id="Emw-Ww-NqB"/>
                         <outlet property="prodCreatorLabel" destination="OpQ-Vg-VIe" id="R00-vH-31B"/>
+                        <outlet property="prodImg" destination="zal-eR-KMZ" id="BsK-n9-AVI"/>
+                        <outlet property="prodLogoImg" destination="p0A-cF-iGc" id="Bd9-rm-qnI"/>
+                        <outlet property="prodLongDescript" destination="Qvl-jR-uMl" id="adS-4d-1a6"/>
                         <outlet property="prodLongDescriptLabel" destination="Qvl-jR-uMl" id="Fe8-8Q-ZXO"/>
+                        <outlet property="prodName" destination="1We-Vt-c2l" id="PCg-VS-3TO"/>
                         <outlet property="prodNameLabel" destination="1We-Vt-c2l" id="Wlf-cB-gL0"/>
+                        <outlet property="prodNeeds" destination="qsN-ZI-R87" id="Bry-gO-p6I"/>
                         <outlet property="prodNeedsLabel" destination="qsN-ZI-R87" id="Ksk-RL-qZU"/>
+                        <outlet property="prodShortDescript" destination="GGY-w0-hms" id="IjS-49-vws"/>
                         <outlet property="prodShortDescriptLAbel" destination="GGY-w0-hms" id="wKU-4f-kxv"/>
+                        <outlet property="prodStage" destination="X1G-co-CnU" id="tUY-Zn-yZW"/>
                         <outlet property="prodStageLabel" destination="X1G-co-CnU" id="AMT-dy-1bu"/>
                         <outlet property="productImageView" destination="zal-eR-KMZ" id="bwZ-7n-tdr"/>
                     </connections>

@@ -130,9 +130,11 @@ class productConfirm: UIViewController {
         let productName = newProduct[postDataTypes.name]
         let prodStage = newProduct[postDataTypes.prodStage]
         let prodCategories = newProduct[postDataTypes.prodCategories]
-        
+        let creatorName = DataService.ds.REF_USER_CURRENT.child(userDataTypes.name)
+
         var post: Dictionary<String, AnyObject> = [
-               postDataTypes.name: productName as AnyObject,
+            postDataTypes.creator: creatorName as AnyObject,
+            postDataTypes.name: productName as AnyObject,
             postDataTypes.shortDescript: shortDescript as AnyObject,
             postDataTypes.longDescript: longDescript as AnyObject,
             postDataTypes.logoUrl : logoUrl as AnyObject,
@@ -140,6 +142,7 @@ class productConfirm: UIViewController {
             postDataTypes.likes: 0 as AnyObject,
             postDataTypes.prodStage : prodStage as AnyObject,
             postDataTypes.prodCategories: prodCategories as AnyObject
+            
         ]
     
         
@@ -170,28 +173,14 @@ class productConfirm: UIViewController {
         
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        let postId = firebasePost.key
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
         firebasePost.setValue(post)
         if let storyboard = self.storyboard {
             let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
             self.present(vc, animated: false, completion: nil)
-        // self.performSegue(withIdentifier: "toPostedSegue", sender: self)
-        
-   /*     captionField.text = ""
-        imageSelected = false
-        imageAdd.image = UIImage(named: "add-image")
-        
-        tableView.reloadData()*/
         }
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

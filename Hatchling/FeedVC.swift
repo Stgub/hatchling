@@ -95,7 +95,7 @@ class FeedVC: UIViewController {
         }
       
          self.postCaption.text = post.shortDescript
-         self.posterName.text = post.name
+         self.posterName.text = post.creatorName
         
         if img != nil {
             self.postImage.image = img
