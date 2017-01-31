@@ -785,6 +785,22 @@
                                     <constraint firstItem="svw-e9-bxH" firstAttribute="leading" secondItem="7Fh-aN-Kiv" secondAttribute="leading" constant="22" id="yAy-HC-Mg1"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIW-sD-Aj8" userLabel="noPostsView">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts left to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tt-Br-KHF">
+                                        <rect key="frame" x="78.5" y="217" width="163" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6tt-Br-KHF" firstAttribute="centerX" secondItem="RIW-sD-Aj8" secondAttribute="centerX" id="EaX-le-Nlq"/>
+                                    <constraint firstItem="6tt-Br-KHF" firstAttribute="centerY" secondItem="RIW-sD-Aj8" secondAttribute="centerY" id="uxi-0e-dJV"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RO-qh-LDl" userLabel="swipeCardView" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="15" y="80" width="290" height="424"/>
                                 <subviews>
@@ -1022,8 +1038,12 @@
                             <constraint firstItem="2RO-qh-LDl" firstAttribute="top" secondItem="7Fh-aN-Kiv" secondAttribute="bottom" constant="15" id="RHV-Ze-RPL"/>
                             <constraint firstItem="7Fh-aN-Kiv" firstAttribute="leading" secondItem="Wv0-bl-PiH" secondAttribute="leading" id="SPn-E2-vSg"/>
                             <constraint firstItem="Kw1-M9-Jjl" firstAttribute="top" secondItem="2RO-qh-LDl" secondAttribute="bottom" constant="15" id="SgX-8p-avT"/>
+                            <constraint firstItem="RIW-sD-Aj8" firstAttribute="leading" secondItem="Wv0-bl-PiH" secondAttribute="leading" id="aHB-U8-kVq"/>
                             <constraint firstItem="2RO-qh-LDl" firstAttribute="leading" secondItem="Wv0-bl-PiH" secondAttribute="leadingMargin" constant="-1" id="ewD-34-PGX"/>
                             <constraint firstAttribute="trailing" secondItem="7Fh-aN-Kiv" secondAttribute="trailing" id="mub-AH-gK4"/>
+                            <constraint firstItem="RIW-sD-Aj8" firstAttribute="top" secondItem="7Fh-aN-Kiv" secondAttribute="bottom" id="wSz-WF-oop"/>
+                            <constraint firstAttribute="trailing" secondItem="RIW-sD-Aj8" secondAttribute="trailing" id="x1J-Sx-eyS"/>
+                            <constraint firstItem="Kw1-M9-Jjl" firstAttribute="top" secondItem="RIW-sD-Aj8" secondAttribute="bottom" id="zy1-el-JVC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="feedImgGray" selectedImage="feedImg" id="Ctl-iK-hSZ"/>
@@ -1043,7 +1063,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2708" y="-350"/>
+            <point key="canvasLocation" x="2707.5" y="-350.7042253521127"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sCV-QF-ru2">
@@ -3118,6 +3138,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Likes" image="likegray" selectedImage="like" id="TeH-G1-OOi"/>
+                    <connections>
+                        <outlet property="tableView" destination="Tz9-HP-Tju" id="iaa-um-hA6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHz-c4-82d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

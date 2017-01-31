@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
+//Global Variables
+var currentUser:User!
+
 class FeedVC: UIViewController {
 
     
@@ -30,23 +33,43 @@ class FeedVC: UIViewController {
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
      var posts:[Post] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Used to access the users likes
-        currentUserLikesRef = DataService.ds.REF_USER_CURRENT.child("likes")
-
-        // TEMPORARY
-
-        if let usrImg = userImage {
-            posterImage.image = usrImg
+        
+        if posts.count == 0 {
+            swipeCardView.isHidden = true
         }
+        
         //Swipe gesture stuff
         originalCenter = swipeCardView.center
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(FeedVC.wasDragged(_:)))
         swipeCardView.addGestureRecognizer(swipeGesture)
         
-        //Downloads posts data
+        //Get users info 
+        DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    if let userDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key //What kind of key is this?
+                        let user = User(userKey: key , userData: userDict)
+                        currentUser = user
+                        
+                    }
+                }
+            }
 
+            
+        }
+        )
+        
+        self.updateData()
+    }
+    
+    private var postIndex = 0
+    func updateData(){
+        //Downloads posts data
+        
         DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
@@ -58,23 +81,25 @@ class FeedVC: UIViewController {
                     }
                 }
             }
-            self.nextPost() // show first post
+            self.nextPost()
         })
     }
-    
-    private var postIndex = 0
-
     func nextPost(){
         if postIndex + 1 < posts.count {
             postIndex += 1
             let post = posts[postIndex]
             showPost(post:post)
         } else {
+            self.swipeCardView.isHidden = true
             print("No more posts to show")
+            self.updateData()
+            
         }
 
     }
+
     func showPost(post:Post){
+        self.swipeCardView.isHidden = false
         currentPost = post
         if let img = FeedVC.imageCache.object(forKey: post.productUrl as NSString) {
             self.configurePost(post: post, img: img)
@@ -95,7 +120,10 @@ class FeedVC: UIViewController {
         }
       
          self.postCaption.text = post.shortDescript
-         self.posterName.text = post.creatorName
+        
+        if let creatorName = post.creatorName {
+            self.posterName.text = creatorName
+        }
         
         if img != nil {
             self.postImage.image = img

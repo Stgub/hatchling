@@ -71,7 +71,7 @@ class Post {
     var shortDescript :String { return _shortDescript }
     var longDescript:String { return _longDescript }
 
-    var creatorName: String {
+    var creatorName: String? {
         return _creatorName
     }
     var likes: Int {

@@ -9,12 +9,14 @@
 import UIKit
 import Firebase
 
-class UserLikesVC: UITableViewController {
+class UserLikesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    var usersLikedPostsKeys:[String] = []
     var usersLikes:[Post] = []
     
     override func viewWillAppear(_ animated: Bool) {
-        self.getUsersLike()
+        self.getUsersLikes()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +32,13 @@ class UserLikesVC: UITableViewController {
     // MARK: - Table view data source
 
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return usersLikes.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "likesTableViewCell", for: indexPath) as! LikesTableViewCell
         let post = usersLikes[indexPath.row]
         cell.prodName.text = post.name
@@ -44,19 +46,37 @@ class UserLikesVC: UITableViewController {
         //cell.prodLogoImg.image = post.logoImg
         return cell
     }
-    func getUsersLike(){
+    func getUsersLikes(){
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     print("SNAP: \(snap)")
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let post = Post(postKey: key, postData: postDict)
-                        self.usersLikes.append(post)
+                    let key = snap.key
+                    self.usersLikedPostsKeys.append(key)
+                
+                }
+                self.loadUsersLikes()
+            }
+        })
+    }
+    func loadUsersLikes(){
+        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    let key = snap.key
+                    if self.usersLikedPostsKeys.contains(snap.key){
+                        if let postData = snap.value as? Dictionary<String, AnyObject>{
+                            let post = Post(postKey: key, postData: postData)
+                            self.usersLikes.append(post)
+                        }
+
                     }
                 }
             }
-        })
+            self.tableView.reloadData()
+            }
+        )
     }
     
 
