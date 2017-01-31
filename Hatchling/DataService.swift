@@ -10,15 +10,6 @@ import Foundation
 import Firebase
 import SwiftKeychainWrapper
 
-struct userDataTypes {
-    static let email = "email"
-    static let name = "name"
-    static let gender = "gender"
-    static let provider = "provider"
-    static let birthday = "birthday"
-    static let likes = "likes"
-}
-
 var userImage:UIImage! //SHOULDNT BE HERE JUST TEMPORARY
 
 
