@@ -44,6 +44,7 @@
 		56FB18151E3EED030052CB09 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB18141E3EED030052CB09 /* LikesTableViewCell.swift */; };
 		56FB18171E3EEF0E0052CB09 /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB18161E3EEF0E0052CB09 /* PostDetailVC.swift */; };
 		56FB18191E4006CB0052CB09 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB18181E4006CB0052CB09 /* User.swift */; };
+		56FB181B1E41713C0052CB09 /* PostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB181A1E41713C0052CB09 /* PostsManager.swift */; };
 		96E6A8578EF3B6CE0EF5FAF4 /* Pods_HatchlingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */; };
 		B5F79CC5EFD33B1B04142363 /* Pods_HatchlingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */; };
 		DF17966F15291021AF6EE98D /* Pods_Hatchling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */; };
@@ -114,6 +115,7 @@
 		56FB18141E3EED030052CB09 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
 		56FB18161E3EEF0E0052CB09 /* PostDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
 		56FB18181E4006CB0052CB09 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		56FB181A1E41713C0052CB09 /* PostsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsManager.swift; sourceTree = "<group>"; };
 		8196BE7C303857D0D59843B4 /* Pods_HatchlingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB54842B1D28BF6829E394A7 /* Pods_Hatchling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hatchling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D6B3C571B1C750012DCCA2 /* Pods-HatchlingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				56DF431D1E2C078800A6A7C5 /* DataService.swift */,
+				56FB181A1E41713C0052CB09 /* PostsManager.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				190B85051E2D772500E5CC6A /* SignUpGenderVC.swift in Sources */,
 				19167F061E29EDC7003EFC98 /* Constants.swift in Sources */,
 				56FB18171E3EEF0E0052CB09 /* PostDetailVC.swift in Sources */,
+				56FB181B1E41713C0052CB09 /* PostsManager.swift in Sources */,
 				56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */,
 				56FB18191E4006CB0052CB09 /* User.swift in Sources */,
 			);

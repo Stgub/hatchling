@@ -14,7 +14,6 @@ import SwiftKeychainWrapper
 var currentUser:User!
 
 class FeedVC: UIViewController {
-
     
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTitle: UILabel!
@@ -23,26 +22,22 @@ class FeedVC: UIViewController {
     @IBOutlet weak var postStage: UILabel!
     @IBOutlet weak var postLikes: UILabel!
     @IBOutlet weak var postCaption: UILabel!
-    
+    @IBOutlet weak var postLogo: RoundPic!
     
     @IBOutlet weak var swipeCardView: swipeCardShadowRoundCorner!
     var originalCenter:CGPoint! //used for swiping to return to the original position
-    var currentUserLikesRef:FIRDatabaseReference!
-    var likesRef: FIRDatabaseReference! // used  for updating likes when tapped
-    var currentPost:Post!
-    static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
-     var posts:[Post] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if posts.count == 0 {
-            swipeCardView.isHidden = true
+
+   
+        if PostManager.pm.currentPost == nil {
+            swipeCardView.isHidden = true 
         }
-        
         //Swipe gesture stuff
-        originalCenter = swipeCardView.center
+        originalCenter = swipeCardView.frame.origin
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(FeedVC.wasDragged(_:)))
         swipeCardView.addGestureRecognizer(swipeGesture)
         
@@ -58,86 +53,97 @@ class FeedVC: UIViewController {
                     }
                 }
             }
-
-            
-        }
-        )
+        })
         
         self.updateData()
     }
     
-    private var postIndex = 0
+    
     func updateData(){
-        //Downloads posts data
-        
-        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots {
-                    print("SNAP: \(snap)")
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let post = Post(postKey: key, postData: postDict)
-                        self.posts.append(post)
-                    }
-                }
-            }
+        print("CHUCK: Updating data for feedVC")
+        //Downloads posts data then runs function when done
+        PostManager.pm.getPosts(){
+            //function to run when done
             self.nextPost()
-        })
-    }
-    func nextPost(){
-        if postIndex + 1 < posts.count {
-            postIndex += 1
-            let post = posts[postIndex]
-            showPost(post:post)
-        } else {
-            self.swipeCardView.isHidden = true
-            print("No more posts to show")
-            self.updateData()
-            
         }
-
+    }
+    
+    func nextPost() -> Void{
+        print("next post")
+    
+        if let post = PostManager.pm.nextPost(){
+            showPost(post: post)
+        } else {
+            print("No posts to show")
+            swipeCardView.isHidden = true
+        }
     }
 
     func showPost(post:Post){
         self.swipeCardView.isHidden = false
-        currentPost = post
-        if let img = FeedVC.imageCache.object(forKey: post.productUrl as NSString) {
+        if let img = PostManager.pm.getPostImg(imgUrl: post.productUrl) {
             self.configurePost(post: post, img: img)
         } else {
             self.configurePost(post: post)
         }
         
     }
-    func postWasSwiped(post: Post, wasLiked: Bool){
-        post.adjustLikes(addLike: wasLiked)
-        DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).child(post.postKey).setValue(true)        
+    func postWasSwiped( wasLiked: Bool){
+        PostManager.pm.adjustLikesForCurrentPost(addLike: wasLiked)
         nextPost()
     }
+    
     func configurePost(post: Post, img: UIImage? = nil) {
         // TEMPORARY
+        
         if let usrImg = userImage {
             posterImage.image = usrImg
         }
       
-         self.postCaption.text = post.shortDescript
-        
+        self.postCaption.text = post.shortDescript
+        self.postTitle.text = post.name
+        //self.postStage.text = post.prodStage
+    
         if let creatorName = post.creatorName {
             self.posterName.text = creatorName
         }
         
+     
+        
+        if let logoImg = post.logoImg {
+            self.postImage.image = logoImg
+        } else {
+            let logoUrl = post.logoUrl
+            let ref = FIRStorage.storage().reference(forURL: logoUrl)
+            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print("Chuck: Error downloading logo img -\(error)")
+                    
+                } else {
+                    print("Chuck: Logo Img downloaded from Firebase storage")
+                    if let imgData = data {
+                        if let img = UIImage(data: imgData) {
+                            self.postLogo.image = img
+                            PostManager.pm.setImg(img: img, forKey: logoUrl as NSString)
+                        }
+                    }
+                }
+            })
+        }
+
         if img != nil {
             self.postImage.image = img
         } else {
             let ref = FIRStorage.storage().reference(forURL: post.productUrl)
             ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
                 if error != nil {
-                    print("Chuck: Unable to download image from Firebase storage")
+                    print("Chuck: Error downloading product img -\(error)")
                 } else {
-                    print("Chuck: Image downloaded from Firebase storage")
+                    print("Chuck: Product Img downloaded from Firebase storage")
                     if let imgData = data {
                         if let img = UIImage(data: imgData) {
                             self.postImage.image = img
-                            FeedVC.imageCache.setObject(img, forKey: post.productUrl as NSString)
+                            PostManager.pm.setImg(img: img, forKey: post.productUrl as NSString)
                         }
                     }
                 }
@@ -167,7 +173,8 @@ class FeedVC: UIViewController {
         let translation = gesture.translation(in: self.view)
         let view = gesture.view!
         //print("\(view.subviews.first?.frame)")
-        view.center = CGPoint(x: swipeCardView.center.x + translation.x, y: self.swipeCardView.center.y + translation.y) // relative to bottom left of screen
+        
+        view.frame.origin = CGPoint(x: originalCenter.x + translation.x, y: self.originalCenter.y + translation.y) // relative to bottom left of screen
         let xFromCenter = view.center.x - self.view.bounds.width/2
         let scale = 1000 / (abs(xFromCenter) + 1000 )
         var rotation = CGAffineTransform(rotationAngle: 0)
@@ -177,16 +184,16 @@ class FeedVC: UIViewController {
         if gesture.state == UIGestureRecognizerState.ended {
             if view.center.x < 100 {
                 print("left drag")
-                self.postWasSwiped(post: currentPost, wasLiked: false)
+                self.postWasSwiped( wasLiked: false)
             } else if view.center.x > self.view.bounds.width - 100 {
                 print("right drag")
-                self.postWasSwiped(post: currentPost, wasLiked: true)
+                self.postWasSwiped( wasLiked: true)
             }
             //Returns the view back to normal
             rotation = CGAffineTransform(rotationAngle: 0)
             stretch = rotation.scaledBy(x: 1, y: 1)
             view.transform = stretch
-            view.center  = originalCenter
+            view.frame.origin  = originalCenter
         }
     }
 
