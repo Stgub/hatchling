@@ -25,7 +25,7 @@ struct postDataTypes{
     static let prodCategories = "prodCategories"
     static let prodNeeds = "prodNeeds"
     static let totalViews = "totalViews"
-    
+    static let likedBy = "likedBy" //a list of the uids of the people who have likd their product.
     static let facebook = "facebook"
     static let instagram = "instagram"
     static let twitter = "twitter"
@@ -59,6 +59,7 @@ class Post {
     private var _postRef: FIRDatabaseReference!
     private var _productUrl: String!
     private var _logoUrl: String!
+    private var _likedBy:[String]!
     //Stage
     private var _prodStage:String!
     private var _prodCategories:String!
@@ -89,13 +90,10 @@ class Post {
     var logoUrl:String{
         return _logoUrl
     }
-    var productImg:UIImage {
-        return _productImg
-    }
-    var totalViews: Int{
-        return _totalViews
-    }
-    var logoImg:UIImage { return _logoImg }
+    var productImg:UIImage? { return _productImg }
+    var totalViews: Int{ return _totalViews }
+    var likedBy: [String]{ return _likedBy }
+    var logoImg:UIImage? { return _logoImg }
     var prodStage:String {return _prodStage}
     var prodCategories:String { return _prodCategories }
     var prodNeeds:String { return _prodNeeds }
@@ -165,15 +163,39 @@ class Post {
     }
     
     func adjustLikes(addLike: Bool) {
-        if addLike {
-            print("Liked post - \(_postKey)")
-            _likes = _likes + 1
-        } else {
-            print("Did not like post - \(_postKey)")
+        //add post to this users likes
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).child(_postKey).setValue(true)
+        _postRef.child(postDataTypes.likedBy).child(DataService.ds.REF_USER_CURRENT.key).setValue(true) // doesn't need to be in transaction block because you are simply adding a value instead of updating
 
+        //Below basically gets the most up to date info and adds the likes and total views. without this the data could be stale
+        print(_postRef)
+        _postRef.runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+            if var postData = currentData.value as? [String : AnyObject] {
+                print("CHUCK: Adjusting likes on - \(postData)")
+                var currentLikes:Int
+                var currentViews:Int
+                
+                currentLikes = postData[postDataTypes.likes] as? Int ?? 0
+                currentViews = postData[postDataTypes.totalViews] as? Int ?? 0
+                if addLike {
+                    currentLikes += 1
+                } else {
+                    currentLikes -= 1
+                }
+                currentViews += 1
+                postData[postDataTypes.likes] = currentLikes as AnyObject?
+                postData[postDataTypes.totalViews] = currentViews as AnyObject?
+                
+                // Set value and report transaction success
+                currentData.value = postData
+                
+                return FIRTransactionResult.success(withValue: currentData)
+            }
+            return FIRTransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
         }
-        _totalViews = _totalViews +  1 //Chuck look at this
-        _postRef.child(postDataTypes.likes).setValue(_likes)
-        _postRef.child(postDataTypes.totalViews).setValue(_totalViews)
     }
 }

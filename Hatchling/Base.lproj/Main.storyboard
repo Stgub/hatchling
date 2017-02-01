@@ -1050,6 +1050,7 @@
                     <connections>
                         <outlet property="postCaption" destination="OoO-kM-Wfg" id="kcr-fM-djb"/>
                         <outlet property="postImage" destination="Mxx-fP-GrM" id="NVe-ZV-eXe"/>
+                        <outlet property="postLogo" destination="vIG-SX-2YI" id="ryY-8E-OwI"/>
                         <outlet property="postTitle" destination="KYj-L1-YbU" id="jtT-46-Jb2"/>
                         <outlet property="posterImage" destination="EjJ-6g-HHb" id="cbq-WM-64x"/>
                         <outlet property="posterName" destination="hOa-zt-SLn" id="YYh-Pb-ZLN"/>
