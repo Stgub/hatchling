@@ -109,46 +109,6 @@ class FeedVC: UIViewController {
             self.postLogo.image = img
         }
      
-        
-        if let logoImg = post.logoImg {
-            self.postImage.image = logoImg
-        } else {
-            let logoUrl = post.logoUrl
-            let ref = FIRStorage.storage().reference(forURL: logoUrl)
-            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
-                if error != nil {
-                    print("Chuck: Error downloading logo img -\(error)")
-                    
-                } else {
-                    print("Chuck: Logo Img downloaded from Firebase storage")
-                    if let imgData = data {
-                        if let img = UIImage(data: imgData) {
-                            self.postLogo.image = img
-                            PostManager.pm.setImg(img: img, forKey: logoUrl as NSString)
-                        }
-                    }
-                }
-            })
-        }
-
-        if img != nil {
-            self.postImage.image = img
-        } else {
-            let ref = FIRStorage.storage().reference(forURL: post.productUrl)
-            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
-                if error != nil {
-                    print("Chuck: Error downloading product img -\(error)")
-                } else {
-                    print("Chuck: Product Img downloaded from Firebase storage")
-                    if let imgData = data {
-                        if let img = UIImage(data: imgData) {
-                            self.postImage.image = img
-                            PostManager.pm.setImg(img: img, forKey: post.productUrl as NSString)
-                        }
-                    }
-                }
-            })
-        }
     }
     
  
@@ -168,6 +128,13 @@ class FeedVC: UIViewController {
     
     
     //MARK: - Gestures
+    
+    
+    @IBAction func tappedPost(_ sender: Any) {
+        print("Post Tapped")
+        performSegue(withIdentifier: "toPostDetailSegue", sender: self)
+    }
+    
     func wasDragged(_ gesture: UIPanGestureRecognizer)
     {
         let translation = gesture.translation(in: self.view)
@@ -201,6 +168,9 @@ class FeedVC: UIViewController {
         switch(dest ){
         case is PostDetailVC:
             let destVC = dest as! PostDetailVC
+            print("Going to PostDetailVC")
+            let currentPost = PostManager.pm.currentPost
+            print("Chuck: Showing post -\(currentPost?.name)")
             destVC.post = PostManager.pm.currentPost
         default:
             print("Segue Default ")

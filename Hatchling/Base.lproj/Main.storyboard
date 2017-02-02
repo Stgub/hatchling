@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -801,9 +801,6 @@
                                     <constraint firstItem="6tt-Br-KHF" firstAttribute="centerX" secondItem="RIW-sD-Aj8" secondAttribute="centerX" id="EaX-le-Nlq"/>
                                     <constraint firstItem="6tt-Br-KHF" firstAttribute="centerY" secondItem="RIW-sD-Aj8" secondAttribute="centerY" id="uxi-0e-dJV"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="nHc-aQ-a3Q" appends="YES" id="Mbu-Vt-y3C"/>
-                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RO-qh-LDl" userLabel="swipeCardView" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="15" y="80" width="290" height="424"/>
@@ -977,6 +974,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="lSg-un-Efh" firstAttribute="centerY" secondItem="FAv-zj-XA0" secondAttribute="centerY" id="1c8-H5-i8x"/>
                                     <constraint firstItem="vIG-SX-2YI" firstAttribute="centerY" secondItem="KYj-L1-YbU" secondAttribute="centerY" id="3VM-o1-c8b"/>
@@ -1034,6 +1032,9 @@
                                     <constraint firstItem="Mxx-fP-GrM" firstAttribute="leading" secondItem="2RO-qh-LDl" secondAttribute="leading" id="z45-QF-2WI"/>
                                     <constraint firstItem="GUP-ei-i9R" firstAttribute="centerY" secondItem="kEe-a0-gTy" secondAttribute="centerY" id="zxo-cd-WAW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nHc-aQ-a3Q" appends="YES" id="teX-yK-mY8"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1060,11 +1061,15 @@
                         <outlet property="posterImage" destination="EjJ-6g-HHb" id="cbq-WM-64x"/>
                         <outlet property="posterName" destination="hOa-zt-SLn" id="YYh-Pb-ZLN"/>
                         <outlet property="swipeCardView" destination="2RO-qh-LDl" id="Z7p-nN-fxb"/>
-                        <segue destination="5vJ-SB-0FR" kind="show" id="RfS-1L-uU6"/>
+                        <segue destination="5vJ-SB-0FR" kind="show" identifier="toPostDetailSegue" id="RfS-1L-uU6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-CU-s0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="nHc-aQ-a3Q"/>
+                <tapGestureRecognizer id="nHc-aQ-a3Q">
+                    <connections>
+                        <action selector="tappedPost:" destination="Yq9-zU-ffv" id="Kzf-Zq-Ojw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="429" y="42"/>
         </scene>
@@ -3058,7 +3063,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
@@ -3197,7 +3202,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
@@ -3683,10 +3688,10 @@
             </objects>
             <point key="canvasLocation" x="3480" y="-1275"/>
         </scene>
-        <!--detailedProductScreen-->
+        <!--PostDetailVC-->
         <scene sceneID="srh-hq-SDK">
             <objects>
-                <viewController id="5vJ-SB-0FR" userLabel="detailedProductScreen" customClass="PostDetailVC" sceneMemberID="viewController">
+                <viewController id="5vJ-SB-0FR" userLabel="PostDetailVC" customClass="PostDetailVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cR4-Kr-KrW"/>
                         <viewControllerLayoutGuide type="bottom" id="Qd5-sR-bRc"/>
@@ -3929,6 +3934,9 @@
                                     <constraint firstAttribute="height" constant="25" id="Z8s-qo-fYR"/>
                                 </constraints>
                                 <state key="normal" image="backBtnBlue"/>
+                                <connections>
+                                    <action selector="tappedBackBtn:" destination="5vJ-SB-0FR" eventType="touchUpInside" id="JJR-zh-ara"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3947,25 +3955,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="874"/>
                     <connections>
-                        <outlet property="creatorPicture" destination="L1P-BK-HuQ" id="mym-gj-vzP"/>
-                        <outlet property="logoImageView" destination="p0A-cF-iGc" id="ZJ5-6i-139"/>
-                        <outlet property="prodCategories" destination="ZVM-Ds-Iuc" id="cec-dZ-98C"/>
-                        <outlet property="prodCategoriesLabel" destination="ZVM-Ds-Iuc" id="CkP-ZF-Lix"/>
-                        <outlet property="prodCreatorImg" destination="L1P-BK-HuQ" id="Emw-Ww-NqB"/>
-                        <outlet property="prodCreatorLabel" destination="OpQ-Vg-VIe" id="R00-vH-31B"/>
-                        <outlet property="prodImg" destination="zal-eR-KMZ" id="BsK-n9-AVI"/>
-                        <outlet property="prodLogoImg" destination="p0A-cF-iGc" id="Bd9-rm-qnI"/>
-                        <outlet property="prodLongDescript" destination="Qvl-jR-uMl" id="adS-4d-1a6"/>
-                        <outlet property="prodLongDescriptLabel" destination="Qvl-jR-uMl" id="Fe8-8Q-ZXO"/>
-                        <outlet property="prodName" destination="1We-Vt-c2l" id="PCg-VS-3TO"/>
-                        <outlet property="prodNameLabel" destination="1We-Vt-c2l" id="Wlf-cB-gL0"/>
-                        <outlet property="prodNeeds" destination="qsN-ZI-R87" id="Bry-gO-p6I"/>
-                        <outlet property="prodNeedsLabel" destination="qsN-ZI-R87" id="Ksk-RL-qZU"/>
-                        <outlet property="prodShortDescript" destination="GGY-w0-hms" id="IjS-49-vws"/>
-                        <outlet property="prodShortDescriptLAbel" destination="GGY-w0-hms" id="wKU-4f-kxv"/>
-                        <outlet property="prodStage" destination="X1G-co-CnU" id="tUY-Zn-yZW"/>
-                        <outlet property="prodStageLabel" destination="X1G-co-CnU" id="AMT-dy-1bu"/>
-                        <outlet property="productImageView" destination="zal-eR-KMZ" id="bwZ-7n-tdr"/>
+                        <outlet property="postCreatorsName" destination="OpQ-Vg-VIe" id="69c-J5-Qlb"/>
+                        <outlet property="postImg" destination="zal-eR-KMZ" id="994-rc-umP"/>
+                        <outlet property="postLogo" destination="p0A-cF-iGc" id="s9p-qE-98s"/>
+                        <outlet property="postLongDescript" destination="Qvl-jR-uMl" id="ZYf-hN-kzx"/>
+                        <outlet property="postName" destination="1We-Vt-c2l" id="sg1-VY-uxU"/>
+                        <outlet property="postShortDescript" destination="GGY-w0-hms" id="R0D-p5-2Ef"/>
+                        <outlet property="postStage" destination="X1G-co-CnU" id="dAF-E6-YZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNY-fB-U1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4018,7 +4014,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
@@ -4887,7 +4883,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="215.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
