@@ -196,6 +196,15 @@ class FeedVC: UIViewController {
             view.frame.origin  = originalCenter
         }
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        switch(dest ){
+        case is PostDetailVC:
+            let destVC = dest as! PostDetailVC
+            destVC.post = PostManager.pm.currentPost
+        default:
+            print("Segue Default ")
+        }
+    }
 
 }

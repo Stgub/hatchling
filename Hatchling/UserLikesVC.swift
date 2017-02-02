@@ -47,7 +47,24 @@ class UserLikesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         })
         return cell
     }
-
+    
+    var selectedPost:Post!
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         selectedPost = usersLikes[indexPath.row]
+        self.performSegue(withIdentifier: "toPostDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        switch(dest ){
+            case is PostDetailVC:
+                let destVC = dest as! PostDetailVC
+                destVC.post = selectedPost
+            default:
+                print("Default")
+        }
+    }
+    
     
 
 

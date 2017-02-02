@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PostDetailVC: UITableViewCell {
+class PostDetailVC: UIViewController {
 
+    var post:Post!
     
     
     @IBOutlet weak var prodImg: UIImageView!
@@ -28,16 +29,8 @@ class PostDetailVC: UITableViewCell {
     @IBOutlet weak var prodNeeds: UILabel!
     
     @IBOutlet weak var prodCategories: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
