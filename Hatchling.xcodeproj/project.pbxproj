@@ -20,6 +20,7 @@
 		194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090D91E29C23E00502FB4 /* Main.storyboard */; };
 		194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 194090DC1E29C23E00502FB4 /* Assets.xcassets */; };
 		194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */; };
+		194267B91E42CE4800954825 /* ViewCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194267B81E42CE4800954825 /* ViewCornerRadius.swift */; };
 		1945BBB51E2FB96000575C8F /* ButtonTextLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBB41E2FB96000575C8F /* ButtonTextLeft.swift */; };
 		1945BBB81E30306900575C8F /* CreateProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBB71E30306900575C8F /* CreateProductDetails.swift */; };
 		1945BBBA1E307D1C00575C8F /* productDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945BBB91E307D1C00575C8F /* productDescription.swift */; };
@@ -88,6 +89,7 @@
 		194090E11E29C23E00502FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194090E61E29C23E00502FB4 /* HatchlingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194090F11E29C23E00502FB4 /* HatchlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HatchlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		194267B81E42CE4800954825 /* ViewCornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCornerRadius.swift; sourceTree = "<group>"; };
 		1945BBB41E2FB96000575C8F /* ButtonTextLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTextLeft.swift; sourceTree = "<group>"; };
 		1945BBB71E30306900575C8F /* CreateProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProductDetails.swift; sourceTree = "<group>"; };
 		1945BBB91E307D1C00575C8F /* productDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productDescription.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				192481581E31ABCA0020B5DD /* textViewRoundCorners.swift */,
 				56FB18101E3EE8BF0052CB09 /* PostsTableViewCell.swift */,
 				56FB18141E3EED030052CB09 /* LikesTableViewCell.swift */,
+				194267B81E42CE4800954825 /* ViewCornerRadius.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				56DC213A1E2DBB4A004EC2FD /* GeneralFunctions.swift in Sources */,
 				190B85051E2D772500E5CC6A /* SignUpGenderVC.swift in Sources */,
 				19167F061E29EDC7003EFC98 /* Constants.swift in Sources */,
+				194267B91E42CE4800954825 /* ViewCornerRadius.swift in Sources */,
 				56FB18171E3EEF0E0052CB09 /* PostDetailVC.swift in Sources */,
 				56FB181B1E41713C0052CB09 /* PostsManager.swift in Sources */,
 				56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */,
