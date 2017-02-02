@@ -13,14 +13,16 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var usersPosts:[Post] = []
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        getUsersPosts() //may not be able to us this here??
-        
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        PostManager.pm.getUsers(userDataType: userDataTypes.posts, returnBlock: {
+            (returnPosts) in
+            self.usersPosts = returnPosts
+            self.tableView.reloadData()
+            
+        })
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +34,10 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         let post = usersPosts[indexPath.row]
         cell.prodLikes.text = "\(post.likes)"
         cell.prodName.text = post.name
+        PostManager.pm.getImage(imgUrl: post.logoUrl, returnBlock: {
+            (returnedImg) in
+            cell.prodLogo.image = returnedImg
+        })
         //cell.prodLogo.image = post.logoImg // Need to load the image at som point
         cell.prodViews.text = "\(post.totalViews)"
 
