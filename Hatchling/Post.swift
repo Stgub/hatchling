@@ -69,8 +69,8 @@ class Post {
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
     
-    var shortDescript :String { return _shortDescript }
-    var longDescript:String { return _longDescript }
+    var shortDescript :String? { return _shortDescript }
+    var longDescript:String? { return _longDescript }
 
     var creatorName: String? {
         return _creatorName
@@ -81,7 +81,7 @@ class Post {
     var postKey:String {
         return _postKey
     }
-    var name:String {
+    var name:String? {
         return _name
     }
     var productUrl:String{
@@ -94,9 +94,9 @@ class Post {
     var totalViews: Int{ return _totalViews }
     var likedBy: [String]{ return _likedBy }
     var logoImg:UIImage? { return _logoImg }
-    var prodStage:String {return _prodStage}
-    var prodCategories:String { return _prodCategories }
-    var prodNeeds:String { return _prodNeeds }
+    var prodStage:String? {return _prodStage}
+    var prodCategories:String? { return _prodCategories }
+    var prodNeeds:String? { return _prodNeeds }
     //socia media
     var facebook:String { return _facebook }
     var twitter: String { return _twitter}

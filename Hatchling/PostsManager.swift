@@ -17,6 +17,9 @@ class PostManager{
 
 
     var currentPost:Post?{
+        if _currentPost == nil {
+            print("No current post")
+        }
         return _currentPost
     }
     func adjustLikesForCurrentPost(addLike: Bool){
