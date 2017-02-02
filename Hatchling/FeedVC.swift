@@ -81,11 +81,7 @@ class FeedVC: UIViewController {
 
     func showPost(post:Post){
         self.swipeCardView.isHidden = false
-        if let img = PostManager.pm.getPostImg(imgUrl: post.productUrl) {
-            self.configurePost(post: post, img: img)
-        } else {
-            self.configurePost(post: post)
-        }
+        configurePost(post: post)
         
     }
     func postWasSwiped( wasLiked: Bool){
@@ -94,11 +90,7 @@ class FeedVC: UIViewController {
     }
     
     func configurePost(post: Post, img: UIImage? = nil) {
-        // TEMPORARY
-        
-        if let usrImg = userImage {
-            posterImage.image = usrImg
-        }
+
       
         self.postCaption.text = post.shortDescript
         self.postTitle.text = post.name
@@ -108,6 +100,14 @@ class FeedVC: UIViewController {
             self.posterName.text = creatorName
         }
         
+        PostManager.pm.getImage(imgUrl:post.productUrl){
+            (img) in
+            self.postImage.image = img
+        }
+        PostManager.pm.getImage(imgUrl: post.logoUrl){
+            (img) in
+            self.postLogo.image = img
+        }
      
         
         if let logoImg = post.logoImg {

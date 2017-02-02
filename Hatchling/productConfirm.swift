@@ -32,7 +32,7 @@ class productConfirm: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let prodImg = newProduct[postDataTypes.productImg]  {
-            productImageView.image = prodImg as! UIImage 
+            productImageView.image = prodImg as! UIImage
         }
         if let logoImg = newProduct[postDataTypes.logoImg] {
             logoImageView.image = logoImg as! UIImage
@@ -130,7 +130,11 @@ class productConfirm: UIViewController {
         let productName = newProduct[postDataTypes.name]
         let prodStage = newProduct[postDataTypes.prodStage]
         let prodCategories = newProduct[postDataTypes.prodCategories]
-        let creatorName = currentUser.name
+        var  creatorName = "Anonymous"
+
+        if let currentUserName = currentUser.name {
+            creatorName = currentUserName
+        }
 
         var post: Dictionary<String, AnyObject> = [
             postDataTypes.creator: creatorName as AnyObject,
