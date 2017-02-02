@@ -9,10 +9,23 @@
 import UIKit
 
 class RoundPic: UIImageView {
-
+    
+    var measurement: CGFloat!
+    
+    func radius() {
+        if self.frame.height < self.frame.width {
+            measurement = self.frame.height
+        } else {
+            measurement = self.frame.width
+        }
+    }
+    
     override func awakeFromNib() {
-        self.layer.cornerRadius = self.frame.width / 2
+        self.radius()
+        self.layer.cornerRadius = measurement / 2
         self.clipsToBounds = true
     }
 
+
 }
+
