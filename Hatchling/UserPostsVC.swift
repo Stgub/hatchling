@@ -10,6 +10,11 @@ import UIKit
 import Firebase
 
 class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
+    @IBAction func backBtnTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     var usersPosts:[Post] = []
     @IBOutlet weak var tableView: UITableView!
     
