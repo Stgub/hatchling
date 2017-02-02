@@ -32,7 +32,7 @@ class productConfirm: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let prodImg = newProduct[postDataTypes.productImg]  {
-            productImageView.image = prodImg as! UIImage 
+            productImageView.image = prodImg as! UIImage
         }
         if let logoImg = newProduct[postDataTypes.logoImg] {
             logoImageView.image = logoImg as! UIImage

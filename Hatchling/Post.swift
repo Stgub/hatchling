@@ -180,7 +180,7 @@ class Post {
                 if addLike {
                     currentLikes += 1
                 } else {
-                    currentLikes -= 1
+                    //currentLikes -= 1
                 }
                 currentViews += 1
                 postData[postDataTypes.likes] = currentLikes as AnyObject?
