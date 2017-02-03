@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19032C351E44246800D18755 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19032C341E44246800D18755 /* CommentsVC.swift */; };
 		190B85011E2D76D800E5CC6A /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */; };
 		190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */; };
 		190B85051E2D772500E5CC6A /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */; };
@@ -78,6 +79,7 @@
 		01F5569F136A69002CD2CE5E /* Pods-HatchlingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		08DB93158C380C0A00E080AD /* Pods_HatchlingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HatchlingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5A5D44C46A3ACF57DB4C7B /* Pods-HatchlingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingUITests/Pods-HatchlingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		19032C341E44246800D18755 /* CommentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		190B85001E2D76D800E5CC6A /* SignUpEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		190B85021E2D76FD00E5CC6A /* SignUpBdayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBdayVC.swift; sourceTree = "<group>"; };
 		190B85041E2D772500E5CC6A /* SignUpGenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpGenderVC.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				56FB18121E3EEC770052CB09 /* UserLikesVC.swift */,
 				56FB18161E3EEF0E0052CB09 /* PostDetailVC.swift */,
 				56EDFCB01E440B42003785CF /* Create Update Flow */,
+				19032C341E44246800D18755 /* CommentsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				56EDFCB41E440C1E003785CF /* Update.swift in Sources */,
 				195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */,
 				190B850F1E2D7BF500E5CC6A /* ForgotPWVC.swift in Sources */,
+				19032C351E44246800D18755 /* CommentsVC.swift in Sources */,
 				1945BBBA1E307D1C00575C8F /* productDescription.swift in Sources */,
 				56FB18131E3EEC770052CB09 /* UserLikesVC.swift in Sources */,
 				1945BBB51E2FB96000575C8F /* ButtonTextLeft.swift in Sources */,
