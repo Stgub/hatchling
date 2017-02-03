@@ -15,7 +15,12 @@ struct EmailLoginProfile{
     var birthdate:Date = Date()
     var gender:String = ""
 }
-class SignUpEmailVC: UIViewController {
+class SignUpEmailVC: UIViewController, UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nameField: UITextField!
@@ -23,6 +28,22 @@ class SignUpEmailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        nameField.delegate = self
+        passwordField.delegate = self
+    }
+    
+    func dismissKeyboard() {
+        emailField.resignFirstResponder()
+        nameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        nameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
     }
 
     @IBAction func backBtnTapped(_ sender: Any) {
