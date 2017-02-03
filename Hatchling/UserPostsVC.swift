@@ -10,13 +10,13 @@ import UIKit
 import Firebase
 
 class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
+  
+    var usersPosts:[Post] = []
+    @IBOutlet weak var tableView: UITableView!
     
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    var usersPosts:[Post] = []
-    @IBOutlet weak var tableView: UITableView!
     
 
     override func viewDidLoad() {
@@ -48,6 +48,16 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+    var selectedPost:Post!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPost = usersPosts[indexPath.row]
+        self.performSegue(withIdentifier: "toUserPostSegue", sender: self)
+    }
+    
+
+    
     func getUsersPosts(){
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -62,5 +72,15 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
             }
         })
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        switch(dest ){
+        case is UsersPostDetailVC:
+            let destVC = dest as! UsersPostDetailVC
+            destVC.post = selectedPost
+        default:
+            print("Default")
+        }
     }
 }

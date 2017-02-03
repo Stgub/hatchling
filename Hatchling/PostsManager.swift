@@ -29,7 +29,13 @@ class PostManager{
          imageCache.setObject(img, forKey: forKey)
 
     }
-    
+    func submitUpdate(newUpdate:Update){
+        let updateDict = newUpdate.createFirebaseUpdate()
+        let firebasePost = DataService.ds.REF_UPDATES.childByAutoId()
+        let postId = firebasePost.key
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
+        firebasePost.setValue(updateDict)
+    }
     /**
      Gets the image requested. First it looksed in the local stored cache, if not there it downloads it from firebase and then saves it to local cache
      @param imgUrl - firebase url asscoiated with the img
