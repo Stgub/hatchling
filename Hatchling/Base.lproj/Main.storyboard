@@ -3415,7 +3415,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-4Q-hRX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="712"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="xes-Kb-ILw">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="xes-Kb-ILw" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="0.0" width="290" height="181"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xes-Kb-ILw" secondAttribute="height" multiplier="290:181" id="xfg-oK-9k9"/>
@@ -3658,7 +3658,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="+ Create product update">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2s-bn-AXS">
@@ -3669,7 +3669,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="Edit product">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-wJ-fri">
@@ -3680,7 +3680,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="Remove">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
@@ -5118,7 +5118,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="gzO-7S-YSP"/>
         <segue reference="DBH-Mr-Li4"/>
-        <segue reference="M5i-Wz-Xs8"/>
+        <segue reference="mwS-w9-FWX"/>
         <segue reference="5mg-hp-wCO"/>
     </inferredMetricsTieBreakers>
 </document>
