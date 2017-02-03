@@ -12,27 +12,23 @@ struct updateDataTypes {
     static let updateType = "updateType"
     static let link = "link"
     static let description = "description"
-    static let prodName = "prodName"
     static let prodKey = "prodKey" //post id or product id related to post
     static let prodLogo = "prodLogo"
 }
-
 class Update{
     var prodKey:String!
     var updateType:String!
     var name:String!
-    var prodName: String!
     var link:String!
     var description:String!
     var prodLogo:String!
     
-    init(forPost: Post){
-        self.prodKey = forPost.postKey
-        self.prodName = forPost.name
+    init(prodKey: String){
+        self.prodKey = prodKey
     }
     func createFirebaseUpdate()->Dictionary<String,AnyObject>{
         let updateDict: Dictionary<String,AnyObject> = [
-            updateDataTypes.prodName   : self.prodName as AnyObject,
+            updateDataTypes.name : self.name as AnyObject,
             updateDataTypes.updateType : self.updateType as AnyObject,
             updateDataTypes.description : self.description as AnyObject,
             updateDataTypes.link : self.link as AnyObject,

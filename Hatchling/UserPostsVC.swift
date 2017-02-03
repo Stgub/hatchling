@@ -23,8 +23,8 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         PostManager.pm.getUsers(userDataType: userDataTypes.posts, returnBlock: {
-            (returnedPosts) in
-            self.usersPosts = returnedPosts
+            (returnPosts) in
+            self.usersPosts = returnPosts
             self.tableView.reloadData()
             
         })
@@ -37,10 +37,8 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postsTableViewCell") as! PostsTableViewCell
         let post = usersPosts[indexPath.row]
-        cell.post = post 
         cell.prodLikes.text = "\(post.likes)"
         cell.prodName.text = post.name
-        cell.userPostsVC = self
         PostManager.pm.getImage(imgUrl: post.logoUrl, returnBlock: {
             (returnedImg) in
             cell.prodLogo.image = returnedImg
@@ -51,10 +49,6 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func createUpdate(forPost:Post){
-        selectedPost = forPost
-        self.performSegue(withIdentifier: "toCreateUpdateSegue", sender: self)
-    }
     var selectedPost:Post!
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,17 +56,28 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "toUserPostSegue", sender: self)
     }
     
+
     
-
-
+    func getUsersPosts(){
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    print("SNAP: \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDict)
+                        self.usersPosts.append(post)
+                    }
+                }
+            }
+        })
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         switch(dest ){
         case is UsersPostDetailVC:
             let destVC = dest as! UsersPostDetailVC
-            destVC.post = selectedPost
-        case is ChooseUpdateTypeVC:
-            let destVC = dest as! ChooseUpdateTypeVC
             destVC.post = selectedPost
         default:
             print("Default")
