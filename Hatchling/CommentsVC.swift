@@ -10,8 +10,29 @@ import UIKit
 
 class CommentsVC: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var header: UIView!
+    @IBOutlet weak var commentTextView: UITextView!
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        commentTextView.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
+    func dismissKeyboard() {
+        commentTextView.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textView: UITextView) -> Bool {
+        commentTextView.resignFirstResponder()
+        return true
     }
     
     // Keyboard shows
@@ -35,9 +56,17 @@ class CommentsVC: UIViewController, UITextViewDelegate {
         UIView.commitAnimations()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        }
+    //move header View
+    func moveHeaderView(headerView: UIView, MoveDistance: Int, down: Bool) {
+        let MoveDuration = 0.01
+        let Movement: CGFloat = CGFloat(down ? MoveDistance : MoveDistance)
+        
+        UIView.beginAnimations("animateUIView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(MoveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: Movement)
+        UIView.commitAnimations()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
