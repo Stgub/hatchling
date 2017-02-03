@@ -1,7 +1,12 @@
-
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+    <device id="retina5_5" orientation="portrait">
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_7" orientation="portrait">
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -3084,7 +3089,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
+<<<<<<< HEAD
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+=======
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3230,7 +3239,11 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
+<<<<<<< HEAD
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+=======
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4062,7 +4075,11 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
+<<<<<<< HEAD
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+=======
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4858,7 +4875,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV2-7c-uOQ">
+<<<<<<< HEAD
+                                <rect key="frame" x="172" y="589" width="70" height="41"/>
+=======
                                 <rect key="frame" x="152.5" y="569" width="70" height="41"/>
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="8oU-9e-tAw"/>
                                     <constraint firstAttribute="width" constant="70" id="Jkp-7T-ntU"/>
@@ -5003,16 +5024,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
+<<<<<<< HEAD
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updatesTableViewCell" rowHeight="216" id="BgW-vt-Dmb" customClass="UpdatesTableViewCell" customModule="Hatchling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+=======
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="BgW-vt-Dmb">
                                         <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="BgW-vt-Dmb">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="216"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -5089,6 +5113,8 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+<<<<<<< HEAD
+=======
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-09-SsR">
                                 <rect key="frame" x="125" y="73" width="125" height="15"/>
@@ -5100,6 +5126,7 @@
                                 <state key="normal" title="+ Create update">
                                     <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+>>>>>>> 57d3e61ba6563c884acc0c0f0243de184d734e97
                                 <connections>
                                     <outlet property="dataSource" destination="n7t-DW-hi9" id="LaB-ZH-aB1"/>
                                     <outlet property="delegate" destination="n7t-DW-hi9" id="de2-gu-31X"/>
