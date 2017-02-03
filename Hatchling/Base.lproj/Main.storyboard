@@ -188,7 +188,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a product name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7c9-tC-51f">
                                 <rect key="frame" x="57.5" y="125" width="175" height="20"/>
@@ -2723,12 +2723,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9m-FF-a6q">
-                                <rect key="frame" x="55" y="65" width="210" height="35"/>
+                                <rect key="frame" x="55" y="65" width="210" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="chg-ww-vMb"/>
+                                    <constraint firstAttribute="height" constant="20" id="chg-ww-vMb"/>
                                     <constraint firstAttribute="width" constant="210" id="nNl-lZ-mq9"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="oh6-8H-gxE"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="yoj-GJ-p0A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2745,7 +2744,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-bp-Uko">
-                                <rect key="frame" x="0.0" y="108" width="320" height="734"/>
+                                <rect key="frame" x="0.0" y="93" width="320" height="749"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK1-Hv-qrj">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="707.5"/>
@@ -2911,9 +2910,7 @@
                                             <constraint firstItem="AzF-5x-93L" firstAttribute="leading" secondItem="a6E-4S-zYt" secondAttribute="trailing" constant="8" id="RWw-r3-nL2"/>
                                             <constraint firstItem="a6E-4S-zYt" firstAttribute="top" secondItem="myR-Jh-bUN" secondAttribute="bottom" constant="8" id="UPW-Tp-tFp"/>
                                             <constraint firstItem="Zm0-gE-6bI" firstAttribute="top" secondItem="a6E-4S-zYt" secondAttribute="bottom" constant="15" id="WHO-q5-IuT"/>
-                                            <constraint firstItem="bO7-tX-Cqz" firstAttribute="leading" secondItem="GK1-Hv-qrj" secondAttribute="leading" constant="15" id="ZFX-6N-nY1"/>
                                             <constraint firstItem="FGS-zR-V5n" firstAttribute="leading" secondItem="f43-ie-bwn" secondAttribute="leading" id="ZbG-TW-eF0"/>
-                                            <constraint firstAttribute="trailing" secondItem="bO7-tX-Cqz" secondAttribute="trailing" constant="15" id="bOU-uY-pLX"/>
                                             <constraint firstItem="bO7-tX-Cqz" firstAttribute="centerX" secondItem="GK1-Hv-qrj" secondAttribute="centerX" id="bau-BQ-MQy"/>
                                             <constraint firstItem="jAg-V7-Uhk" firstAttribute="leading" secondItem="T5Y-IT-0ec" secondAttribute="trailing" constant="10" id="cWV-bR-XrA"/>
                                             <constraint firstItem="X8a-fI-5CA" firstAttribute="leading" secondItem="GK1-Hv-qrj" secondAttribute="leading" constant="15" id="cdf-gi-a7b"/>
@@ -3086,7 +3083,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3232,7 +3229,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4058,7 +4055,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4988,7 +4985,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
