@@ -10,12 +10,13 @@ import Foundation
 import Firebase
 
 class PostManager{
-    static let pm = PostManager()
+    static let pm = PostManager() //Singletons
     private var _feedPosts:[Post] = []
     private var _currentPost:Post!
     private var imageCache: NSCache<NSString, UIImage> = NSCache()
 
-
+    //THOUGHT is it better to have firebase return every post or go to firebase for each indivdual post???
+    
     var currentPost:Post?{
         if _currentPost == nil {
             print("No current post")
@@ -29,12 +30,34 @@ class PostManager{
          imageCache.setObject(img, forKey: forKey)
 
     }
-    func submitUpdate(newUpdate:Update){
+    func submitUpdate(newUpdate:Update, withCompletionBlock: @escaping (_ error:NSError?)-> Void ){
         let updateDict = newUpdate.createFirebaseUpdate()
         let firebasePost = DataService.ds.REF_UPDATES.childByAutoId()
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
         firebasePost.setValue(updateDict)
+        firebasePost.setValue(updateDict, withCompletionBlock: {
+            (error, reference) in
+            withCompletionBlock(error as NSError?)
+        })
+        
+
+    }
+    func getUsersLikesUpdates(withCompletionBlock: (_ returnedUpdates:[Update]) -> Void ){
+        var updates:[Update] = []
+        var likesKeys:[String] = []
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                print("CHUCK: Likes keys -\(snapshots)")
+                for snap in snapshots {
+                    //print("Posts SNAP - \(snap)")
+                    likesKeys.append(snap.key as String)
+              
+                    }
+                }
+        })
+        
     }
     /**
      Gets the image requested. First it looksed in the local stored cache, if not there it downloads it from firebase and then saves it to local cache
@@ -64,8 +87,11 @@ class PostManager{
             })
         }
     }
+    
     func getUsers(userDataType: String, returnBlock: @escaping (_ returnPosts:[Post]) -> Void){
+        
         var returnedKeys:[String] = []
+        
         DataService.ds.REF_USER_CURRENT.child(userDataType).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {

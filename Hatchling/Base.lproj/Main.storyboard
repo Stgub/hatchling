@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_7" orientation="portrait">
@@ -5,7 +6,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -3325,6 +3326,9 @@
                                                             <state key="normal" title="+ Create update">
                                                                 <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="tappedCreateUpdateBtn:" destination="kfr-tW-wkn" eventType="touchUpInside" id="39W-V6-oRf"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3392,6 +3396,7 @@
                     <connections>
                         <outlet property="tableView" destination="SnP-oq-htj" id="JVb-eI-7gs"/>
                         <segue destination="qI7-bf-I3Q" kind="show" identifier="toUserPostSegue" id="hZy-dl-aON"/>
+                        <segue destination="Cy1-vv-qda" kind="show" identifier="toCreateUpdateSegue" id="sYH-6i-Y3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53X-MU-TCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4280,10 +4285,10 @@
             </objects>
             <point key="canvasLocation" x="4292" y="-1420"/>
         </scene>
-        <!--betaTestingUD-->
+        <!--UpdateDetailsVC-->
         <scene sceneID="LBu-mF-4Q6">
             <objects>
-                <viewController id="Lr9-dR-BzA" userLabel="betaTestingUD" customClass="UpdateDetailsVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lr9-dR-BzA" userLabel="UpdateDetailsVC" customClass="UpdateDetailsVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t7u-vP-4pJ"/>
                         <viewControllerLayoutGuide type="bottom" id="BgG-0X-gii"/>
@@ -4318,7 +4323,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNextBtn:" destination="Lr9-dR-BzA" eventType="touchUpInside" id="krZ-ou-9j0"/>
+                                    <action selector="tappedNextBtn:" destination="Lr9-dR-BzA" eventType="touchUpInside" id="cNa-B0-d4q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link for product testers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9y-5b-jVp">
@@ -4830,10 +4835,10 @@
             </objects>
             <point key="canvasLocation" x="6188" y="-2213"/>
         </scene>
-        <!--UDconfirm-->
+        <!--UpdateConfirmVC-->
         <scene sceneID="Uqt-yW-X22">
             <objects>
-                <viewController id="bBL-Ub-JkR" userLabel="UDconfirm" customClass="UpdateConfirmVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bBL-Ub-JkR" userLabel="UpdateConfirmVC" customClass="UpdateConfirmVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dBB-mf-iRs"/>
                         <viewControllerLayoutGuide type="bottom" id="FwI-kK-7iF"/>
@@ -4874,9 +4879,7 @@
                                 </constraints>
                                 <state key="normal" image="backBtn"/>
                                 <connections>
-                                    <action selector="backBtnTapped:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="6cW-B7-CVx"/>
-                                    <action selector="backBtnTapped:" destination="ZdQ-Ke-OYa" eventType="touchUpInside" id="SuJ-6M-jJh"/>
-                                    <action selector="tappedBackBtn:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="g82-VR-NgU"/>
+                                    <action selector="tappedSubmitBtn:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="L6u-km-lXZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-dd-Mwu">
@@ -4890,6 +4893,7 @@
                                 </state>
                                 <connections>
                                     <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="bOv-gZ-zeT"/>
+                                    <action selector="linkTapped:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="Z4j-ix-5oX"/>
                                     <action selector="nextBtnTapped:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="tpz-qH-7y8"/>
                                 </connections>
                             </button>
@@ -4954,7 +4958,7 @@
         <!--myProducts-->
         <scene sceneID="Uuu-5l-Adq">
             <objects>
-                <viewController id="n7t-DW-hi9" userLabel="myProducts" sceneMemberID="viewController">
+                <viewController id="n7t-DW-hi9" userLabel="myProducts" customClass="UpdatesTableVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hmc-kq-ldX"/>
                         <viewControllerLayoutGuide type="bottom" id="vb9-PH-YzY"/>
@@ -4980,11 +4984,30 @@
                                 <color key="textColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-09-SsR">
+                                <rect key="frame" x="144.66666666666669" y="73" width="125.00000000000006" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="470-zT-6mQ"/>
+                                    <constraint firstAttribute="height" constant="15" id="TQ7-Tn-aht"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="+ Create update">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9zc-zJ-epR" kind="show" id="mwS-w9-FWX"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="216" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6TG-Km-eYO">
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="BgW-vt-Dmb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="BgW-vt-Dmb">
                                         <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -5034,6 +5057,7 @@
                                                             <connections>
                                                                 <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="g1G-Ti-PV5"/>
                                                                 <action selector="nextBtnTapped:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="Nah-lt-eUD"/>
+                                                                <action selector="tappedLinkBtn:" destination="BgW-vt-Dmb" eventType="touchUpInside" id="7cz-RI-uxC"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -5057,6 +5081,12 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="NF2-zx-kb4" secondAttribute="bottom" constant="8" id="pEK-d7-wte"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="updateDescript" destination="jda-Nl-C3b" id="zCl-ue-vGo"/>
+                                            <outlet property="updateLink" destination="mQv-8L-iun" id="SSJ-Aq-fE3"/>
+                                            <outlet property="updateLogo" destination="bxh-00-FJY" id="32d-XY-3S3"/>
+                                            <outlet property="updateProdName" destination="JFM-RU-Tki" id="Cpk-NS-5Rh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -5071,9 +5101,10 @@
                                     <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9zc-zJ-epR" kind="show" id="mwS-w9-FWX"/>
+                                    <outlet property="dataSource" destination="n7t-DW-hi9" id="LaB-ZH-aB1"/>
+                                    <outlet property="delegate" destination="n7t-DW-hi9" id="de2-gu-31X"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -5091,6 +5122,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Updates" image="updateGray20" selectedImage="update20" id="pIL-Se-Iec"/>
+                    <connections>
+                        <outlet property="tableView" destination="6TG-Km-eYO" id="XYO-en-O1L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oad-JW-Aco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
