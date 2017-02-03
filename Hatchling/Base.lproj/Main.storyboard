@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -852,7 +852,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RO-qh-LDl" userLabel="swipeCardView" customClass="swipeCardShadowRoundCorner" customModule="Hatchling" customModuleProvider="target">
                                 <rect key="frame" x="15" y="80" width="290" height="424"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-fP-GrM" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-fP-GrM" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="180.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="215" id="629-ca-uxo"/>
@@ -984,7 +984,7 @@
                                         </constraints>
                                         <state key="normal" image="icon-indiegogo"/>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIG-SX-2YI" userLabel="Logo" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="vIG-SX-2YI" userLabel="Logo" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="15" y="182.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vIG-SX-2YI" secondAttribute="height" multiplier="1:1" id="K6t-zK-EFc"/>
@@ -3082,7 +3082,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3228,7 +3228,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3387,6 +3387,7 @@
                     <tabBarItem key="tabBarItem" title="Likes" image="likegray" selectedImage="like" id="Haf-4E-COQ"/>
                     <connections>
                         <outlet property="tableView" destination="SnP-oq-htj" id="JVb-eI-7gs"/>
+                        <segue destination="qI7-bf-I3Q" kind="show" identifier="toUserPostSegue" id="hZy-dl-aON"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53X-MU-TCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3396,7 +3397,7 @@
         <!--detailedMyProduct-->
         <scene sceneID="Jk5-Y0-1tm">
             <objects>
-                <viewController id="qI7-bf-I3Q" userLabel="detailedMyProduct" customClass="productConfirm" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qI7-bf-I3Q" userLabel="detailedMyProduct" customClass="UsersPostDetailVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RXs-ZB-5FP"/>
                         <viewControllerLayoutGuide type="bottom" id="7gk-ng-BNS"/>
@@ -3406,25 +3407,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0A-03-pSh">
-                                <rect key="frame" x="0.0" y="104" width="320" height="770"/>
+                                <rect key="frame" x="0.0" y="55" width="320" height="770"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-4Q-hRX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="770"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xes-Kb-ILw">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="xes-Kb-ILw">
                                                 <rect key="frame" x="15" y="0.0" width="290" height="181"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xes-Kb-ILw" secondAttribute="height" multiplier="290:181" id="xfg-oK-9k9"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-Dg-LOi" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-Dg-LOi" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="189" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="oPA-j8-NFq"/>
                                                     <constraint firstAttribute="height" constant="50" id="vsE-QY-UIZ"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-jY-UmU" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-jY-UmU" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="294" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="HDP-q8-O1l"/>
@@ -3640,9 +3641,12 @@
                                     <constraint firstAttribute="height" constant="25" id="wFP-e6-Uw3"/>
                                 </constraints>
                                 <state key="normal" image="backBtnBlue"/>
+                                <connections>
+                                    <action selector="tappedBackBtn:" destination="qI7-bf-I3Q" eventType="touchUpInside" id="sm8-6n-OKK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHb-cG-avL">
-                                <rect key="frame" x="55" y="20" width="210" height="20"/>
+                                <rect key="frame" x="55" y="-29" width="210" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="1ZX-af-CSE"/>
                                     <constraint firstAttribute="height" constant="20" id="uIc-X4-Ay8"/>
@@ -3653,7 +3657,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2s-bn-AXS">
-                                <rect key="frame" x="55" y="48" width="210" height="20"/>
+                                <rect key="frame" x="55" y="-1" width="210" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Dbf-xA-QWh"/>
                                     <constraint firstAttribute="width" constant="210" id="Mng-v5-rvk"/>
@@ -3664,7 +3668,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-wJ-fri">
-                                <rect key="frame" x="55" y="76" width="210" height="20"/>
+                                <rect key="frame" x="55" y="27" width="210" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="9vS-GP-UbZ"/>
                                     <constraint firstAttribute="width" constant="210" id="tIT-AN-FUs"/>
@@ -3697,21 +3701,20 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="874"/>
                     <connections>
-                        <outlet property="creatorPicture" destination="dM9-jY-UmU" id="8FP-YC-QMm"/>
-                        <outlet property="logoImageView" destination="QxP-Dg-LOi" id="5SK-Km-stj"/>
-                        <outlet property="prodCategoriesLabel" destination="l1V-b5-YBx" id="hLh-hV-SfH"/>
-                        <outlet property="prodCreatorLabel" destination="Eu9-O7-8AG" id="6HU-TY-yLQ"/>
-                        <outlet property="prodLongDescriptLabel" destination="tag-Rc-uZJ" id="Dwi-o7-EiT"/>
-                        <outlet property="prodNameLabel" destination="h7S-YK-8ul" id="uok-wJ-IrM"/>
-                        <outlet property="prodNeedsLabel" destination="unq-CF-UuZ" id="dg9-nJ-Lrn"/>
-                        <outlet property="prodShortDescriptLAbel" destination="RVQ-Xm-zU1" id="lmz-Mf-oNX"/>
-                        <outlet property="prodStageLabel" destination="1Ra-1l-1Sa" id="7iJ-hh-aEC"/>
-                        <outlet property="productImageView" destination="xes-Kb-ILw" id="obR-Oy-qan"/>
+                        <outlet property="postCategories" destination="l1V-b5-YBx" id="rl6-Bc-h3D"/>
+                        <outlet property="postCreatorsName" destination="Eu9-O7-8AG" id="zze-h6-Xms"/>
+                        <outlet property="postImg" destination="xes-Kb-ILw" id="bll-ff-Uxg"/>
+                        <outlet property="postLogoImg" destination="QxP-Dg-LOi" id="D4O-NR-MHX"/>
+                        <outlet property="postLongDescript" destination="tag-Rc-uZJ" id="CVX-32-ULm"/>
+                        <outlet property="postName" destination="h7S-YK-8ul" id="b8f-IG-YFd"/>
+                        <outlet property="postNeeds" destination="unq-CF-UuZ" id="fu0-xI-hYP"/>
+                        <outlet property="postShortDescript" destination="RVQ-Xm-zU1" id="3Li-EZ-wpT"/>
+                        <outlet property="postStage" destination="1Ra-1l-1Sa" id="Fo8-Ii-H42"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bQ-PI-F6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480" y="-1275"/>
+            <point key="canvasLocation" x="3268" y="-2077"/>
         </scene>
         <!--PostDetailVC-->
         <scene sceneID="srh-hq-SDK">
@@ -3731,13 +3734,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppe-mL-olc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="821"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zal-eR-KMZ" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="zal-eR-KMZ" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="0.0" width="290" height="181"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zal-eR-KMZ" secondAttribute="height" multiplier="290:181" id="5j7-ch-ZZ4"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0A-cF-iGc" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="p0A-cF-iGc" customClass="RoundPic" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="196" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="5jg-Nf-Qus"/>
@@ -4035,7 +4038,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4113,7 +4116,7 @@
         <!--createUpdate-->
         <scene sceneID="Dzv-kU-mtP">
             <objects>
-                <viewController id="Cy1-vv-qda" userLabel="createUpdate" sceneMemberID="viewController">
+                <viewController id="Cy1-vv-qda" userLabel="createUpdate" customClass="ChooseUpdateTypeVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ghi-sY-xKM"/>
                         <viewControllerLayoutGuide type="bottom" id="9i1-nK-FBd"/>
@@ -4140,6 +4143,9 @@
                                 <state key="normal" title="launching crowdfunding campaign">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedCrowdfundingBtn:" destination="Cy1-vv-qda" eventType="touchUpInside" id="0md-sB-h0B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnz-OL-WsP">
                                 <rect key="frame" x="86.5" y="380" width="147" height="20"/>
@@ -4150,6 +4156,9 @@
                                 <state key="normal" title="taking pre-orders">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedPreorderBtn:" destination="Cy1-vv-qda" eventType="touchUpInside" id="BBQ-EF-xx8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-RH-uBR">
                                 <rect key="frame" x="73.5" y="180" width="173" height="20"/>
@@ -4161,7 +4170,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Lr9-dR-BzA" kind="show" id="mT3-J0-F5f"/>
+                                    <action selector="tappedBetaTesting:" destination="Cy1-vv-qda" eventType="touchUpInside" id="eiP-3s-28f"/>
+                                    <segue destination="Lr9-dR-BzA" kind="show" identifier="toNextCreateUpdateVCSegue" id="mT3-J0-F5f"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-BE-leU" userLabel="backBtn">
@@ -4171,6 +4181,9 @@
                                     <constraint firstAttribute="width" constant="15" id="RuT-FF-8fQ"/>
                                 </constraints>
                                 <state key="normal" image="backBtn"/>
+                                <connections>
+                                    <action selector="tappedBackBtn:" destination="Cy1-vv-qda" eventType="touchUpInside" id="5he-LI-x9N"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvy-po-2Ix">
                                 <rect key="frame" x="97" y="480" width="126" height="20"/>
@@ -4181,6 +4194,9 @@
                                 <state key="normal" title="product launch">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedProdLaunchBtn:" destination="Cy1-vv-qda" eventType="touchUpInside" id="q94-oe-RWU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.49019607840000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -4208,7 +4224,7 @@
         <!--betaTestingUD-->
         <scene sceneID="LBu-mF-4Q6">
             <objects>
-                <viewController id="Lr9-dR-BzA" userLabel="betaTestingUD" customClass="productDescription" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lr9-dR-BzA" userLabel="betaTestingUD" customClass="UpdateDetailsVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t7u-vP-4pJ"/>
                         <viewControllerLayoutGuide type="bottom" id="BgG-0X-gii"/>
@@ -4243,8 +4259,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnTapped:" destination="Lr9-dR-BzA" eventType="touchUpInside" id="KZv-Sr-cIZ"/>
-                                    <segue destination="bBL-Ub-JkR" kind="show" id="3bq-Fn-8JM"/>
+                                    <action selector="tappedNextBtn:" destination="Lr9-dR-BzA" eventType="touchUpInside" id="krZ-ou-9j0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link for product testers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9y-5b-jVp">
@@ -4285,6 +4300,7 @@
                                 <connections>
                                     <action selector="backBtnTapped:" destination="ZdQ-Ke-OYa" eventType="touchUpInside" id="4a3-sO-i1i"/>
                                     <action selector="backBtnTapped:" destination="Lr9-dR-BzA" eventType="touchUpInside" id="b0i-bI-Her"/>
+                                    <action selector="tappedBackBtn:" destination="Lr9-dR-BzA" eventType="touchUpInside" id="uMq-Et-v15"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="www.download.com/here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwl-tC-3ik">
@@ -4335,7 +4351,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="createImgGray" id="TyM-Hn-5cA"/>
                     <connections>
-                        <outlet property="shortProdDescriptionField" destination="Eb2-eE-Mgy" id="dvG-Qc-WyQ"/>
+                        <outlet property="updateDescript" destination="Eb2-eE-Mgy" id="897-Om-bpi"/>
+                        <outlet property="updateLink" destination="bwl-tC-3ik" id="Txs-QI-hUQ"/>
+                        <segue destination="bBL-Ub-JkR" kind="show" identifier="toNextCreateUpdateVCSegue" id="QZw-me-ax2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfA-Ru-Ky7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4756,7 +4774,7 @@
         <!--UDconfirm-->
         <scene sceneID="Uqt-yW-X22">
             <objects>
-                <viewController id="bBL-Ub-JkR" userLabel="UDconfirm" customClass="productDescription" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bBL-Ub-JkR" userLabel="UDconfirm" customClass="UpdateConfirmVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dBB-mf-iRs"/>
                         <viewControllerLayoutGuide type="bottom" id="FwI-kK-7iF"/>
@@ -4785,6 +4803,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedSubmitBtn:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="Q7C-eK-RoO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7h-23-8rJ" userLabel="backBtn">
                                 <rect key="frame" x="15" y="35" width="15" height="25"/>
@@ -4796,6 +4817,7 @@
                                 <connections>
                                     <action selector="backBtnTapped:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="6cW-B7-CVx"/>
                                     <action selector="backBtnTapped:" destination="ZdQ-Ke-OYa" eventType="touchUpInside" id="SuJ-6M-jJh"/>
+                                    <action selector="tappedBackBtn:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="g82-VR-NgU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-dd-Mwu">
@@ -4861,6 +4883,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="createImgGray" id="jcO-X3-meY"/>
+                    <connections>
+                        <outlet property="updateDescript" destination="H7T-xU-2zE" id="25Y-cS-kje"/>
+                        <outlet property="updateLink" destination="uwz-dd-Mwu" id="vvZ-wp-UEN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh3-Yq-BBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4904,7 +4930,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="215.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
