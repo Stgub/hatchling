@@ -18,13 +18,11 @@ class UpdateDetailsVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func tappedNextBtn(_ sender: UIButton) {
+    @IBAction func tappedNextBtn(_ sender: Any) {
         if updateDescript.text == ""  {
             presentUIAlert(title: "Description not filled out", message: "Please fill in Description")
-        } else {
             update.description = updateDescript.text
             update.link = updateLink.text
-            self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
         }
     }
     

@@ -9,22 +9,16 @@
 import UIKit
 
 class PostsTableViewCell: UITableViewCell {
-    var userPostsVC:UserPostsVC!
-    var post:Post!
+
     @IBOutlet weak var prodLogo: RoundPic!
     @IBOutlet weak var prodName: UILabel!
     @IBOutlet weak var prodViews: UILabel!
     @IBOutlet weak var prodLikes: UILabel!
     
-    @IBAction func tappedCreateUpdateBtn(_ sender: Any) {
-        userPostsVC.createUpdate(forPost:self.post)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
