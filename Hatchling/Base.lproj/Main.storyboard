@@ -638,7 +638,7 @@
                         <outlet property="prodStageLabel" destination="10J-OB-efH" id="GXQ-qr-pqY"/>
                         <outlet property="prodTalentLabel" destination="CiD-qi-Xmo" id="Izy-V0-va3"/>
                         <outlet property="stageView" destination="KEj-se-9IA" id="8Ji-25-0xV"/>
-                        <segue destination="SYr-75-V02" kind="show" identifier="toCreateDescriptionSegue" id="c2d-7h-fxc"/>
+                        <segue destination="SYr-75-V02" kind="show" identifier="toCreateDescriptionSegue" animates="NO" id="c2d-7h-fxc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqC-ng-dna" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2283,7 +2283,7 @@
                                 <connections>
                                     <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="N8T-P5-zTw"/>
                                     <action selector="nextBtnTapped:" destination="SYr-75-V02" eventType="touchUpInside" id="8G9-s8-W8u"/>
-                                    <segue destination="ezo-Wq-J0I" kind="show" identifier="toCreateProductPicsSegue" id="dWg-1I-57i"/>
+                                    <segue destination="ezo-Wq-J0I" kind="show" identifier="toCreateProductPicsSegue" animates="NO" id="dWg-1I-57i"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long product description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evh-7i-hPg">
@@ -2475,7 +2475,7 @@
                     <connections>
                         <outlet property="logoPicture" destination="Hzv-qF-n4d" id="TZC-Um-2iW"/>
                         <outlet property="productPicture" destination="Tqt-rg-RZc" id="Dfm-tD-C09"/>
-                        <segue destination="og9-1O-HbH" kind="show" identifier="toProductConnectionsSegue" id="tAU-KH-Xah"/>
+                        <segue destination="og9-1O-HbH" kind="show" identifier="toProductConnectionsSegue" animates="NO" id="tAU-KH-Xah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUb-dx-E7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2697,7 +2697,7 @@
                         <outlet property="instagramField" destination="U3K-fV-nyz" id="N4N-TH-VFx"/>
                         <outlet property="twitterField" destination="Jbo-7B-yYn" id="67v-Yd-ff4"/>
                         <outlet property="websiteField" destination="rb6-Yj-1Qy" id="2es-Qy-pgA"/>
-                        <segue destination="GGq-ED-Ppp" kind="show" identifier="toConfirmPostSegue" id="FDf-EV-Bor"/>
+                        <segue destination="GGq-ED-Ppp" kind="show" identifier="toConfirmPostSegue" animates="NO" id="FDf-EV-Bor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulj-TI-ni6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4017,6 +4017,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-Uo-be0" userLabel="Header">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-cE-IiK">
+                                        <rect key="frame" x="116" y="14" width="88" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="z6X-da-IU8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgM-Rk-fJT" userLabel="backBtn">
                                         <rect key="frame" x="15" y="23" width="15" height="25"/>
                                         <constraints>
@@ -4032,20 +4041,13 @@
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.89411764709999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="HRC-5b-vkn"/>
+                                    <constraint firstItem="68D-cE-IiK" firstAttribute="centerX" secondItem="1fQ-Uo-be0" secondAttribute="centerX" id="QbQ-gI-yhG"/>
+                                    <constraint firstItem="68D-cE-IiK" firstAttribute="centerY" secondItem="BgM-Rk-fJT" secondAttribute="centerY" id="ZJH-om-58i"/>
                                     <constraint firstAttribute="height" constant="65" id="g1j-I9-dy7"/>
                                     <constraint firstItem="BgM-Rk-fJT" firstAttribute="leading" secondItem="1fQ-Uo-be0" secondAttribute="leading" constant="15" id="nmM-2m-bvl"/>
                                     <constraint firstItem="BgM-Rk-fJT" firstAttribute="top" secondItem="1fQ-Uo-be0" secondAttribute="topMargin" constant="15" id="sQg-2u-rIR"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-cE-IiK">
-                                <rect key="frame" x="116" y="14" width="88" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="z6X-da-IU8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <color key="textColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-ES-LbF">
                                 <rect key="frame" x="0.0" y="73" width="320" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4116,7 +4118,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="0V0-p1-LVm" id="FHX-X7-3Pm"/>
                                 </connections>
@@ -4147,9 +4149,7 @@
                             <constraint firstItem="Tiq-sL-QZg" firstAttribute="centerY" secondItem="kut-CQ-ZHA" secondAttribute="centerY" id="72v-2w-vNT"/>
                             <constraint firstAttribute="trailing" secondItem="1fQ-Uo-be0" secondAttribute="trailing" id="ACn-97-DVM"/>
                             <constraint firstItem="TcX-8R-9jC" firstAttribute="leading" secondItem="nJ1-Qy-HpX" secondAttribute="leading" id="BW5-Mm-lIk"/>
-                            <constraint firstItem="68D-cE-IiK" firstAttribute="top" secondItem="nJ1-Qy-HpX" secondAttribute="top" constant="14" id="OQW-Yv-v17"/>
                             <constraint firstItem="x9v-wX-RoB" firstAttribute="top" secondItem="kut-CQ-ZHA" secondAttribute="bottom" id="Vld-Hh-lee"/>
-                            <constraint firstItem="68D-cE-IiK" firstAttribute="centerX" secondItem="nJ1-Qy-HpX" secondAttribute="centerX" id="XdU-y9-3xb"/>
                             <constraint firstAttribute="trailing" secondItem="TcX-8R-9jC" secondAttribute="trailing" id="cm8-o3-RFC"/>
                             <constraint firstItem="kut-CQ-ZHA" firstAttribute="leading" secondItem="nJ1-Qy-HpX" secondAttribute="leading" id="cp6-hM-B3Y"/>
                             <constraint firstItem="kut-CQ-ZHA" firstAttribute="top" secondItem="TcX-8R-9jC" secondAttribute="bottom" id="ewt-ln-2t2"/>
@@ -4163,6 +4163,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="kut-CQ-ZHA" id="9hH-Ua-THA"/>
+                        <outlet property="header" destination="1fQ-Uo-be0" id="gjy-x4-SY2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YpA-6Y-gTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
