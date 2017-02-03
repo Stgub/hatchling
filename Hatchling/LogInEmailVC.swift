@@ -10,12 +10,25 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class LogInEmailVC: UIViewController {
+class LogInEmailVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
+    }
+    
+    func dismissKeyboard() {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -25,6 +38,12 @@ class LogInEmailVC: UIViewController {
         performSegue(withIdentifier: "forgotPasswordSegue", sender: self)
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     @IBAction func logInBtnTapped(_ sender: Any) {
         if let email = emailField.text, let pwd = passwordField.text{
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in

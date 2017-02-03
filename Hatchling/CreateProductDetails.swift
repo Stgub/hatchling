@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateProductDetails: UIViewController {
+class CreateProductDetails: UIViewController, UITextFieldDelegate {
     
     private var newProduct =  [String: Any]()
     
@@ -109,7 +109,16 @@ class CreateProductDetails: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        prodNameLabel.delegate = self
+    }
+    
+    func dismissKeyboard() {
+        prodNameLabel.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        prodNameLabel.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
