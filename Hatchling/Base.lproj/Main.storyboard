@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9O3-qe-q9W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -3083,7 +3083,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3185,11 +3185,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Oup-PU-3h1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KRF-yZ-LI0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruh-y6-BVM" userLabel="Header">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ1-W3-oPP" userLabel="backBtn">
                                         <rect key="frame" x="17" y="23" width="15" height="25"/>
@@ -3212,7 +3212,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeU-YE-6qy">
-                                <rect key="frame" x="109.5" y="14" width="101" height="43"/>
+                                <rect key="frame" x="137" y="14" width="101" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="q97-fd-iNG"/>
                                 </constraints>
@@ -3221,15 +3221,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="153" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-oq-htj">
-                                <rect key="frame" x="0.0" y="73" width="320" height="446"/>
+                                <rect key="frame" x="0.0" y="73" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postsTableViewCell" rowHeight="153" id="kfr-tW-wkn" customClass="PostsTableViewCell" customModule="Hatchling" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="153"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4057,7 +4057,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4951,10 +4951,10 @@
             </objects>
             <point key="canvasLocation" x="6038" y="-1423"/>
         </scene>
-        <!--myProducts-->
+        <!--Updates Table View-->
         <scene sceneID="Uuu-5l-Adq">
             <objects>
-                <viewController id="n7t-DW-hi9" userLabel="myProducts" sceneMemberID="viewController">
+                <viewController id="n7t-DW-hi9" userLabel="Updates Table View" customClass="UpdatesTableVC" customModule="Hatchling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hmc-kq-ldX"/>
                         <viewControllerLayoutGuide type="bottom" id="vb9-PH-YzY"/>
@@ -4986,10 +4986,10 @@
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updatesTableViewCell" rowHeight="216" id="BgW-vt-Dmb" customClass="UpdatesTableViewCell" customModule="Hatchling" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="216"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -5034,6 +5034,7 @@
                                                             <connections>
                                                                 <action selector="femaleBtnTapped:" destination="rXV-eV-W7d" eventType="touchUpInside" id="g1G-Ti-PV5"/>
                                                                 <action selector="nextBtnTapped:" destination="bBL-Ub-JkR" eventType="touchUpInside" id="Nah-lt-eUD"/>
+                                                                <action selector="tappedLinkBtn:" destination="BgW-vt-Dmb" eventType="touchUpInside" id="wnz-A4-IwS"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -5057,8 +5058,18 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="NF2-zx-kb4" secondAttribute="bottom" constant="8" id="pEK-d7-wte"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="prodLogo" destination="bxh-00-FJY" id="5QQ-vX-19g"/>
+                                            <outlet property="prodNmae" destination="JFM-RU-Tki" id="To5-QA-Jls"/>
+                                            <outlet property="updateDescript" destination="jda-Nl-C3b" id="Lwr-c5-CEC"/>
+                                            <outlet property="updateLink" destination="mQv-8L-iun" id="d0D-7q-QlP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n7t-DW-hi9" id="riy-f6-v2X"/>
+                                    <outlet property="delegate" destination="n7t-DW-hi9" id="VEd-QG-jZP"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-09-SsR">
                                 <rect key="frame" x="125" y="73" width="125" height="15"/>
@@ -5091,6 +5102,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Updates" image="updateGray20" selectedImage="update20" id="pIL-Se-Iec"/>
+                    <connections>
+                        <outlet property="tableView" destination="6TG-Km-eYO" id="rnH-Js-G3G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oad-JW-Aco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5136,7 +5150,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Evz-FW-air"/>
         <segue reference="RfS-1L-uU6"/>
-        <segue reference="M5i-Wz-Xs8"/>
+        <segue reference="mwS-w9-FWX"/>
         <segue reference="5mg-hp-wCO"/>
     </inferredMetricsTieBreakers>
 </document>

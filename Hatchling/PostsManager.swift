@@ -27,14 +27,53 @@ class PostManager{
     }
     func setImg(img: UIImage, forKey: NSString ){
          imageCache.setObject(img, forKey: forKey)
-
     }
-    func submitUpdate(newUpdate:Update){
-        let updateDict = newUpdate.createFirebaseUpdate()
+    func submitUpdate(newUpdate:Update, withCompletionBlock: (_ error: NSError?) -> Void ){
+        let updateData = newUpdate.createFirebaseUpdate()
         let firebasePost = DataService.ds.REF_UPDATES.childByAutoId()
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
-        firebasePost.setValue(updateDict)
+        firebasePost.setValue(updateData, withCompletionBlock: {
+            (error, ref) in
+            withCompletionBlock(error)
+        })
+    }
+    /**
+     Returns the upates for the likes a user has 
+ */
+    func getUsersLikesUpdates(withCompletionBlock:([Update]) -> Void ){
+        var usersLikesUpdates:[Update] = []
+        getUsersLikesKeys { (likesKeys) in
+            DataService.ds.REF_UPDATES.observeSingleEvent(of: .value, with: { (snapshot) in
+               if  let snapshots = snapshot.children.allObjects as [FIRDataSnapshot] {
+                for snap in snapshots {
+                    let updateKey = snap.key
+                    if likesKeys.contains(updateKey) {
+                        let updateDict = snap.value as! NSDictionary<String, AnyObject>
+                        let update = Update(updateKey, updateData: updateDict)
+                        usersLikesUpdates.append(update)
+                    }
+                }
+                withCompletionBlock(usersLikesUpdates)
+                }
+            })
+        }
+    }
+    /**
+     Returns the keys for all of the likes a user has
+ */
+    func getUsersLikesKeys(withCompletionBlock:([String]) -> Void){
+        var usersLikesKeys:[String] = []
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    let key = snap.key
+                        usersLikesKeys.append(key)
+                }
+                withCompletionBlock(usersLikesKeys)
+            }
+        })
     }
     /**
      Gets the image requested. First it looksed in the local stored cache, if not there it downloads it from firebase and then saves it to local cache
@@ -64,6 +103,9 @@ class PostManager{
             })
         }
     }
+    /**
+     General function to get a users posts, or a users liked posts
+ */
     func getUsers(userDataType: String, returnBlock: @escaping (_ returnPosts:[Post]) -> Void){
         var returnedKeys:[String] = []
         DataService.ds.REF_USER_CURRENT.child(userDataType).observeSingleEvent(of: .value, with: { (snapshot) in

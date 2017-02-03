@@ -44,7 +44,7 @@ class ChooseUpdateTypeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        update = Update(prodKey: post.postKey)
+        update = Update(forPost:post)
         // Do any additional setup after loading the view.
     }
 
