@@ -27,7 +27,7 @@ class productConnections: UIViewController {
 
     
     @IBAction func backBtnTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func nextBtnTapped(_ sender: UIButton) {

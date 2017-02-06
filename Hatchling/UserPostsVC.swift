@@ -13,11 +13,6 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
   
     var usersPosts:[Post] = []
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func backBtnTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

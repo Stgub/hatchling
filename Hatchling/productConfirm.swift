@@ -13,7 +13,7 @@ class productConfirm: UIViewController {
     var newProduct:[String:Any]!
     
     @IBAction func backBtnTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @IBOutlet weak var creatorPicture: RoundPic!

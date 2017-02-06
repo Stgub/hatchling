@@ -14,7 +14,6 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
     override func viewDidLoad() {
         super.viewDidLoad()
         productImagePicker.delegate = self
-
         
         
         let pictureTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.pickProductPictureTapped(_:)))
@@ -27,7 +26,7 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @IBOutlet weak var productPicture: UIImageView!
