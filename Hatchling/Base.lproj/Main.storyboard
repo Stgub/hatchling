@@ -3325,6 +3325,9 @@
                                                             <state key="normal" title="+ Create update">
                                                                 <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="tappedCreateUpdateBtn:" destination="kfr-tW-wkn" eventType="touchUpInside" id="Q8T-AU-WO8"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3392,6 +3395,7 @@
                     <connections>
                         <outlet property="tableView" destination="SnP-oq-htj" id="JVb-eI-7gs"/>
                         <segue destination="qI7-bf-I3Q" kind="show" identifier="toUserPostSegue" id="hZy-dl-aON"/>
+                        <segue destination="Cy1-vv-qda" kind="show" identifier="toCreateUpdateSegue" id="Jh0-Ka-TIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53X-MU-TCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5060,7 +5064,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="prodLogo" destination="bxh-00-FJY" id="5QQ-vX-19g"/>
-                                            <outlet property="prodNmae" destination="JFM-RU-Tki" id="To5-QA-Jls"/>
+                                            <outlet property="prodName" destination="JFM-RU-Tki" id="WEY-sm-7eR"/>
                                             <outlet property="updateDescript" destination="jda-Nl-C3b" id="Lwr-c5-CEC"/>
                                             <outlet property="updateLink" destination="mQv-8L-iun" id="d0D-7q-QlP"/>
                                         </connections>

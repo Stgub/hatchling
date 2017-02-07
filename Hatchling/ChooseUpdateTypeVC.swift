@@ -24,21 +24,21 @@ class ChooseUpdateTypeVC: UIViewController {
     }
     
     @IBAction func tappedBetaTesting(_ sender: Any) {
-        update.updateType = updateTypes.betaTesting
+        update.setUpdateType(type: updateTypes.betaTesting)
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     
     @IBAction func tappedCrowdfundingBtn(_ sender: Any) {
-        update.updateType = updateTypes.crowdfunding
+        update.setUpdateType(type: updateTypes.crowdfunding)
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     
     @IBAction func tappedPreorderBtn(_ sender: Any) {
-        update.updateType = updateTypes.preorders
+        update.setUpdateType(type: updateTypes.preorders)
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     @IBAction func tappedProdLaunchBtn(_ sender: Any) {
-        update.updateType = updateTypes.launch
+        update.setUpdateType(type: updateTypes.launch)
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     

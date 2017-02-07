@@ -23,35 +23,43 @@ class Update{
     var prodKey:String { return _prodKey }
     var _updateType:String!
     var updateType:String { return _updateType }
+    func setUpdateType(type: String){self._updateType = type}
+    
+    
     var _prodName:String!
-    var prodName:String { return _prodName }
+    var prodName:String? { return _prodName }
+    
     var _link:String!
-    var prodName:String { return _prodName }
+    var link:String? { return _link }
+    func setLink(link:String){ self._link = link }
+    
     var _description:String!
-    var description:String {return _description }
+    var description:String? {return _description }
+    func setDescription(descript: String){ self._description = descript }
+    
     var _prodLogoUrl:String!
     var prodLogoUrl:String? {return _prodLogoUrl}
-    
+    func setProdLogoUrl(url: String) { self._prodLogoUrl = url }
     //Intialization used when loading an update
-    init(updateKey: String, updateData:NSDictionary<String,AnyObject>){
+    init(updateKey: String, updateData: Dictionary<String, AnyObject>){
         self._updateKey = updateKey
         
-        if let prodKey =  updateData[updateDataTypes.prodKey] as! String{
+        if let prodKey =  updateData[updateDataTypes.prodKey] as? String{
             self._prodKey = prodKey
         }
-        if let prodName = updateData[updateDataTypes.prodName] as! String{
-            self.prodName = prodName
+        if let prodName = updateData[updateDataTypes.prodName] as? String{
+            self._prodName = prodName
         }
-        if let updateType = updateData[updateDataTypes.updateType] as! String{
+        if let updateType = updateData[updateDataTypes.updateType] as? String{
             self._updateType = updateType
         }
-        if let descript = updateData[updateDataTypes.description] as! String{
+        if let descript = updateData[updateDataTypes.description] as? String{
             self._description = descript
         }
-        if let link = updateData[updateDataTypes.link] as! String {
+        if let link = updateData[updateDataTypes.link] as? String {
             self._link = link
         }
-        if let prodLogoUrl = updateData[updateDataTypes.prodLogoUrl] as! String {
+        if let prodLogoUrl = updateData[updateDataTypes.prodLogoUrl] as? String {
             self._prodLogoUrl = prodLogoUrl
         }
     }
@@ -63,7 +71,7 @@ class Update{
     }
     func createFirebaseUpdate()->Dictionary<String,AnyObject>{
         let updateDict: Dictionary<String,AnyObject> = [
-            updateDataTypes.name : self._name as AnyObject,
+            updateDataTypes.prodName : self._prodName as AnyObject,
             updateDataTypes.updateType : self._updateType as AnyObject,
             updateDataTypes.description : self._description as AnyObject,
             updateDataTypes.link : self._link as AnyObject,

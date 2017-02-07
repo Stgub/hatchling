@@ -11,7 +11,7 @@ import UIKit
 class UpdatesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var prodLogo: RoundPic!
-    @IBOutlet weak var prodNmae: UILabel!
+    @IBOutlet weak var prodName: UILabel!
     @IBOutlet weak var updateDescript: UILabel!
     @IBOutlet weak var updateLink: UIButton!
     

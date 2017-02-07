@@ -28,31 +28,37 @@ class PostManager{
     func setImg(img: UIImage, forKey: NSString ){
          imageCache.setObject(img, forKey: forKey)
     }
-    func submitUpdate(newUpdate:Update, withCompletionBlock: (_ error: NSError?) -> Void ){
+    func submitUpdate(newUpdate:Update, withCompletionBlock: @escaping (_ error: NSError?) -> Void ){
         let updateData = newUpdate.createFirebaseUpdate()
         let firebasePost = DataService.ds.REF_UPDATES.childByAutoId()
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
         firebasePost.setValue(updateData, withCompletionBlock: {
             (error, ref) in
-            withCompletionBlock(error)
+            withCompletionBlock(error as NSError?)
         })
     }
     /**
      Returns the upates for the likes a user has 
  */
-    func getUsersLikesUpdates(withCompletionBlock:([Update]) -> Void ){
+    func getUsersLikesUpdates(withCompletionBlock:@escaping ([Update]) -> Void ){
         var usersLikesUpdates:[Update] = []
         getUsersLikesKeys { (likesKeys) in
             DataService.ds.REF_UPDATES.observeSingleEvent(of: .value, with: { (snapshot) in
-               if  let snapshots = snapshot.children.allObjects as [FIRDataSnapshot] {
+               if  let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     let updateKey = snap.key
-                    if likesKeys.contains(updateKey) {
-                        let updateDict = snap.value as! NSDictionary<String, AnyObject>
-                        let update = Update(updateKey, updateData: updateDict)
-                        usersLikesUpdates.append(update)
+
+                    if let updateDict = snap.value as? Dictionary<String, AnyObject> {
+                        //DEFINITELY A WAY TO IMRPVOE
+                        let update = Update(updateKey: updateKey, updateData: updateDict)
+                        print("prodKey - \(update.prodKey)")
+                        if likesKeys.contains(update.prodKey){
+                            print("Chuck: update key -\(updateKey)")
+                            usersLikesUpdates.append(update)
+                        }
                     }
+                    
                 }
                 withCompletionBlock(usersLikesUpdates)
                 }
@@ -62,13 +68,14 @@ class PostManager{
     /**
      Returns the keys for all of the likes a user has
  */
-    func getUsersLikesKeys(withCompletionBlock:([String]) -> Void){
+    func getUsersLikesKeys(withCompletionBlock:@escaping ([String]) -> Void){
         var usersLikesKeys:[String] = []
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).observeSingleEvent(of: .value, with: {
             (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     let key = snap.key
+                        print("Chuck: like key- \(key)")
                         usersLikesKeys.append(key)
                 }
                 withCompletionBlock(usersLikesKeys)

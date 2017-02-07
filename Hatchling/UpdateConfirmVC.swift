@@ -24,7 +24,7 @@ class UpdateConfirmVC: UIViewController {
                     self.present(vc, animated: false, completion: nil)
                 }
             } else {
-                presentUIAlert(self, title: "Eror submitting", message: "Please try again")
+                presentUIAlert(sender: self, title: "Eror submitting", message: "Please try again")
             }
         })
         
@@ -35,7 +35,7 @@ class UpdateConfirmVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDescript.text = update.description
-        updateLink.titleLabel?.text = update.link
+        updateLink.setTitle(update.link, for: .normal)
         // Do any additional setup after loading the view.
     }
 

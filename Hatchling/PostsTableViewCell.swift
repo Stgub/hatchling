@@ -9,12 +9,16 @@
 import UIKit
 
 class PostsTableViewCell: UITableViewCell {
-
+    var post:Post!
+    var delegate: UserPostsVC!
     @IBOutlet weak var prodLogo: RoundPic!
     @IBOutlet weak var prodName: UILabel!
     @IBOutlet weak var prodViews: UILabel!
     @IBOutlet weak var prodLikes: UILabel!
     
+    @IBAction func tappedCreateUpdateBtn(_ sender: Any) {
+        delegate.createUpdate(forPost:post)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
