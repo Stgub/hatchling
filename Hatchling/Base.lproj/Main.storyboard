@@ -3189,26 +3189,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruh-y6-BVM" userLabel="Header">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ1-W3-oPP" userLabel="backBtn">
-                                        <rect key="frame" x="17" y="23" width="15" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="EQ0-Q5-UJU"/>
-                                            <constraint firstAttribute="width" constant="15" id="HBv-CJ-Nf4"/>
-                                        </constraints>
-                                        <state key="normal" image="backBtnBlue"/>
-                                        <connections>
-                                            <action selector="backBtnTapped:" destination="9zc-zJ-epR" eventType="touchUpInside" id="AqI-YK-FAc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.89411764709999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="AdN-eX-3rg"/>
-                                    <constraint firstItem="YQ1-W3-oPP" firstAttribute="top" secondItem="ruh-y6-BVM" secondAttribute="topMargin" constant="15" id="AyS-SY-a4a"/>
                                     <constraint firstAttribute="height" constant="65" id="Dq4-Br-mCQ"/>
-                                    <constraint firstItem="YQ1-W3-oPP" firstAttribute="leading" secondItem="ruh-y6-BVM" secondAttribute="leading" constant="17" id="WlV-vb-9vK"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeU-YE-6qy">
@@ -3221,7 +3206,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="153" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SnP-oq-htj">
-                                <rect key="frame" x="0.0" y="73" width="375" height="545"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -3229,7 +3214,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3377,18 +3362,32 @@
                                     <outlet property="delegate" destination="9zc-zJ-epR" id="AVi-wv-HCt"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeO-i3-zGh">
+                                <rect key="frame" x="77" y="73" width="166" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="ZIb-XZ-993"/>
+                                    <constraint firstAttribute="height" constant="15" id="c90-pS-VkE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="qmQ-c7-YOc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="+ Create new product">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="CeO-i3-zGh" firstAttribute="top" secondItem="ruh-y6-BVM" secondAttribute="bottom" constant="8" id="9kQ-l6-Ror"/>
                             <constraint firstItem="Oup-PU-3h1" firstAttribute="top" secondItem="SnP-oq-htj" secondAttribute="bottom" id="9ld-0F-mGY"/>
                             <constraint firstItem="ruh-y6-BVM" firstAttribute="leading" secondItem="KRF-yZ-LI0" secondAttribute="leading" id="ErY-bQ-Th9"/>
                             <constraint firstItem="jeU-YE-6qy" firstAttribute="top" secondItem="KRF-yZ-LI0" secondAttribute="top" constant="14" id="Hob-2s-BSD"/>
                             <constraint firstItem="SnP-oq-htj" firstAttribute="leading" secondItem="KRF-yZ-LI0" secondAttribute="leading" id="LsS-LH-F5b"/>
-                            <constraint firstItem="SnP-oq-htj" firstAttribute="top" secondItem="ruh-y6-BVM" secondAttribute="bottom" constant="8" id="YFj-LV-kFt"/>
+                            <constraint firstItem="SnP-oq-htj" firstAttribute="top" secondItem="ruh-y6-BVM" secondAttribute="bottom" constant="35" id="YFj-LV-kFt"/>
                             <constraint firstItem="ruh-y6-BVM" firstAttribute="top" secondItem="KRF-yZ-LI0" secondAttribute="top" id="fRU-Ps-BOe"/>
                             <constraint firstAttribute="trailing" secondItem="SnP-oq-htj" secondAttribute="trailing" id="l84-D6-HqA"/>
                             <constraint firstItem="jeU-YE-6qy" firstAttribute="centerX" secondItem="KRF-yZ-LI0" secondAttribute="centerX" id="sL1-Hy-jSb"/>
                             <constraint firstAttribute="trailing" secondItem="ruh-y6-BVM" secondAttribute="trailing" id="tYz-CD-YJk"/>
+                            <constraint firstItem="CeO-i3-zGh" firstAttribute="centerX" secondItem="KRF-yZ-LI0" secondAttribute="centerX" id="zqm-1z-rCp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="AccountIconGray" selectedImage="accountIcon" id="Haf-4E-COQ"/>
@@ -3400,7 +3399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53X-MU-TCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2385" y="-1275"/>
+            <point key="canvasLocation" x="3266" y="-949"/>
         </scene>
         <!--detailedMyProduct-->
         <scene sceneID="Jk5-Y0-1tm">
@@ -4745,6 +4744,6 @@
         <segue reference="Evz-FW-air"/>
         <segue reference="RfS-1L-uU6"/>
         <segue reference="mwS-w9-FWX"/>
-        <segue reference="5mg-hp-wCO"/>
+        <segue reference="5mg-hp-wCO"/
     </inferredMetricsTieBreakers>
 </document>

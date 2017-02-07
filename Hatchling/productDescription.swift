@@ -20,7 +20,7 @@ class productDescription: UIViewController {
     @IBOutlet weak var shortProdDescriptionField: textViewRoundCorners!
     @IBOutlet weak var longProdDescriptionField: textViewRoundCorners!
     @IBAction func backBtnTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func nextBtnTapped(_ sender: Any) {
