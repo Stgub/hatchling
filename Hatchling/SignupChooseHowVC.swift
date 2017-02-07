@@ -70,7 +70,7 @@ class SignupChooseHowVC: UIViewController {
                                             let imgURL = data["url"]
                                             let url = NSURL(string:imgURL as! String)
                                             let urlRequest = NSURLRequest(url: url! as URL)
-                                            
+                                                
                                             NSURLConnection.sendAsynchronousRequest(urlRequest as URLRequest, queue: OperationQueue.main) {
                                                 (response:URLResponse?, data:Data?, error:Error?) -> Void in
                                                 if error == nil {
