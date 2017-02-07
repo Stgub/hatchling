@@ -37,6 +37,8 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postsTableViewCell") as! PostsTableViewCell
         let post = usersPosts[indexPath.row]
+        cell.delegate = self
+        cell.post = post
         cell.prodLikes.text = "\(post.likes)"
         cell.prodName.text = post.name
         PostManager.pm.getImage(imgUrl: post.logoUrl, returnBlock: {
@@ -56,6 +58,10 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "toUserPostSegue", sender: self)
     }
     
+    func createUpdate(forPost:Post){
+        selectedPost = forPost
+        self.performSegue(withIdentifier: "toCreateUpdateSegue", sender: self)
+    }
 
     
     func getUsersPosts(){
@@ -78,6 +84,9 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         switch(dest ){
         case is UsersPostDetailVC:
             let destVC = dest as! UsersPostDetailVC
+            destVC.post = selectedPost
+        case is ChooseUpdateTypeVC:
+            let destVC = dest as! ChooseUpdateTypeVC
             destVC.post = selectedPost
         default:
             print("Default")

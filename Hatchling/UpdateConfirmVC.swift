@@ -16,7 +16,17 @@ class UpdateConfirmVC: UIViewController {
     @IBOutlet weak var updateLink: UIButton!
     
     @IBAction func tappedSubmitBtn(_ sender: Any) {
-        PostManager.pm.submitUpdate(newUpdate: update)
+        PostManager.pm.submitUpdate(newUpdate: update, withCompletionBlock: {
+            (error) in
+            if error == nil {
+                if let storyboard = self.storyboard {
+                    let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
+                    self.present(vc, animated: false, completion: nil)
+                }
+            } else {
+                presentUIAlert(sender: self, title: "Eror submitting", message: "Please try again")
+            }
+        })
         
     }
     @IBAction func tappedBackBtn(_ sender: UIButton) {
@@ -25,7 +35,7 @@ class UpdateConfirmVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDescript.text = update.description
-        updateLink.titleLabel?.text = update.link
+        updateLink.setTitle(update.link, for: .normal)
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +43,10 @@ class UpdateConfirmVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    
+
     
 
 
