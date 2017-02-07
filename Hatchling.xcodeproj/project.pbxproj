@@ -32,6 +32,7 @@
 		195D2A201E29FF87006CE51D /* swipeCardShadowRoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */; };
 		195D2A241E2A1009006CE51D /* RoundPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D2A231E2A1009006CE51D /* RoundPic.swift */; };
 		1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */; };
+		19B395441E4A286C00A10513 /* joinTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B395431E4A286C00A10513 /* joinTeamVC.swift */; };
 		56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */; };
 		56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */; };
 		56DC213A1E2DBB4A004EC2FD /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */; };
@@ -110,6 +111,7 @@
 		195D2A1F1E29FF87006CE51D /* swipeCardShadowRoundCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swipeCardShadowRoundCorner.swift; sourceTree = "<group>"; };
 		195D2A231E2A1009006CE51D /* RoundPic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundPic.swift; sourceTree = "<group>"; };
 		1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerFontWhite.swift; sourceTree = "<group>"; };
+		19B395431E4A286C00A10513 /* joinTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = joinTeamVC.swift; sourceTree = "<group>"; };
 		27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.release.xcconfig"; sourceTree = "<group>"; };
 		517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling.debug.xcconfig"; sourceTree = "<group>"; };
 		56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseHowVC.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				56EDFCC11E4517FE003785CF /* UpdatesTableVC.swift */,
 				56EDFCB01E440B42003785CF /* Create Update Flow */,
 				19032C341E44246800D18755 /* CommentsVC.swift */,
+				19B395431E4A286C00A10513 /* joinTeamVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				1945BBC01E30808900575C8F /* productConfirm.swift in Sources */,
 				56EDFCC01E4517C9003785CF /* UpdatesTableViewCell.swift in Sources */,
 				1945BBBC1E307FE200575C8F /* productPics.swift in Sources */,
+				19B395441E4A286C00A10513 /* joinTeamVC.swift in Sources */,
 				56FB18111E3EE8BF0052CB09 /* PostsTableViewCell.swift in Sources */,
 				1949C4821E42ED370062E166 /* Rounded Image Corners.swift in Sources */,
 				190B850D1E2D7BCF00E5CC6A /* LogInEmailVC.swift in Sources */,
