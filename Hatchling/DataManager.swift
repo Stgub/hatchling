@@ -9,8 +9,8 @@
 import Foundation
 import Firebase
 
-class PostManager{
-    static let pm = PostManager()
+class DataManager{
+    static let dm = DataManager()
     private var _feedPosts:[Post] = []
     private var _currentPost:Post!
     private var imageCache: NSCache<NSString, UIImage> = NSCache()
@@ -27,6 +27,15 @@ class PostManager{
     }
     func setImg(img: UIImage, forKey: NSString ){
          imageCache.setObject(img, forKey: forKey)
+    }
+    
+    func postComment(comment:Comment, forPost:Post){
+        //Add commentkey to post
+        //Add post key to comment
+        //Add comment
+    }
+    func getComments(forPost:Post){
+        
     }
     func submitUpdate(newUpdate:Update, withCompletionBlock: @escaping (_ error: NSError?) -> Void ){
         let updateData = newUpdate.createFirebaseUpdate()

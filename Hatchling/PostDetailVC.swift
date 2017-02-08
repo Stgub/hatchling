@@ -38,11 +38,11 @@ class PostDetailVC: UIViewController {
             postLongDescript.text = longDescript
         }
         
-        PostManager.pm.getImage(imgUrl: post.productUrl, returnBlock: {
+        DataManager.dm.getImage(imgUrl: post.productUrl, returnBlock: {
             (returnedImg) in
             self.postImg.image = returnedImg
         })
-        PostManager.pm.getImage(imgUrl: post.logoUrl, returnBlock: {
+        DataManager.dm.getImage(imgUrl: post.logoUrl, returnBlock: {
             (returnedImg) in
             self.postLogo.image = returnedImg
         })

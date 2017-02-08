@@ -33,7 +33,7 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
 
    
-        if PostManager.pm.currentPost == nil {
+        if DataManager.dm.currentPost == nil {
             swipeCardView.isHidden = true 
         }
         //Swipe gesture stuff
@@ -62,7 +62,7 @@ class FeedVC: UIViewController {
     func updateData(){
         print("CHUCK: Updating data for feedVC")
         //Downloads posts data then runs function when done
-        PostManager.pm.getPosts(){
+        DataManager.dm.getPosts(){
             //function to run when done
             self.nextPost()
         }
@@ -71,7 +71,7 @@ class FeedVC: UIViewController {
     func nextPost() -> Void{
         print("next post")
     
-        if let post = PostManager.pm.nextPost(){
+        if let post = DataManager.dm.nextPost(){
             showPost(post: post)
         } else {
             print("No posts to show")
@@ -85,7 +85,7 @@ class FeedVC: UIViewController {
         
     }
     func postWasSwiped( wasLiked: Bool){
-        PostManager.pm.adjustLikesForCurrentPost(addLike: wasLiked)
+        DataManager.dm.adjustLikesForCurrentPost(addLike: wasLiked)
         nextPost()
     }
     
@@ -100,11 +100,11 @@ class FeedVC: UIViewController {
             self.posterName.text = creatorName
         }
         
-        PostManager.pm.getImage(imgUrl:post.productUrl){
+        DataManager.dm.getImage(imgUrl:post.productUrl){
             (img) in
             self.postImage.image = img
         }
-        PostManager.pm.getImage(imgUrl: post.logoUrl){
+        DataManager.dm.getImage(imgUrl: post.logoUrl){
             (img) in
             self.postLogo.image = img
         }
@@ -169,9 +169,9 @@ class FeedVC: UIViewController {
         case is PostDetailVC:
             let destVC = dest as! PostDetailVC
             print("Going to PostDetailVC")
-            let currentPost = PostManager.pm.currentPost
+            let currentPost = DataManager.dm.currentPost
             print("Chuck: Showing post -\(currentPost?.name)")
-            destVC.post = PostManager.pm.currentPost
+            destVC.post = DataManager.dm.currentPost
         default:
             print("Segue Default ")
         }

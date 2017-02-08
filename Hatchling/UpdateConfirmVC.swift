@@ -16,7 +16,7 @@ class UpdateConfirmVC: UIViewController {
     @IBOutlet weak var updateLink: UIButton!
     
     @IBAction func tappedSubmitBtn(_ sender: Any) {
-        PostManager.pm.submitUpdate(newUpdate: update, withCompletionBlock: {
+        DataManager.dm.submitUpdate(newUpdate: update, withCompletionBlock: {
             (error) in
             if error == nil {
                 if let storyboard = self.storyboard {
