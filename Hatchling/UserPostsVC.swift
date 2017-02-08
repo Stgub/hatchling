@@ -22,7 +22,7 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PostManager.pm.getUsers(userDataType: userDataTypes.posts, returnBlock: {
+        DataManager.dm.getUsers(userDataType: userDataTypes.posts, returnBlock: {
             (returnPosts) in
             self.usersPosts = returnPosts
             self.tableView.reloadData()
@@ -41,7 +41,7 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         cell.post = post
         cell.prodLikes.text = "\(post.likes)"
         cell.prodName.text = post.name
-        PostManager.pm.getImage(imgUrl: post.logoUrl, returnBlock: {
+        DataManager.dm.getImage(imgUrl: post.logoUrl, returnBlock: {
             (returnedImg) in
             cell.prodLogo.image = returnedImg
         })

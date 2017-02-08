@@ -16,7 +16,7 @@ class UserLikesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PostManager.pm.getUsers(userDataType: userDataTypes.likes ,returnBlock: {
+        DataManager.dm.getUsers(userDataType: userDataTypes.likes ,returnBlock: {
             (returnPosts) in
             self.usersLikes = returnPosts
             print("Users likes - \(self.usersLikes)")
@@ -41,7 +41,7 @@ class UserLikesVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         let post = usersLikes[indexPath.row]
         cell.prodName.text = post.name
         cell.prodShortDescript.text = post.shortDescript
-        PostManager.pm.getImage(imgUrl: post.logoUrl, returnBlock: {
+        DataManager.dm.getImage(imgUrl: post.logoUrl, returnBlock: {
             (returnedImg) in
             cell.prodoLogoImg.image = returnedImg
         })

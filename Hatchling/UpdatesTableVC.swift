@@ -17,7 +17,7 @@ class UpdatesTableVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         super.viewDidLoad()
         self.tableView.addSubview(self.refreshControl)
 
-        PostManager.pm.getUsersLikesUpdates { (updates) in
+        DataManager.dm.getUsersLikesUpdates { (updates) in
             print("Chuck getting updates")
             self.usersLikesUpdates = updates
             self.tableView.reloadData()
@@ -37,7 +37,7 @@ class UpdatesTableVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
     func handleRefresh(refreshControl: UIRefreshControl) {
         // Do some reloading of data and update the table view's data source
         // Fetch more objects from a web service, for example...
-        PostManager.pm.getUsersLikesUpdates { (updates) in
+        DataManager.dm.getUsersLikesUpdates { (updates) in
             print("Chuck getting updates")
             self.usersLikesUpdates = updates
             self.tableView.reloadData()
@@ -68,7 +68,7 @@ class UpdatesTableVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
             cell.updateLink.isHidden = true
         }
         cell.update = update
-        PostManager.pm.getImage(imgUrl: update.prodLogoUrl!, returnBlock: {
+        DataManager.dm.getImage(imgUrl: update.prodLogoUrl!, returnBlock: {
             (returnedImg) in
             cell.prodLogo.image = returnedImg
         })
