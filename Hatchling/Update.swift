@@ -70,14 +70,17 @@ class Update{
         self._prodLogoUrl = forPost.logoUrl
     }
     func createFirebaseUpdate()->Dictionary<String,AnyObject>{
-        let updateDict: Dictionary<String,AnyObject> = [
+    
+        var updateDict: Dictionary<String,AnyObject> = [
             updateDataTypes.prodName : self._prodName as AnyObject,
             updateDataTypes.updateType : self._updateType as AnyObject,
             updateDataTypes.description : self._description as AnyObject,
-            updateDataTypes.link : self._link as AnyObject,
             updateDataTypes.prodKey : self._prodKey as AnyObject,
             updateDataTypes.prodLogoUrl: self._prodLogoUrl as AnyObject
         ]
+        if let link = self._link {
+           updateDict[updateDataTypes.link] = link as? AnyObject
+        }
         
         
         return updateDict

@@ -64,6 +64,8 @@ class UpdatesTableVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
         if update.link != nil  {
             cell.updateLink.setTitle(update.link, for: .normal)
+        } else {
+            cell.updateLink.isHidden = true
         }
         cell.update = update
         PostManager.pm.getImage(imgUrl: update.prodLogoUrl!, returnBlock: {

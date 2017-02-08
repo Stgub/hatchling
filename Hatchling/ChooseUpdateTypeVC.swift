@@ -25,6 +25,7 @@ class ChooseUpdateTypeVC: UIViewController {
     
     @IBAction func tappedBetaTesting(_ sender: Any) {
         update.setUpdateType(type: updateTypes.betaTesting)
+        print("Chuck - User chose update type -\(update.updateType)")
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     
