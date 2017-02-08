@@ -18,7 +18,7 @@ class UpdateDetailsVC: UIViewController {
     @IBOutlet weak var updateDescript: textViewRoundCorners!
     @IBOutlet weak var updateLink: UITextField!
     
-    @IBAction func tappedBackBtn(_ sender: Any) {
+    @IBAction func tappedBackBtn(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -28,13 +28,16 @@ class UpdateDetailsVC: UIViewController {
 
         } else {
             update.setDescription(descript: updateDescript.text)
-            update.setLink(link: updateLink.text!)
+            if updateLink.text != "" {
+                update.setLink(link: updateLink.text!)
+            }
             self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Below sets the text on the screen depending on the update type
         switch(update.updateType){
         case updateTypes.launch:
             titleLabel.text = "Launch"
@@ -80,6 +83,7 @@ class UpdateDetailsVC: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    //Descriptions for UI
     private let betaExplanation = "Create a beta testing update if you are looking for people to try out your product and give you feedback. Submit a link to where beta testers can download or look at your product."
     private let crowdfundingExplanation = "Create a crowdfunding update if you are starting a crowdfunding campaign and want followers to know. Submit a link to the campaign so followers can find it."
     private let preordersExplanation = "Create a pre-order update if you are taking pre-orders and want to let your followers know. Submit a link to the pre-order page so followers can find it."

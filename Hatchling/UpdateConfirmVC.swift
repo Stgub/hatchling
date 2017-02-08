@@ -35,7 +35,11 @@ class UpdateConfirmVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDescript.text = update.description
-        updateLink.setTitle(update.link, for: .normal)
+        if let link = update.link {
+            updateLink.setTitle(link, for: .normal)
+        } else {
+            updateLink.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
 
