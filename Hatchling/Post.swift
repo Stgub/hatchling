@@ -12,6 +12,7 @@ import Firebase
 
 //Strings for accessing firebase data
 struct postDataTypes{
+    static let commentChain = "commentChain"
     static let creator = "creator"
     static let shortDescript = "shortDescription"
     static let longDescript = "longDescript"
@@ -50,6 +51,7 @@ class Post {
     private var _crowdfunding:String!
     private var _website:String!
     //Basic
+    private var _commentChain:String! // Firebase key for the comment chain
     private var _creatorName:String! // username of the creator
     private var _name: String!
     private var _shortDescript: String!
@@ -69,6 +71,7 @@ class Post {
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
     
+    var commentChain:String? { return _commentChain }
     var shortDescript :String? { return _shortDescript }
     var longDescript:String? { return _longDescript }
 
@@ -159,9 +162,16 @@ class Post {
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)
-
     }
     
+    /**
+     Adds the key for the comment chain
+ */
+    func addCommentChain(commentChainKey: String){
+        self._commentChain = commentChainKey
+        _postRef.child(postDataTypes.commentChain).child(commentChainKey).setValue(true)
+        
+    }
     func adjustLikes(addLike: Bool) {
         //add post to this users likes
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).child(_postKey).setValue(true)

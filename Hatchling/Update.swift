@@ -69,7 +69,7 @@ class Update{
         self._prodName = forPost.name
         self._prodLogoUrl = forPost.logoUrl
     }
-    func createFirebaseUpdate()->Dictionary<String,AnyObject>{
+    func createDictForFirebase()->Dictionary<String,AnyObject>{
     
         var updateDict: Dictionary<String,AnyObject> = [
             updateDataTypes.prodName : self._prodName as AnyObject,

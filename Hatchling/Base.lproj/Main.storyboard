@@ -489,7 +489,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp7-q5-SoS">
-                                        <rect key="frame" x="147" y="88" width="52" height="25"/>
+                                        <rect key="frame" x="147" y="87" width="52" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="1sV-xF-yuv"/>
                                         </constraints>
@@ -554,7 +554,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB9-NX-iDc">
-                                        <rect key="frame" x="227" y="88" width="86" height="25"/>
+                                        <rect key="frame" x="227" y="87" width="86" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="cQR-E3-wd5"/>
                                         </constraints>
@@ -803,7 +803,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afw-7K-aI2">
-                                        <rect key="frame" x="9" y="14" width="359" height="43"/>
+                                        <rect key="frame" x="8" y="14" width="359" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="Zeg-dJ-tqg"/>
                                             <constraint firstAttribute="width" constant="359" id="jCk-2k-Od2"/>
@@ -838,7 +838,7 @@
                                 <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts left to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tt-Br-KHF">
-                                        <rect key="frame" x="107" y="267" width="163" height="21"/>
+                                        <rect key="frame" x="106" y="266" width="163" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2424,7 +2424,7 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoPic" translatesAutoresizingMaskIntoConstraints="NO" id="Tqt-rg-RZc" userLabel="ProdPic">
-                                <rect key="frame" x="15" y="120" width="345" height="216"/>
+                                <rect key="frame" x="15" y="120" width="345" height="215.5"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Tqt-rg-RZc" secondAttribute="height" multiplier="290:181" id="VMD-Yy-tMC"/>
@@ -2443,7 +2443,7 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProdPic" translatesAutoresizingMaskIntoConstraints="NO" id="Hzv-qF-n4d" userLabel="LogoPic">
-                                <rect key="frame" x="138" y="376" width="100" height="100"/>
+                                <rect key="frame" x="138" y="375.5" width="100" height="100"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="J9k-Fh-sFe"/>
@@ -2776,7 +2776,7 @@
                                 <rect key="frame" x="0.0" y="93" width="320" height="749"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK1-Hv-qrj">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="708"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="707.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-tX-Cqz" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="8" width="290" height="181"/>
@@ -2906,7 +2906,7 @@
                                                 <state key="normal" image="Twitter-icon"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmU-iU-fNc">
-                                                <rect key="frame" x="15" y="478" width="290" height="230"/>
+                                                <rect key="frame" x="15" y="478" width="290" height="229.5"/>
                                                 <string key="text">500 charactersa fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmg aekng aekmg akmg egea rgsrgr g gg w gg r gw gw gw gr gkbrk bdf bdfjb k sks bijs jsdk sadsadasdasdasda fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmg aekng aekmg akmg egea rgsrgr g gg w gg r gw gw gw gr gkbrk bdf bdfjb k sks bijs jsdk sadsadasdasdasda fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmgdf bdfjb k sks bijs jsdk sdddddddldldldldldldldldldld</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3112,7 +3112,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3260,7 +3260,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3461,7 +3461,7 @@
                                 <rect key="frame" x="0.0" y="113" width="320" height="712"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-4Q-hRX">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="699.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="xes-Kb-ILw" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="0.0" width="290" height="181"/>
@@ -3591,7 +3591,7 @@
                                                 <state key="normal" image="Twitter-icon"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tag-Rc-uZJ">
-                                                <rect key="frame" x="15" y="470" width="290" height="230"/>
+                                                <rect key="frame" x="15" y="470" width="290" height="229.5"/>
                                                 <string key="text">500 charactersa fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmg aekng aekmg akmg egea rgsrgr g gg w gg r gw gw gw gr gkbrk bdf bdfjb k sks bijs jsdk sadsadasdasdasda fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmg aekng aekmg akmg egea rgsrgr g gg w gg r gw gw gw gr gkbrk bdf bdfjb k sks bijs jsdk sadsadasdasdasda fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmgdf bdfjb k sks bijs jsdk sdddddddldldldldldldldldldld</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -3892,7 +3892,7 @@
                                 <rect key="frame" x="0.0" y="68" width="320" height="757"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppe-mL-olc">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="728"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="727.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HatchlingDefault" translatesAutoresizingMaskIntoConstraints="NO" id="zal-eR-KMZ" customClass="Rounded_Image_Corners" customModule="Hatchling" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="15" width="290" height="181"/>
@@ -3933,7 +3933,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxE-y7-oRZ">
-                                                <rect key="frame" x="15" y="610" width="32" height="15"/>
+                                                <rect key="frame" x="15" y="609.5" width="32" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="31.5" id="92j-lL-zGR"/>
                                                     <constraint firstAttribute="height" constant="15" id="AD5-aP-lbr"/>
@@ -3942,7 +3942,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-02-Jvz">
-                                                <rect key="frame" x="15" y="640" width="46" height="20"/>
+                                                <rect key="frame" x="15" y="639.5" width="46" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="zbX-fS-tBg"/>
                                                 </constraints>
@@ -3950,7 +3950,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Needs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-pG-ZvC">
-                                                <rect key="frame" x="15" y="675" width="36" height="15"/>
+                                                <rect key="frame" x="15" y="674.5" width="36" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="PB3-UD-5bW"/>
                                                 </constraints>
@@ -3958,7 +3958,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-fO-Q1d">
-                                                <rect key="frame" x="15" y="705" width="60" height="15"/>
+                                                <rect key="frame" x="15" y="704.5" width="60" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="JjC-1f-bss"/>
                                                 </constraints>
@@ -3966,25 +3966,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Validation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1G-co-CnU">
-                                                <rect key="frame" x="89" y="608" width="93" height="20"/>
+                                                <rect key="frame" x="89" y="607.5" width="93" height="20"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer, Funding, Sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsN-ZI-R87">
-                                                <rect key="frame" x="89" y="673" width="164" height="20"/>
+                                                <rect key="frame" x="89" y="672.5" width="164" height="20"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tech, Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-Ds-Iuc">
-                                                <rect key="frame" x="89" y="703" width="81" height="20"/>
+                                                <rect key="frame" x="89" y="702.5" width="81" height="20"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgx-KV-pAM" userLabel="connect1">
-                                                <rect key="frame" x="89" y="638" width="25" height="25"/>
+                                                <rect key="frame" x="89" y="637.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="Fhu-6L-ki9"/>
                                                     <constraint firstAttribute="height" constant="25" id="wAW-Jw-h3j"/>
@@ -3992,7 +3992,7 @@
                                                 <state key="normal" image="Instagram-v051916_200"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9S-lH-6Lk" userLabel="connect2">
-                                                <rect key="frame" x="124" y="638" width="25" height="25"/>
+                                                <rect key="frame" x="124" y="637.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="5Tg-Mx-wNR"/>
                                                     <constraint firstAttribute="width" constant="25" id="OT1-rI-TFm"/>
@@ -4000,7 +4000,7 @@
                                                 <state key="normal" image="square-facebook-512"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG9-kI-53P" userLabel="connect3">
-                                                <rect key="frame" x="159" y="638" width="25" height="25"/>
+                                                <rect key="frame" x="159" y="637.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="TY0-Ie-z3Q"/>
                                                     <constraint firstAttribute="width" constant="25" id="tJx-pn-a9I"/>
@@ -4015,7 +4015,7 @@
                                                 </constraints>
                                                 <state key="normal" image="commentIcon-1"/>
                                                 <connections>
-                                                    <segue destination="0V0-p1-LVm" kind="show" id="cvh-xL-W4Z"/>
+                                                    <action selector="tappedCommentsBtn:" destination="5vJ-SB-0FR" eventType="touchUpInside" id="pDP-Mv-Y3M"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzv-rk-eKZ" userLabel="share">
@@ -4036,7 +4036,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvl-jR-uMl">
-                                                <rect key="frame" x="15" y="365" width="290" height="230"/>
+                                                <rect key="frame" x="15" y="365" width="290" height="229.5"/>
                                                 <string key="text">500 charactersa fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmg aekng aekmg akmg egea rgsrgr g gg w gg r gw gw gw gr gkbrk bdf bdfjb k sks bijs jsdk sadsadasdasdasda fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmg aekng aekmg akmg egea rgsrgr g gg w gg r gw gw gw gr gkbrk bdf bdfjb k sks bijs jsdk sadsadasdasdasda fef ejbgbgksbbwj   nk ae gklmeslr nglmsnglkaen geklgeaklg aekljg aek gaekmgdf bdfjb k sks bijs jsdk sdddddddldldldldldldldldldld</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -4154,6 +4154,7 @@
                         <outlet property="postName" destination="1We-Vt-c2l" id="sg1-VY-uxU"/>
                         <outlet property="postShortDescript" destination="GGY-w0-hms" id="R0D-p5-2Ef"/>
                         <outlet property="postStage" destination="X1G-co-CnU" id="dAF-E6-YZy"/>
+                        <segue destination="0V0-p1-LVm" kind="show" identifier="toCommentsSegue" id="Ek2-FU-hri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNY-fB-U1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4211,11 +4212,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="rhu-DS-fQ2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentTableViewCell" rowHeight="94" id="rhu-DS-fQ2" customClass="CommentTableViewCell" customModule="Hatchling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4265,8 +4266,17 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="gtE-uf-oI3" secondAttribute="trailing" constant="8" id="yFl-0s-crT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentContentLabel" destination="l7b-lf-9uj" id="UIT-lf-zIZ"/>
+                                            <outlet property="commentCreatorImg" destination="frw-k8-Q6F" id="gSv-Y7-ayH"/>
+                                            <outlet property="commentCreatorLabel" destination="cXa-mg-7rh" id="hbd-3t-1he"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0V0-p1-LVm" id="I5B-do-VzZ"/>
+                                    <outlet property="delegate" destination="0V0-p1-LVm" id="Aze-c1-ogt"/>
+                                </connections>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kut-CQ-ZHA">
                                 <rect key="frame" x="0.0" y="469" width="259" height="50"/>
@@ -4291,6 +4301,9 @@
                                 <state key="normal" title="Post!">
                                     <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedPostBtn:" destination="0V0-p1-LVm" eventType="touchUpInside" id="iYo-XM-cvJ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcX-8R-9jC">
                                 <rect key="frame" x="0.0" y="468" width="320" height="1"/>
@@ -4324,6 +4337,7 @@
                     <connections>
                         <outlet property="commentTextView" destination="kut-CQ-ZHA" id="9hH-Ua-THA"/>
                         <outlet property="header" destination="1fQ-Uo-be0" id="gjy-x4-SY2"/>
+                        <outlet property="tableView" destination="Q7h-ES-LbF" id="Z00-Wa-nao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YpA-6Y-gTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4733,7 +4747,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -5001,9 +5015,9 @@
         <image name="updateGray20" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="M5i-Wz-Xs8"/>
         <segue reference="Evz-FW-air"/>
         <segue reference="DBH-Mr-Li4"/>
-        <segue reference="cvh-xL-W4Z"/>
-        <segue reference="M5i-Wz-Xs8"/>
+        <segue reference="Ek2-FU-hri"/>
     </inferredMetricsTieBreakers>
 </document>
