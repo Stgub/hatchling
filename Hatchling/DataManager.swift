@@ -33,40 +33,45 @@ class DataManager{
     
     func postComment(comment:Comment, forPost:Post, withCompletionBlock: @escaping (_ error: NSError?) -> Void ){
         
-        let commentData = comment.createDictForFirebase()
-        let firebasePost = DataService.ds.REF_COMMENT_CHAIN.child(forPost.commentChain!).child(comments).childByAutoId()
-        let postId = firebasePost.key
-        DataService.ds.REF_COMMENT_CHAIN.child(forPost.commentChain!).child(postId).setValue(true)
-        firebasePost.setValue(commentData, withCompletionBlock: {
-            (error, ref) in
-            withCompletionBlock(error as NSError?)
+      
+        forPost.getCommentChainKey(withCompletionBlock: {
+            (key) in
+            let commentData = comment.createDictForFirebase()
+            let firebasePost = DataService.ds.REF_COMMENT_CHAIN.child(key).child(commentChainDataTypes.comments).childByAutoId()
+            let commentId = firebasePost.key
+            firebasePost.setValue(commentData, withCompletionBlock: {
+                (error, ref) in
+                withCompletionBlock(error as NSError?)
+            })
         })
+  
     }
     
     func getComments(forPost:Post, returnBlock:  @escaping (_ returnedComments: [Comment]) -> Void ){
         var returnedComments:[Comment] = []
         //should put in guard in case post doesnt have a comment chain.. create one 
             //TEMP make better
-        if forPost.commentChain == nil {
-            let commentChain = DataService.ds.REF_COMMENT_CHAIN.childByAutoId()
-            forPost.addCommentChain(commentChainKey: commentChain.key)
-        }
-        DataService.ds.REF_COMMENT_CHAIN.child(forPost.commentChain!).child(comments).observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots {
-                    //print("Posts SNAP - \(snap)")
-                    let key = snap.key
-              
-                    if let commentData = snap.value as? Dictionary<String, AnyObject>{
-                        let comment = Comment(commentData: commentData)
-                        returnedComments.append(comment)
+       
+        forPost.getCommentChainKey(withCompletionBlock:{
+                (key) in
+            DataService.ds.REF_COMMENT_CHAIN.child(key).child(commentChainDataTypes.comments).observeSingleEvent(of: .value, with: {
+                (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshots {
+                        //print("Posts SNAP - \(snap)")
+                        let key = snap.key
+                        
+                        if let commentData = snap.value as? Dictionary<String, AnyObject>{
+                            let comment = Comment(commentData: commentData)
+                            returnedComments.append(comment)
+                        }
                     }
+                    returnBlock(returnedComments)
                 }
-                returnBlock(returnedComments)
             }
-        }
-        )
+            )
+            })
+
     }
     
     

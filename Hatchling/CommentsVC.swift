@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommentsVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class CommentsVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, hasPostVar {
     
     var post:Post!
     var comments:[Comment] = []
@@ -39,9 +39,11 @@ class CommentsVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Comments viewDidLoad:")
         commentTextView.delegate = self
         DataManager.dm.getComments(forPost: self.post,returnBlock:{
             (returnedComments) in
+            print("Chuck: returned Comments")
             self.comments = returnedComments
             self.tableView.reloadData()
         })

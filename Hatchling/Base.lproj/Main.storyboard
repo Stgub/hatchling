@@ -3112,7 +3112,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Eq-e2-zXJ" id="qNU-dA-yLJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hl-9y-QJh" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3260,7 +3260,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfr-tW-wkn" id="OD2-pY-8JH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Pg-Hxi" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -3605,7 +3605,7 @@
                                                 </constraints>
                                                 <state key="normal" image="commentIcon"/>
                                                 <connections>
-                                                    <segue destination="0V0-p1-LVm" kind="show" id="5mg-hp-wCO"/>
+                                                    <action selector="tappedCommentBtn:" destination="qI7-bf-I3Q" eventType="touchUpInside" id="PHV-e0-FyP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XV5-KK-5e0" userLabel="share">
@@ -3763,6 +3763,7 @@
                         <outlet property="postNeeds" destination="unq-CF-UuZ" id="fu0-xI-hYP"/>
                         <outlet property="postShortDescript" destination="RVQ-Xm-zU1" id="3Li-EZ-wpT"/>
                         <outlet property="postStage" destination="1Ra-1l-1Sa" id="Fo8-Ii-H42"/>
+                        <segue destination="0V0-p1-LVm" kind="show" identifier="toCommentsSegue" id="cni-FH-AJT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bQ-PI-F6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4216,7 +4217,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhu-DS-fQ2" id="59U-K6-qjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-uf-oI3" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -4747,7 +4748,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BgW-vt-Dmb" id="8kQ-0O-boy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF2-zx-kb4" customClass="ViewCornerRadius" customModule="Hatchling" customModuleProvider="target">
@@ -5015,9 +5016,9 @@
         <image name="updateGray20" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M5i-Wz-Xs8"/>
         <segue reference="Evz-FW-air"/>
+        <segue reference="M5i-Wz-Xs8"/>
+        <segue reference="cni-FH-AJT"/>
         <segue reference="DBH-Mr-Li4"/>
-        <segue reference="Ek2-FU-hri"/>
     </inferredMetricsTieBreakers>
 </document>

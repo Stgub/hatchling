@@ -131,9 +131,11 @@ class productConfirm: UIViewController {
         let prodStage = newProduct[postDataTypes.prodStage]
         let prodCategories = newProduct[postDataTypes.prodCategories]
         var  creatorName = "Anonymous"
-
-        if let currentUserName = currentUser.name {
-            creatorName = currentUserName
+        
+        //TEMPORARY NEED TO DO SOMETHIGN ABOUT THIS NOT WORKING
+        guard let user = currentUser else {
+            print("Chuck: no current user")
+            return
         }
 
         var post: Dictionary<String, AnyObject> = [

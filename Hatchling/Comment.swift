@@ -14,6 +14,10 @@ struct commentDataTypes{
     static let creatorKey = "creatorKey"
     
 }
+struct commentChainDataTypes {
+    static let comments = "comments"
+    static let postKey = "postKey"
+}
 class Comment{
     private var _creatorKey:String!
     private var _content:String!

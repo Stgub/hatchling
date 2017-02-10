@@ -12,7 +12,7 @@ import Firebase
 
 //Strings for accessing firebase data
 struct postDataTypes{
-    static let commentChain = "commentChain"
+    static let commentChainKey = "commentChainKey"
     static let creator = "creator"
     static let shortDescript = "shortDescription"
     static let longDescript = "longDescript"
@@ -51,7 +51,7 @@ class Post {
     private var _crowdfunding:String!
     private var _website:String!
     //Basic
-    private var _commentChain:String! // Firebase key for the comment chain
+    private var _commentChainKey:String! // Firebase key for the comment chain
     private var _creatorName:String! // username of the creator
     private var _name: String!
     private var _shortDescript: String!
@@ -71,7 +71,10 @@ class Post {
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
     
-    var commentChain:String? { return _commentChain }
+    var commentChainKey:String? {
+        get {
+            return _commentChainKey }
+    }
     var shortDescript :String? { return _shortDescript }
     var longDescript:String? { return _longDescript }
 
@@ -111,6 +114,10 @@ class Post {
 
     init( postKey: String , postData: Dictionary<String, AnyObject> ){
         self._postKey = postKey
+        if let commentChainKey = postData[postDataTypes.commentChainKey] as? String{
+            self._commentChainKey = commentChainKey
+        } else {
+        }
         if let creatorName = postData[postDataTypes.creator] as? String {
             self._creatorName = creatorName
         }
@@ -165,12 +172,45 @@ class Post {
     }
     
     /**
-     Adds the key for the comment chain
+     Tries to get the commentChainKey from firebase, if it can't get it, then it will create one
  */
-    func addCommentChain(commentChainKey: String){
-        self._commentChain = commentChainKey
-        _postRef.child(postDataTypes.commentChain).child(commentChainKey).setValue(true)
-        
+    func getCommentChainKey(withCompletionBlock:@escaping (_ key:String) -> Void){
+        _postRef.child(postDataTypes.commentChainKey).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
+            if var postData = currentData.value as? [String : AnyObject] {
+                print("CHUCK: getting commentChainKey for \(postData)")
+                var currentCommentChainKey:String
+                var currentViews:Int
+                
+                currentCommentChainKey = postData[postDataTypes.commentChainKey] as? String ?? ""
+                
+                if currentCommentChainKey == "" {
+                    self.addNewCommentChainKey()
+                    currentCommentChainKey = self._commentChainKey
+                } else if currentCommentChainKey == nil {
+                    self.addNewCommentChainKey()
+                }
+                postData[postDataTypes.commentChainKey] as AnyObject?
+                // Set value and report transaction success
+                currentData.value = postData
+                
+                return FIRTransactionResult.success(withValue: currentData)
+            }
+            return FIRTransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+                withCompletionBlock("")
+            } else {
+                withCompletionBlock(self._commentChainKey)
+            }
+        }
+    }
+    
+    func addNewCommentChainKey(){
+        let commentChainRefKey = DataService.ds.REF_COMMENT_CHAIN.childByAutoId()
+        self._commentChainKey = commentChainRefKey.key
+        commentChainRefKey.child(commentChainDataTypes.postKey).setValue(self._postKey)
+
     }
     func adjustLikes(addLike: Bool) {
         //add post to this users likes
