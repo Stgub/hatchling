@@ -118,11 +118,8 @@ class FeedVC: UIViewController {
        
         try! FIRAuth.auth()!.signOut()
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-
-        if let storyboard = self.storyboard {
-            let vc = storyboard.instantiateViewController(withIdentifier: "intialVC") 
-            self.present(vc, animated: false, completion: nil)
-        }
+        presentSignUpOrLoginVC(sender:self)
+        
     }
     
     

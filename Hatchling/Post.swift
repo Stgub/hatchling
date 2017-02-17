@@ -175,35 +175,18 @@ class Post {
      Tries to get the commentChainKey from firebase, if it can't get it, then it will create one
  */
     func getCommentChainKey(withCompletionBlock:@escaping (_ key:String) -> Void){
-        _postRef.child(postDataTypes.commentChainKey).runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
-            if var postData = currentData.value as? [String : AnyObject] {
-                print("CHUCK: getting commentChainKey for \(postData)")
-                var currentCommentChainKey:String
-                var currentViews:Int
-                
-                currentCommentChainKey = postData[postDataTypes.commentChainKey] as? String ?? ""
-                
-                if currentCommentChainKey == "" {
+        _postRef.child(postDataTypes.commentChainKey).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            print("Chuck: Comment chain snapshot value-\( snapshot.value)")
+            if let commentChain = snapshot.value as? String {
+                self._commentChainKey = commentChain
+                guard self._commentChainKey != nil else {
                     self.addNewCommentChainKey()
-                    currentCommentChainKey = self._commentChainKey
-                } else if currentCommentChainKey == nil {
-                    self.addNewCommentChainKey()
+                    return
                 }
-                postData[postDataTypes.commentChainKey] as AnyObject?
-                // Set value and report transaction success
-                currentData.value = postData
-                
-                return FIRTransactionResult.success(withValue: currentData)
-            }
-            return FIRTransactionResult.success(withValue: currentData)
-        }) { (error, committed, snapshot) in
-            if let error = error {
-                print(error.localizedDescription)
-                withCompletionBlock("")
-            } else {
                 withCompletionBlock(self._commentChainKey)
             }
-        }
+        })
     }
     
     func addNewCommentChainKey(){

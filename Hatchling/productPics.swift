@@ -63,7 +63,7 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
     }
     
     //MARK: - Delegates
-    func imagePickerController(_ picker: UIImagePickerController,
+      func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
         var  chosenImage = UIImage()

@@ -29,7 +29,6 @@ class DataManager{
          imageCache.setObject(img, forKey: forKey)
     }
     
-    let comments = "comments" //TEMPORARY
     
     func postComment(comment:Comment, forPost:Post, withCompletionBlock: @escaping (_ error: NSError?) -> Void ){
         
@@ -38,7 +37,7 @@ class DataManager{
             (key) in
             let commentData = comment.createDictForFirebase()
             let firebasePost = DataService.ds.REF_COMMENT_CHAIN.child(key).child(commentChainDataTypes.comments).childByAutoId()
-            let commentId = firebasePost.key
+            //let commentId = firebasePost.key
             firebasePost.setValue(commentData, withCompletionBlock: {
                 (error, ref) in
                 withCompletionBlock(error as NSError?)
@@ -53,24 +52,25 @@ class DataManager{
             //TEMP make better
        
         forPost.getCommentChainKey(withCompletionBlock:{
-                (key) in
-            DataService.ds.REF_COMMENT_CHAIN.child(key).child(commentChainDataTypes.comments).observeSingleEvent(of: .value, with: {
+                (commentChainKey) in
+    
+        
+           DataService.ds.REF_COMMENT_CHAIN.child(commentChainKey).child(commentChainDataTypes.comments).observeSingleEvent(of: .value, with: {
                 (snapshot) in
                 if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                     for snap in snapshots {
                         //print("Posts SNAP - \(snap)")
-                        let key = snap.key
+                        //let commentKey = snap.key
                         
                         if let commentData = snap.value as? Dictionary<String, AnyObject>{
                             let comment = Comment(commentData: commentData)
                             returnedComments.append(comment)
                         }
                     }
-                    returnBlock(returnedComments)
                 }
-            }
-            )
+                returnBlock(returnedComments)
             })
+        })
 
     }
     

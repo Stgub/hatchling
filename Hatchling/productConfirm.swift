@@ -32,10 +32,10 @@ class productConfirm: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let prodImg = newProduct[postDataTypes.productImg]  {
-            productImageView.image = prodImg as! UIImage
+            productImageView.image = prodImg as? UIImage
         }
         if let logoImg = newProduct[postDataTypes.logoImg] {
-            logoImageView.image = logoImg as! UIImage
+            logoImageView.image = logoImg as? UIImage
         }
         if let productNeeds = newProduct[postDataTypes.prodNeeds] {
             prodNeedsLabel.text = productNeeds as? String
@@ -182,10 +182,7 @@ class productConfirm: UIViewController {
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
         firebasePost.setValue(post)
-        if let storyboard = self.storyboard {
-            let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
-            self.present(vc, animated: false, completion: nil)
-        }
+        presentMainTabVC(sender: self)
     }
 
 

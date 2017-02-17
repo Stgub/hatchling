@@ -11,3 +11,11 @@ import UIKit
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0
 
 let KEY_UID = "uid"
+
+
+struct hatchlingStoryboards {
+    static let  main = "main"
+    static let logOrSignIn = "SignOrLogin"
+    static let createProduct = "CreateProduct"
+
+}

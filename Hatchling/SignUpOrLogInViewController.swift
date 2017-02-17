@@ -18,6 +18,7 @@ class SignUpOrLogInViewController: UIViewController {
     }
 
 
+
     override func viewDidAppear(_ animated: Bool) {
        if let _  = KeychainWrapper.standard.string(forKey: KEY_UID ){
             print("CHUCK: ID found in keychain")

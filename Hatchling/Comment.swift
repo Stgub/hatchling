@@ -43,7 +43,7 @@ class Comment{
     }
     func createDictForFirebase() -> Dictionary<String, AnyObject>{
         
-        var commentDict: Dictionary<String,AnyObject> = [
+        let commentDict: Dictionary<String,AnyObject> = [
             commentDataTypes.content : self._content as AnyObject,
             commentDataTypes.creatorUserName : self._creatorUserName as AnyObject,
             commentDataTypes.creatorKey : self._creatorKey as AnyObject
