@@ -26,20 +26,11 @@ protocol hasUpdateVar {
 }
 
 protocol hasDataDict{
-    var dataDict:Dictionary<String,AnyObject> {get set }
-    func addToDataDict(key: String, object: AnyObject)
-    func getFromDataDict(key:String) -> AnyObject
+    var dataDict:Dictionary<String,AnyObject> {get set}
+   // func addToDataDict(key: String, object: Any)
+   // func getFromDataDict(key:String) -> AnyObject
 }
 
 
-extension hasDataDict {
-    var dataDict:Dictionary<String,AnyObject> {
-        get {return dataDict}
-        set {dataDict = newValue }
-    }
-    
-    mutating func addToDataDict(key:String , object: Any){
-        dataDict[key] = object as AnyObject
-    }
-}
+
 

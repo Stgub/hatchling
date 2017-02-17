@@ -8,9 +8,8 @@
 
 import UIKit
 
-class productDescription: UIViewController {
-    var newProduct:[String: Any]!
-    
+class productDescription: UIViewController, hasDataDict {
+    var dataDict: Dictionary<String, AnyObject> = [:]
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
@@ -29,8 +28,8 @@ class productDescription: UIViewController {
         if shortDescript == "" || longDescript == "" {
             presentUIAlert(title: "Field not filled out", message: "Please fill out both descriptions")
         } else {
-            newProduct[postDataTypes.shortDescript] = shortDescript
-            newProduct[postDataTypes.longDescript] = longDescript
+            dataDict[postDataTypes.shortDescript] = shortDescript as AnyObject
+            dataDict[postDataTypes.longDescript] = longDescript as AnyObject
             self.performSegue(withIdentifier: "toCreateProductPicsSegue", sender: self)
         }
     }
@@ -56,9 +55,9 @@ class productDescription: UIViewController {
         // Pass the selected object to the new view controller.
         let dest = segue.destination
         switch(dest){
-        case is productPics:
-            let destVC = dest as! productPics
-            destVC.newProduct = newProduct
+        case is hasDataDict:
+            var destVC = dest as! hasDataDict
+            destVC.dataDict = self.dataDict
         default:
             print("Default in switch statment")
         }

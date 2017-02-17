@@ -8,8 +8,8 @@
 
 import UIKit
 
-class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    var newProduct:[String:Any]!
+class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate , hasDataDict{
+    var dataDict: Dictionary<String, AnyObject> = [:]
     var imagePicked:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +57,8 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
         //NEED TO PUT SOMETHIGN IN TO MAKE SURE THEY PICKED SOMETHIGN OR HAVE A DEFAULT IMAGe
         let productImg = productPicture.image
         let logoImg = logoPicture.image
-        newProduct[postDataTypes.productImg] = productImg
-        newProduct[postDataTypes.logoImg] = logoImg
+        dataDict[postDataTypes.productImg] = productImg as AnyObject
+        dataDict[postDataTypes.logoImg] = logoImg as AnyObject
         performSegue(withIdentifier: "toProductConnectionsSegue", sender: self)
     }
     
@@ -81,9 +81,9 @@ class productPics: UIViewController, UIImagePickerControllerDelegate, UINavigati
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         switch(dest){
-        case is productConnections:
-            let destVC = dest as! productConnections
-            destVC.newProduct = newProduct
+        case is hasDataDict:
+            var destVC = dest as! hasDataDict
+            destVC.dataDict = self.dataDict
         default:
             print("Default in switch statment")
         }
