@@ -34,6 +34,8 @@
 		1986121D1E2E862F00E85F98 /* DatePickerFontWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986121C1E2E862F00E85F98 /* DatePickerFontWhite.swift */; };
 		19B395441E4A286C00A10513 /* joinTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B395431E4A286C00A10513 /* joinTeamVC.swift */; };
 		19C8B11D1E4A947B004AD9F2 /* SendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8B11C1E4A947B004AD9F2 /* SendVC.swift */; };
+		56B697731E4C1AB10087388F /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B697721E4C1AB10087388F /* CommentTableViewCell.swift */; };
+		56B697751E4D32F40087388F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B697741E4D32F40087388F /* Protocols.swift */; };
 		56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */; };
 		56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */; };
 		56DC213A1E2DBB4A004EC2FD /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */; };
@@ -49,6 +51,9 @@
 		56EDFCB81E440E5A003785CF /* UpdateConfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDFCB71E440E5A003785CF /* UpdateConfirmVC.swift */; };
 		56EDFCC01E4517C9003785CF /* UpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDFCBF1E4517C9003785CF /* UpdatesTableViewCell.swift */; };
 		56EDFCC21E4517FE003785CF /* UpdatesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDFCC11E4517FE003785CF /* UpdatesTableVC.swift */; };
+		56F559AD1E574FBE009D6A72 /* SignOrLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F559AC1E574FBE009D6A72 /* SignOrLogIn.storyboard */; };
+		56F559AF1E5755AC009D6A72 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F559AE1E5755AC009D6A72 /* CreateProduct.storyboard */; };
+		56F559B11E5757A8009D6A72 /* CreateProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F559B01E5757A8009D6A72 /* CreateProductVC.swift */; };
 		56F7AE411E4AC21C003BEF3C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F7AE401E4AC21C003BEF3C /* Comment.swift */; };
 		56FB180D1E3EE7FF0052CB09 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB180C1E3EE7FF0052CB09 /* ProfileVC.swift */; };
 		56FB180F1E3EE86D0052CB09 /* UserPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB180E1E3EE86D0052CB09 /* UserPostsVC.swift */; };
@@ -117,6 +122,8 @@
 		19C8B11C1E4A947B004AD9F2 /* SendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendVC.swift; sourceTree = "<group>"; };
 		27430DD2E99CF45ACD96F242 /* Pods-HatchlingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatchlingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatchlingTests/Pods-HatchlingTests.release.xcconfig"; sourceTree = "<group>"; };
 		517C233D46282F5D19E3DCFE /* Pods-Hatchling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hatchling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hatchling/Pods-Hatchling.debug.xcconfig"; sourceTree = "<group>"; };
+		56B697721E4C1AB10087388F /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		56B697741E4D32F40087388F /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		56DC21351E2DA155004EC2FD /* SignupChooseHowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupChooseHowVC.swift; sourceTree = "<group>"; };
 		56DC21371E2DA1C7004EC2FD /* LoginChooseHowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginChooseHowVC.swift; sourceTree = "<group>"; };
 		56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
@@ -133,6 +140,9 @@
 		56EDFCB71E440E5A003785CF /* UpdateConfirmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateConfirmVC.swift; sourceTree = "<group>"; };
 		56EDFCBF1E4517C9003785CF /* UpdatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		56EDFCC11E4517FE003785CF /* UpdatesTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesTableVC.swift; sourceTree = "<group>"; };
+		56F559AC1E574FBE009D6A72 /* SignOrLogIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignOrLogIn.storyboard; sourceTree = "<group>"; };
+		56F559AE1E5755AC009D6A72 /* CreateProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
+		56F559B01E5757A8009D6A72 /* CreateProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProductVC.swift; sourceTree = "<group>"; };
 		56F7AE401E4AC21C003BEF3C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		56FB180C1E3EE7FF0052CB09 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		56FB180E1E3EE86D0052CB09 /* UserPostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostsVC.swift; sourceTree = "<group>"; };
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				19167F051E29EDC7003EFC98 /* Constants.swift */,
+				56B697741E4D32F40087388F /* Protocols.swift */,
 				56DC21391E2DBB4A004EC2FD /* GeneralFunctions.swift */,
 			);
 			name = Utilities;
@@ -216,6 +227,8 @@
 				194091041E29C76A00502FB4 /* Controller */,
 				194091051E29C77800502FB4 /* View */,
 				194090D91E29C23E00502FB4 /* Main.storyboard */,
+				56F559AC1E574FBE009D6A72 /* SignOrLogIn.storyboard */,
+				56F559AE1E5755AC009D6A72 /* CreateProduct.storyboard */,
 				194090DC1E29C23E00502FB4 /* Assets.xcassets */,
 				194090DE1E29C23E00502FB4 /* LaunchScreen.storyboard */,
 				194090E11E29C23E00502FB4 /* Info.plist */,
@@ -274,6 +287,7 @@
 		1945BBB61E302E5000575C8F /* Create/Submit Flow */ = {
 			isa = PBXGroup;
 			children = (
+				56F559B01E5757A8009D6A72 /* CreateProductVC.swift */,
 				1945BBB71E30306900575C8F /* CreateProductDetails.swift */,
 				1945BBB91E307D1C00575C8F /* productDescription.swift */,
 				1945BBBB1E307FE200575C8F /* productPics.swift */,
@@ -335,6 +349,7 @@
 				56FB18141E3EED030052CB09 /* LikesTableViewCell.swift */,
 				56EDFCBF1E4517C9003785CF /* UpdatesTableViewCell.swift */,
 				56FB18101E3EE8BF0052CB09 /* PostsTableViewCell.swift */,
+				56B697721E4C1AB10087388F /* CommentTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -429,7 +444,7 @@
 				TargetAttributes = {
 					194090D11E29C23E00502FB4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = T4B85P4F7X;
+						DevelopmentTeam = Y436CAXHW3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -478,8 +493,10 @@
 			files = (
 				194090E01E29C23E00502FB4 /* LaunchScreen.storyboard in Resources */,
 				56DF43191E2AAD0100A6A7C5 /* GoogleService-Info.plist in Resources */,
+				56F559AF1E5755AC009D6A72 /* CreateProduct.storyboard in Resources */,
 				194090DD1E29C23E00502FB4 /* Assets.xcassets in Resources */,
 				194090DB1E29C23E00502FB4 /* Main.storyboard in Resources */,
+				56F559AD1E574FBE009D6A72 /* SignOrLogIn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,11 +663,13 @@
 				56F7AE411E4AC21C003BEF3C /* Comment.swift in Sources */,
 				190B85031E2D76FD00E5CC6A /* SignUpBdayVC.swift in Sources */,
 				56EDFCB81E440E5A003785CF /* UpdateConfirmVC.swift in Sources */,
+				56F559B11E5757A8009D6A72 /* CreateProductVC.swift in Sources */,
 				56EDFCB61E440CF3003785CF /* UpdateDetailsVC.swift in Sources */,
 				56FB18151E3EED030052CB09 /* LikesTableViewCell.swift in Sources */,
 				56DC213C1E2EF69E004EC2FD /* SignUpOrLogInViewController.swift in Sources */,
 				190B85091E2D7B1E00E5CC6A /* SignUpConfirmVC.swift in Sources */,
 				1945BBBE1E30802900575C8F /* productConnections.swift in Sources */,
+				56B697751E4D32F40087388F /* Protocols.swift in Sources */,
 				56FB180F1E3EE86D0052CB09 /* UserPostsVC.swift in Sources */,
 				56DC21361E2DA155004EC2FD /* SignupChooseHowVC.swift in Sources */,
 				56DC21381E2DA1C7004EC2FD /* LoginChooseHowVC.swift in Sources */,
@@ -685,6 +704,7 @@
 				19167F061E29EDC7003EFC98 /* Constants.swift in Sources */,
 				194267B91E42CE4800954825 /* ViewCornerRadius.swift in Sources */,
 				56FB18171E3EEF0E0052CB09 /* PostDetailVC.swift in Sources */,
+				56B697731E4C1AB10087388F /* CommentTableViewCell.swift in Sources */,
 				56FB181B1E41713C0052CB09 /* DataManager.swift in Sources */,
 				56DF431E1E2C078800A6A7C5 /* DataService.swift in Sources */,
 				56EDFCC21E4517FE003785CF /* UpdatesTableVC.swift in Sources */,
@@ -840,7 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hatchling/Hatchling.entitlements;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -856,7 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hatchling/Hatchling.entitlements;
-				DEVELOPMENT_TEAM = T4B85P4F7X;
+				DEVELOPMENT_TEAM = Y436CAXHW3;
 				INFOPLIST_FILE = Hatchling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

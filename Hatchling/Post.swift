@@ -12,6 +12,7 @@ import Firebase
 
 //Strings for accessing firebase data
 struct postDataTypes{
+    static let commentChainKey = "commentChainKey"
     static let creator = "creator"
     static let shortDescript = "shortDescription"
     static let longDescript = "longDescript"
@@ -50,6 +51,7 @@ class Post {
     private var _crowdfunding:String!
     private var _website:String!
     //Basic
+    private var _commentChainKey:String! // Firebase key for the comment chain
     private var _creatorName:String! // username of the creator
     private var _name: String!
     private var _shortDescript: String!
@@ -69,6 +71,10 @@ class Post {
     private var _productImg:UIImage!
     private var _logoImg:UIImage!
     
+    var commentChainKey:String? {
+        get {
+            return _commentChainKey }
+    }
     var shortDescript :String? { return _shortDescript }
     var longDescript:String? { return _longDescript }
 
@@ -108,6 +114,10 @@ class Post {
 
     init( postKey: String , postData: Dictionary<String, AnyObject> ){
         self._postKey = postKey
+        if let commentChainKey = postData[postDataTypes.commentChainKey] as? String{
+            self._commentChainKey = commentChainKey
+        } else {
+        }
         if let creatorName = postData[postDataTypes.creator] as? String {
             self._creatorName = creatorName
         }
@@ -159,9 +169,32 @@ class Post {
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)
-
     }
     
+    /**
+     Tries to get the commentChainKey from firebase, if it can't get it, then it will create one
+ */
+    func getCommentChainKey(withCompletionBlock:@escaping (_ key:String) -> Void){
+        _postRef.child(postDataTypes.commentChainKey).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            print("Chuck: Comment chain snapshot value-\( snapshot.value)")
+            if let commentChain = snapshot.value as? String {
+                self._commentChainKey = commentChain
+                guard self._commentChainKey != nil else {
+                    self.addNewCommentChainKey()
+                    return
+                }
+                withCompletionBlock(self._commentChainKey)
+            }
+        })
+    }
+    
+    func addNewCommentChainKey(){
+        let commentChainRefKey = DataService.ds.REF_COMMENT_CHAIN.childByAutoId()
+        self._commentChainKey = commentChainRefKey.key
+        commentChainRefKey.child(commentChainDataTypes.postKey).setValue(self._postKey)
+
+    }
     func adjustLikes(addLike: Bool) {
         //add post to this users likes
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.likes).child(_postKey).setValue(true)

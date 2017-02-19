@@ -23,6 +23,10 @@ class PostDetailVC: UIViewController {
     @IBAction func tappedBackBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func tappedCommentsBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "toCommentsSegue", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,5 +59,16 @@ class PostDetailVC: UIViewController {
 
         
         
+    }
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        switch(dest){
+            case is CommentsVC:
+            let destVC = dest as! CommentsVC
+            destVC.post = self.post
+            default:
+            print("Default segue")
+        }
     }
 }

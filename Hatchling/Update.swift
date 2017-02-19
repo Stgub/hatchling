@@ -18,28 +18,33 @@ struct updateDataTypes {
 }
 class Update{
     var _updateKey:String!
-    var updateKey:String{ return _updateKey }
+    var updateKey: String!{
+        get { return _updateKey }
+    }
     var _prodKey:String!
-    var prodKey:String { return _prodKey }
+    var prodKey:String { get {return _prodKey } }
     var _updateType:String!
-    var updateType:String { return _updateType }
-    func setUpdateType(type: String){self._updateType = type}
-    
-    
+    var updateType:String {
+        get {return _updateType }
+        set { self._updateType = newValue }
+    }
     var _prodName:String!
     var prodName:String? { return _prodName }
-    
     var _link:String!
-    var link:String? { return _link }
-    func setLink(link:String){ self._link = link }
-    
+    var link:String? {
+        get { return _link }
+        set { _link = link }
+    }
     var _description:String!
-    var description:String? {return _description }
-    func setDescription(descript: String){ self._description = descript }
-    
+    var description:String? {
+        get{ return _description }
+        set{ _description = newValue }
+    }
     var _prodLogoUrl:String!
-    var prodLogoUrl:String? {return _prodLogoUrl}
-    func setProdLogoUrl(url: String) { self._prodLogoUrl = url }
+    var prodLogoUrl:String? {
+        get {return _prodLogoUrl}
+        set { _prodLogoUrl = newValue }
+    }
     //Intialization used when loading an update
     init(updateKey: String, updateData: Dictionary<String, AnyObject>){
         self._updateKey = updateKey
@@ -69,7 +74,7 @@ class Update{
         self._prodName = forPost.name
         self._prodLogoUrl = forPost.logoUrl
     }
-    func createFirebaseUpdate()->Dictionary<String,AnyObject>{
+    func createDictForFirebase()->Dictionary<String,AnyObject>{
     
         var updateDict: Dictionary<String,AnyObject> = [
             updateDataTypes.prodName : self._prodName as AnyObject,

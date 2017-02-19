@@ -85,8 +85,8 @@ class UserPostsVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         case is UsersPostDetailVC:
             let destVC = dest as! UsersPostDetailVC
             destVC.post = selectedPost
-        case is ChooseUpdateTypeVC:
-            let destVC = dest as! ChooseUpdateTypeVC
+        case is hasPostVar:
+            var destVC = dest as! hasPostVar
             destVC.post = selectedPost
         default:
             print("Default")

@@ -8,10 +8,9 @@
 
 import UIKit
 
-class productConnections: UIViewController {
+class productConnections: UIViewController, hasDataDict {
     
-    var newProduct:[String:Any]!
-    
+    var dataDict: Dictionary<String, AnyObject> = [:]
     @IBOutlet weak var websiteField: UITextField!
     @IBOutlet weak var facebookField: UITextField!
     @IBOutlet weak var instagramField: UITextField!
@@ -38,22 +37,22 @@ class productConnections: UIViewController {
         let crowdfunding = crowdfundingField.text
         let twitter = twitterField.text
         if website != "" {
-            newProduct[postDataTypes.website] = website
+            dataDict[postDataTypes.website] = website as AnyObject?
         }
         if facebook != "" {
-            newProduct[postDataTypes.facebook] = facebook
+            dataDict[postDataTypes.facebook] = facebook as AnyObject
         }
         if instagram != "" {
-            newProduct[postDataTypes.instagram] = instagram
+            dataDict[postDataTypes.instagram] = instagram as AnyObject
         }
         if email != "" {
-            newProduct[postDataTypes.email] = email
+            dataDict[postDataTypes.email] = email as AnyObject
         }
         if crowdfunding != "" {
-            newProduct[postDataTypes.crowdfunding] = crowdfunding
+            dataDict[postDataTypes.crowdfunding] = crowdfunding as AnyObject
         }
         if twitter != "" {
-            newProduct[postDataTypes.twitter] = twitter
+            dataDict[postDataTypes.twitter] = twitter as AnyObject
         }
         self.performSegue(withIdentifier: "toConfirmPostSegue", sender: self)
     }
@@ -76,9 +75,9 @@ class productConnections: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         switch(dest){
-        case is productConfirm:
-            let destVC = dest as! productConfirm
-            destVC.newProduct = newProduct
+        case is hasDataDict:
+            var destVC = dest as! hasDataDict
+            destVC.dataDict = self.dataDict
         default:
             print("Default in switch statment")
         }

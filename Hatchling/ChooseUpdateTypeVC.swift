@@ -14,7 +14,7 @@ struct updateTypes{
     static let preorders = "preorders"
     static let launch = "launch"
 }
-class ChooseUpdateTypeVC: UIViewController {
+class ChooseUpdateTypeVC: UIViewController, hasUpdateVar, hasPostVar {
 
     var post:Post!
     var update:Update!
@@ -24,22 +24,22 @@ class ChooseUpdateTypeVC: UIViewController {
     }
     
     @IBAction func tappedBetaTesting(_ sender: Any) {
-        update.setUpdateType(type: updateTypes.betaTesting)
+        update.updateType = updateTypes.betaTesting
         print("Chuck - User chose update type -\(update.updateType)")
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     
     @IBAction func tappedCrowdfundingBtn(_ sender: Any) {
-        update.setUpdateType(type: updateTypes.crowdfunding)
+        update.updateType = updateTypes.crowdfunding
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     
     @IBAction func tappedPreorderBtn(_ sender: Any) {
-        update.setUpdateType(type: updateTypes.preorders)
+        update.updateType = updateTypes.preorders
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     @IBAction func tappedProdLaunchBtn(_ sender: Any) {
-        update.setUpdateType(type: updateTypes.launch)
+        update.updateType = updateTypes.launch
         self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
     }
     
@@ -60,8 +60,8 @@ class ChooseUpdateTypeVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         switch(dest){
-        case is UpdateDetailsVC:
-            let destVC = dest as! UpdateDetailsVC
+        case is hasUpdateVar:
+            var destVC = dest as! hasUpdateVar
             destVC.update = update
         default:
             print("Default")

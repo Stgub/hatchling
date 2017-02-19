@@ -23,6 +23,7 @@ class DataService {
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_UPDATES = DB_BASE.child("updates")
+    private var _REF_COMMENT_CHAIN = DB_BASE.child("commentChain")
     
     //make private varibales globally accessible
 
@@ -37,6 +38,9 @@ class DataService {
     }
     var REF_UPDATES: FIRDatabaseReference {
         return _REF_UPDATES
+    }
+    var REF_COMMENT_CHAIN: FIRDatabaseReference {
+        return _REF_COMMENT_CHAIN
     }
     var REF_USER_CURRENT: FIRDatabaseReference {
         //let uid = KeychainWrapper.stringForKey(KEY_UID)
