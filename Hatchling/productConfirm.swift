@@ -74,7 +74,8 @@ class productConfirm: UIViewController, hasDataDict {
     var logoUrl = ""
     func postProudctImg(){
         let productImg = dataDict[postDataTypes.productImg] as! UIImage
-
+        dataDict.removeValue(forKey: postDataTypes.productImg)
+    
         if let productImgData = UIImageJPEGRepresentation(productImg, 0.2) {
             
             let imgUid = NSUUID().uuidString
@@ -88,6 +89,7 @@ class productConfirm: UIViewController, hasDataDict {
                     print("Chuck: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
                     if let url = downloadURL {
+                        
                          self.productUrl = url
                         //postLogoImg(imgUrl: url)
                         self.dataDict[postDataTypes.productUrl] = url as AnyObject
@@ -100,8 +102,8 @@ class productConfirm: UIViewController, hasDataDict {
     
     func postLogoImg(){
         let logoImg = dataDict[postDataTypes.logoImg] as! UIImage
-        
-        
+        dataDict.removeValue(forKey: postDataTypes.logoImg)
+
         if let logoImgData = UIImageJPEGRepresentation(logoImg, 0.2) {
             
             let imgUid = NSUUID().uuidString
