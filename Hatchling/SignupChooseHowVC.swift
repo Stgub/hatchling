@@ -117,10 +117,7 @@ class SignupChooseHowVC: UIViewController {
             DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
             let KeychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
             print("Chuck: Data saved to keycahain \(KeychainResult)")
-            if let storyboard = self.storyboard {
-                let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
-                self.present(vc, animated: false, completion: nil)
-            }
+            presentMainTabVC(sender: self)
         }
     
     

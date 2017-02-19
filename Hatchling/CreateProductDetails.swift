@@ -8,9 +8,8 @@
 
 import UIKit
 
-class CreateProductDetails: UIViewController, UITextFieldDelegate {
-    
-    private var newProduct =  [String: Any]()
+class CreateProductDetails: UIViewController, UITextFieldDelegate, hasDataDict {
+    var dataDict: Dictionary<String, AnyObject> = [String: AnyObject]()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -97,11 +96,11 @@ class CreateProductDetails: UIViewController, UITextFieldDelegate {
         if prodName == "" || stage == "" || categories.count == 0 {
             presentUIAlert(title: "Sections not filled out", message: "Please fill out all sections")
         } else {
-            newProduct[postDataTypes.name] = prodName
-            newProduct[postDataTypes.prodStage] = stage
-            newProduct[postDataTypes.prodCategories] = categories
-            newProduct[postDataTypes.prodNeeds] = needs
- 
+            dataDict[postDataTypes.name] = prodName as AnyObject
+            dataDict[postDataTypes.prodStage] = stage as AnyObject
+            dataDict[postDataTypes.prodCategories] = categories as AnyObject
+            dataDict[postDataTypes.prodNeeds] = needs as AnyObject
+
             self.performSegue(withIdentifier: "toCreateDescriptionSegue", sender: self)
         }
 
@@ -136,9 +135,9 @@ class CreateProductDetails: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
         let dest = segue.destination
         switch(dest){
-        case is productDescription:
-            let destVC = dest as! productDescription
-            destVC.newProduct = newProduct
+        case is hasDataDict:
+            var destVC = dest as! hasDataDict
+            destVC.dataDict = self.dataDict
         default:
             print("Default in switch statment")
         }

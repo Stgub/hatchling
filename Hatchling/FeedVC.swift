@@ -48,6 +48,7 @@ class FeedVC: UIViewController {
                     if let userDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key //What kind of key is this?
                         let user = User(userKey: key , userData: userDict)
+                        print("Chuck: Added current user")
                         currentUser = user
                         
                     }
@@ -117,11 +118,8 @@ class FeedVC: UIViewController {
        
         try! FIRAuth.auth()!.signOut()
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-
-        if let storyboard = self.storyboard {
-            let vc = storyboard.instantiateViewController(withIdentifier: "intialVC") 
-            self.present(vc, animated: false, completion: nil)
-        }
+        presentSignUpOrLoginVC(sender:self)
+        
     }
     
     

@@ -57,7 +57,7 @@ class UpdatesTableVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "updatesTableViewCell") as! UpdatesTableViewCell
         let update = usersLikesUpdates[indexPath.row]
         if let descript = update.description {
-            cell.updateDescript.text = update.description
+            cell.updateDescript.text = descript
         }
         if update.prodName != nil{
             cell.prodName.text = update.prodName

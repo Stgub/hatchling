@@ -38,11 +38,7 @@ class SignUpGenderVC: UIViewController {
     //toSignUpConfirmSegue
     @IBAction func nextBtnTapped(_ sender: Any) {
         if profile.gender == "" {
-            let alertController = UIAlertController(title: "Gender not choosen", message: "Please choose one", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(defaultAction)
-            present(alertController, animated: true, completion: nil)
-            
+            presentUIAlert(sender: self, title: "Gender not choosen", message: "Please choose one")
 
         } else {
             self.performSegue(withIdentifier: "toSignUpConfirmSegue", sender: self)

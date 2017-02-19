@@ -29,16 +29,55 @@ class DataManager{
          imageCache.setObject(img, forKey: forKey)
     }
     
-    func postComment(comment:Comment, forPost:Post){
-        //Add commentkey to post
-        //Add post key to comment
-        //Add comment
-    }
-    func getComments(forPost:Post){
+    
+    func postComment(comment:Comment, forPost:Post, withCompletionBlock: @escaping (_ error: NSError?) -> Void ){
         
+      
+        forPost.getCommentChainKey(withCompletionBlock: {
+            (key) in
+            let commentData = comment.createDictForFirebase()
+            let firebasePost = DataService.ds.REF_COMMENT_CHAIN.child(key).child(commentChainDataTypes.comments).childByAutoId()
+            //let commentId = firebasePost.key
+            firebasePost.setValue(commentData, withCompletionBlock: {
+                (error, ref) in
+                withCompletionBlock(error as NSError?)
+            })
+        })
+  
     }
+    
+    func getComments(forPost:Post, returnBlock:  @escaping (_ returnedComments: [Comment]) -> Void ){
+        var returnedComments:[Comment] = []
+        //should put in guard in case post doesnt have a comment chain.. create one 
+            //TEMP make better
+       
+        forPost.getCommentChainKey(withCompletionBlock:{
+                (commentChainKey) in
+    
+        
+           DataService.ds.REF_COMMENT_CHAIN.child(commentChainKey).child(commentChainDataTypes.comments).observeSingleEvent(of: .value, with: {
+                (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshots {
+                        //print("Posts SNAP - \(snap)")
+                        //let commentKey = snap.key
+                        
+                        if let commentData = snap.value as? Dictionary<String, AnyObject>{
+                            let comment = Comment(commentData: commentData)
+                            returnedComments.append(comment)
+                        }
+                    }
+                }
+                returnBlock(returnedComments)
+            })
+        })
+
+    }
+    
+    
+    
     func submitUpdate(newUpdate:Update, withCompletionBlock: @escaping (_ error: NSError?) -> Void ){
-        let updateData = newUpdate.createFirebaseUpdate()
+        let updateData = newUpdate.createDictForFirebase()
         let firebasePost = DataService.ds.REF_UPDATES.childByAutoId()
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpdateConfirmVC: UIViewController {
+class UpdateConfirmVC: UIViewController,hasUpdateVar {
     var update:Update!
     
     @IBOutlet weak var updateDescript: UILabel!

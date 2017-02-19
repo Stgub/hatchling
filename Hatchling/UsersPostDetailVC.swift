@@ -8,10 +8,11 @@
 
 import UIKit
 
-class UsersPostDetailVC: UIViewController {
+class UsersPostDetailVC: UIViewController, hasPostVar {
     var post:Post!
     
     
+ 
     @IBOutlet weak var postName: UILabel!
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var postLogoImg: RoundPic!
@@ -28,6 +29,11 @@ class UsersPostDetailVC: UIViewController {
     @IBAction func tappedBackBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func tappedCommentBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "toCommentsSegue", sender: self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,14 +72,19 @@ class UsersPostDetailVC: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+       let dest = segue.destination
+        switch(dest){
+            case is hasPostVar:
+                var destVC = dest as! hasPostVar
+                destVC.post = self.post
+            default:
+            print("Default segue switch")
+        }
     }
-    */
+    
 
 }

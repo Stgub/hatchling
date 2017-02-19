@@ -18,13 +18,11 @@ class SignUpOrLogInViewController: UIViewController {
     }
 
 
+
     override func viewDidAppear(_ animated: Bool) {
        if let _  = KeychainWrapper.standard.string(forKey: KEY_UID ){
             print("CHUCK: ID found in keychain")
-            if let storyboard = self.storyboard {
-                let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
-                self.present(vc, animated: false, completion: nil)
-            }
+            presentMainTabVC(sender: self)
         }
     }
 

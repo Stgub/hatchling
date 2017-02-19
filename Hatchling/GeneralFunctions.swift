@@ -14,5 +14,23 @@ func presentUIAlert(sender: UIViewController, title:String, message:String){
     let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
     alertController.addAction(defaultAction)
     sender.present(alertController, animated: true, completion: nil)
-}
     
+}
+   /**
+    Performs a segue from whatever UIViewController to the Feed VC
+ */
+func presentMainTabVC(sender: UIViewController){
+    let storyboard = UIStoryboard(name: hatchlingStoryboards.main, bundle: Bundle.main)
+    let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
+    sender.present(vc, animated: true, completion: nil)
+}
+func presentSignUpOrLoginVC(sender:UIViewController){
+    let storyboard = UIStoryboard(name: hatchlingStoryboards.logOrSignIn, bundle: Bundle.main)
+    let vc = storyboard.instantiateViewController(withIdentifier: "SignUpOrLogInViewController")
+    sender.present(vc, animated: true, completion: nil)
+}
+func presentCreatProductDetailsVC(sender:UIViewController){
+    let storyboard = UIStoryboard(name: hatchlingStoryboards.createProduct, bundle: Bundle.main)
+    let vc = storyboard.instantiateViewController(withIdentifier: "CreateProductDetailsVC")
+    sender.present(vc, animated: true, completion: nil)
+}

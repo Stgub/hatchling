@@ -30,6 +30,9 @@ class User{
         self.key = userKey
         if let name = userData[userDataTypes.name] as? String {
             self.name = name
+        } else {
+            print("Chuck: Do not have users name")
+            self.name = "Anonymous"
         }
     }
 }

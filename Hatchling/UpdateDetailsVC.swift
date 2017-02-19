@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpdateDetailsVC: UIViewController {
+class UpdateDetailsVC: UIViewController, hasUpdateVar{
     var update:Update!
     
     
@@ -27,9 +27,9 @@ class UpdateDetailsVC: UIViewController {
             presentUIAlert(title: "Description not filled out", message: "Please fill in Description")
 
         } else {
-            update.setDescription(descript: updateDescript.text)
+            update.description = updateDescript.text
             if updateLink.text != "" {
-                update.setLink(link: updateLink.text!)
+                update.link = updateLink.text!
             }
             self.performSegue(withIdentifier: "toNextCreateUpdateVCSegue", sender: self)
         }
@@ -68,8 +68,8 @@ class UpdateDetailsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         switch(dest){
-        case is UpdateConfirmVC:
-            let destVC = dest as! UpdateConfirmVC
+        case is hasUpdateVar:
+            var destVC = dest as! hasUpdateVar
             destVC.update = update
         default:
             print("Default")

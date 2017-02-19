@@ -9,9 +9,8 @@
 import UIKit
 import Firebase
 
-class productConfirm: UIViewController {
-    var newProduct:[String:Any]!
-    
+class productConfirm: UIViewController, hasDataDict {
+    var dataDict: Dictionary<String, AnyObject> = [:]
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -31,19 +30,19 @@ class productConfirm: UIViewController {
     @IBOutlet weak var prodNeedsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let prodImg = newProduct[postDataTypes.productImg]  {
-            productImageView.image = prodImg as! UIImage
+        if let prodImg = dataDict[postDataTypes.productImg]  {
+            productImageView.image = prodImg as? UIImage
         }
-        if let logoImg = newProduct[postDataTypes.logoImg] {
-            logoImageView.image = logoImg as! UIImage
+        if let logoImg = dataDict[postDataTypes.logoImg] {
+            logoImageView.image = logoImg as? UIImage
         }
-        if let productNeeds = newProduct[postDataTypes.prodNeeds] {
+        if let productNeeds = dataDict[postDataTypes.prodNeeds] {
             prodNeedsLabel.text = productNeeds as? String
         }
-        let shortDescript = newProduct[postDataTypes.shortDescript]
-        let longDescript = newProduct[postDataTypes.longDescript]
-        let productName = newProduct[postDataTypes.name]
-        let productCategories = newProduct[postDataTypes.prodCategories]
+        let shortDescript = dataDict[postDataTypes.shortDescript]
+        let longDescript = dataDict[postDataTypes.longDescript]
+        let productName = dataDict[postDataTypes.name]
+        let productCategories = dataDict[postDataTypes.prodCategories]
         
         prodShortDescriptLAbel.text  = shortDescript as? String
         prodLongDescriptLabel.text = longDescript as? String
@@ -74,8 +73,9 @@ class productConfirm: UIViewController {
     var productUrl = ""
     var logoUrl = ""
     func postProudctImg(){
-        let productImg = newProduct[postDataTypes.productImg] as! UIImage
-
+        let productImg = dataDict[postDataTypes.productImg] as! UIImage
+        dataDict.removeValue(forKey: postDataTypes.productImg)
+    
         if let productImgData = UIImageJPEGRepresentation(productImg, 0.2) {
             
             let imgUid = NSUUID().uuidString
@@ -89,8 +89,10 @@ class productConfirm: UIViewController {
                     print("Chuck: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
                     if let url = downloadURL {
+                        
                          self.productUrl = url
                         //postLogoImg(imgUrl: url)
+                        self.dataDict[postDataTypes.productUrl] = url as AnyObject
                         self.postLogoImg()
                     }
                 }
@@ -99,9 +101,9 @@ class productConfirm: UIViewController {
     }
     
     func postLogoImg(){
-        let logoImg = newProduct[postDataTypes.logoImg] as! UIImage
-        
-        
+        let logoImg = dataDict[postDataTypes.logoImg] as! UIImage
+        dataDict.removeValue(forKey: postDataTypes.logoImg)
+
         if let logoImgData = UIImageJPEGRepresentation(logoImg, 0.2) {
             
             let imgUid = NSUUID().uuidString
@@ -115,6 +117,7 @@ class productConfirm: UIViewController {
                     print("Chuck: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
                     if let url = downloadURL {
+                        self.dataDict[postDataTypes.logoUrl] = url as AnyObject
                         self.logoUrl = url
                         self.postToFirebase()
                     }
@@ -124,66 +127,22 @@ class productConfirm: UIViewController {
     }
     
     func postToFirebase() {
-        //Required Values
-        let shortDescript = newProduct[postDataTypes.shortDescript]
-        let longDescript = newProduct[postDataTypes.longDescript]
-        let productName = newProduct[postDataTypes.name]
-        let prodStage = newProduct[postDataTypes.prodStage]
-        let prodCategories = newProduct[postDataTypes.prodCategories]
         var  creatorName = "Anonymous"
-
-        if let currentUserName = currentUser.name {
-            creatorName = currentUserName
-        }
-
-        var post: Dictionary<String, AnyObject> = [
-            postDataTypes.creator: creatorName as AnyObject,
-            postDataTypes.name: productName as AnyObject,
-            postDataTypes.shortDescript: shortDescript as AnyObject,
-            postDataTypes.longDescript: longDescript as AnyObject,
-            postDataTypes.logoUrl : logoUrl as AnyObject,
-            postDataTypes.productUrl : productUrl as AnyObject,
-            postDataTypes.likes: 0 as AnyObject,
-            postDataTypes.prodStage : prodStage as AnyObject,
-            postDataTypes.prodCategories: prodCategories as AnyObject
-            
-        ]
+        
     
-        
-        //Optional Values
-        if let prodNeeds = newProduct[postDataTypes.prodNeeds]{
-            post[postDataTypes.prodNeeds] = prodNeeds as AnyObject
-        } else { print("CHUCK - no prod needs loaded to firebase")}
-        if let website = newProduct[postDataTypes.website] {
-            post[postDataTypes.website] = website as AnyObject
+        //TEMPORARY NEED TO DO SOMETHIGN ABOUT THIS NOT WORKING
+        guard let user = currentUser else {
+            print("Chuck: no current user")
+            return
         }
-        if let facebook = newProduct[postDataTypes.facebook]{
-            post[postDataTypes.facebook] = facebook as AnyObject
 
-        }
-        if let instagram = newProduct[postDataTypes.instagram]{
-            post[postDataTypes.instagram] = instagram as AnyObject
-        }
-        if let email = newProduct[postDataTypes.email] {
-            post[postDataTypes.email] = email as AnyObject
-        }
-        if let crowdfunding = newProduct[postDataTypes.crowdfunding] {
-            post[postDataTypes.crowdfunding] = crowdfunding as AnyObject
-        }
-        if let twitter = newProduct[postDataTypes.twitter] {
-            post[postDataTypes.twitter] = twitter as AnyObject
-        }
-        
-        
+ 
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
-        firebasePost.setValue(post)
-        if let storyboard = self.storyboard {
-            let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController")
-            self.present(vc, animated: false, completion: nil)
-        }
+        firebasePost.setValue(dataDict)
+        presentMainTabVC(sender: self)
     }
 
 

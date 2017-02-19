@@ -45,9 +45,9 @@ class SignUpConfirmVC: UIViewController {
                 if let errCode = FIRAuthErrorCode(rawValue: (error?._code)!) {
                     switch errCode {
                     case .errorCodeEmailAlreadyInUse:
-                        self.presentUIAlert(title: "Email already in use", message: "Please try another email")
+                        presentUIAlert(sender:self, title: "Email already in use", message: "Please try another email")
                     case .errorCodeInvalidEmail:
-                        self.presentUIAlert(title: "Invalid Email", message: "Email is not in the correct format")
+                        presentUIAlert(sender:self, title: "Invalid Email", message: "Email is not in the correct format")
                     default:
                         print("Chuck: Erorr signing up with email - \(error)")
 
@@ -62,13 +62,7 @@ class SignUpConfirmVC: UIViewController {
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let KeychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Chuck: Data saved to keycahain \(KeychainResult)")
-        performSegue(withIdentifier: "signedUpWithEmailSegue", sender: self)
-    }
-    func presentUIAlert(title:String, message:String){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present(alertController, animated: true, completion: nil)
+        presentMainTabVC(sender:self)
     }
     
     

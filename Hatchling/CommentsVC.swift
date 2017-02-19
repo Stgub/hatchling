@@ -8,17 +8,46 @@
 
 import UIKit
 
-class CommentsVC: UIViewController, UITextViewDelegate {
+class CommentsVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, hasPostVar {
+    
+    var post:Post!
+    var comments:[Comment] = []
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var commentTextView: UITextView!
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func tappedPostBtn(_ sender: Any) {
+        let commentContent = commentTextView.text
+        let newComment = Comment(content: commentContent!)
+        
+        DataManager.dm.postComment(comment: newComment, forPost: self.post, withCompletionBlock: {
+            (error) in
+            if error == nil {
+                self.comments.append(newComment)
+                self.tableView.reloadData()
+                self.dismissKeyboard()
+            } else {
+                print("Chuck: error posting comment - \(error)")
+            }
+        })
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Comments viewDidLoad:")
         commentTextView.delegate = self
+        DataManager.dm.getComments(forPost: self.post,returnBlock:{
+            (returnedComments) in
+            print("Chuck: returned Comments")
+            self.comments = returnedComments
+            self.tableView.reloadData()
+        })
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -26,6 +55,18 @@ class CommentsVC: UIViewController, UITextViewDelegate {
         super.touchesBegan(touches, with: event)
     }
     
+    //MARK: Table view functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentTableViewCell") as! CommentTableViewCell
+        let comment = comments[indexPath.row]
+        cell.commentContentLabel.text = comment.content
+        return cell
+    }
+    
+    //MARK: UI functions
     func dismissKeyboard() {
         commentTextView.resignFirstResponder()
     }
