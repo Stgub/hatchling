@@ -252,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				1945BBB61E302E5000575C8F /* Create/Submit Flow */,
+				56EDFCB01E440B42003785CF /* Create Update Flow */,
 				56DC21301E2D9DC5004EC2FD /* LogIn/SignIn Flow */,
 				56DF431A1E2AC02C00A6A7C5 /* FeedVC.swift */,
 				56FB180C1E3EE7FF0052CB09 /* ProfileVC.swift */,
@@ -260,7 +261,6 @@
 				56FB18121E3EEC770052CB09 /* UserLikesVC.swift */,
 				56FB18161E3EEF0E0052CB09 /* PostDetailVC.swift */,
 				56EDFCC11E4517FE003785CF /* UpdatesTableVC.swift */,
-				56EDFCB01E440B42003785CF /* Create Update Flow */,
 				19032C341E44246800D18755 /* CommentsVC.swift */,
 				19B395431E4A286C00A10513 /* joinTeamVC.swift */,
 				19C8B11C1E4A947B004AD9F2 /* SendVC.swift */,

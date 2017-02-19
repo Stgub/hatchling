@@ -53,13 +53,13 @@ class DataManager{
        
         forPost.getCommentChainKey(withCompletionBlock:{
                 (commentChainKey) in
-    
+            
         
            DataService.ds.REF_COMMENT_CHAIN.child(commentChainKey).child(commentChainDataTypes.comments).observeSingleEvent(of: .value, with: {
                 (snapshot) in
                 if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                     for snap in snapshots {
-                        //print("Posts SNAP - \(snap)")
+                        print("Posts comment chain SNAP - \(snap)")
                         //let commentKey = snap.key
                         
                         if let commentData = snap.value as? Dictionary<String, AnyObject>{

@@ -180,11 +180,15 @@ class Post {
             print("Chuck: Comment chain snapshot value-\( snapshot.value)")
             if let commentChain = snapshot.value as? String {
                 self._commentChainKey = commentChain
-                guard self._commentChainKey != nil else {
+                if self._commentChainKey.isEmpty {
                     self.addNewCommentChainKey()
-                    return
                 }
+
                 withCompletionBlock(self._commentChainKey)
+            } else {
+                print("Chuck: Could not make snapshot a string ")
+                self.addNewCommentChainKey()
+
             }
         })
     }
@@ -192,7 +196,9 @@ class Post {
     func addNewCommentChainKey(){
         let commentChainRefKey = DataService.ds.REF_COMMENT_CHAIN.childByAutoId()
         self._commentChainKey = commentChainRefKey.key
+        print("Added comment chain with key - \(self._commentChainKey)")
         commentChainRefKey.child(commentChainDataTypes.postKey).setValue(self._postKey)
+        _postRef.child(postDataTypes.commentChainKey).setValue(self._commentChainKey)
 
     }
     func adjustLikes(addLike: Bool) {
