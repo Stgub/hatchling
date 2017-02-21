@@ -64,8 +64,8 @@ class PostDetailVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         switch(dest){
-            case is CommentsVC:
-            let destVC = dest as! CommentsVC
+            case is hasPostVar:
+            var destVC = dest as! hasPostVar
             destVC.post = self.post
             default:
             print("Default segue")

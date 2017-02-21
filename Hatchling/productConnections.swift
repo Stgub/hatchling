@@ -18,6 +18,15 @@ class productConnections: UIViewController, hasDataDict {
     @IBOutlet weak var crowdfundingField: UITextField!
     @IBOutlet weak var twitterField: UITextField!
     
+    var joinable = ""
+    @IBAction func tappedNotJoinableBtn(_ sender: Any) {
+        joinable = "no"
+    }
+    
+    @IBAction func tappedJoinableBtn(_ sender: Any) {
+        joinable = "yes"
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -36,6 +45,11 @@ class productConnections: UIViewController, hasDataDict {
         let email = emailField.text
         let crowdfunding = crowdfundingField.text
         let twitter = twitterField.text
+        guard joinable != "" else {
+            presentUIAlert(sender: self, title: "Did not choose if people can join", message: "Please choose yes or no")
+            return
+        }
+
         if website != "" {
             dataDict[postDataTypes.website] = website as AnyObject?
         }
@@ -45,9 +59,12 @@ class productConnections: UIViewController, hasDataDict {
         if instagram != "" {
             dataDict[postDataTypes.instagram] = instagram as AnyObject
         }
-        if email != "" {
-            dataDict[postDataTypes.email] = email as AnyObject
+        guard let prodEmail = emailField.text,  isValidEmail(testStr: prodEmail ) else {
+            presentUIAlert(sender: self, title: "Email not valid", message: "Please add a valid email to contact field")
+            return
         }
+
+        dataDict[postDataTypes.email] = email as AnyObject
         if crowdfunding != "" {
             dataDict[postDataTypes.crowdfunding] = crowdfunding as AnyObject
         }
@@ -56,7 +73,13 @@ class productConnections: UIViewController, hasDataDict {
         }
         self.performSegue(withIdentifier: "toConfirmPostSegue", sender: self)
     }
-
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

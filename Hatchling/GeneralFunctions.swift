@@ -9,10 +9,22 @@
 import Foundation
 import UIKit
  //Simple UIalert function...
-func presentUIAlert(sender: UIViewController, title:String, message:String){
+func presentUIAlert(sender: UIViewController, title:String, message:String, action: ()?=nil){
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-    alertController.addAction(defaultAction)
+    
+    if action == nil {
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+
+    } else {
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            uialertAction in
+            //run your function here
+           action!
+        }))
+    }
+
+
     sender.present(alertController, animated: true, completion: nil)
     
 }

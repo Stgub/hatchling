@@ -42,19 +42,8 @@ class FeedVC: UIViewController {
         swipeCardView.addGestureRecognizer(swipeGesture)
         
         //Get users info 
-        DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots {
-                    if let userDict = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key //What kind of key is this?
-                        let user = User(userKey: key , userData: userDict)
-                        print("Chuck: Added current user")
-                        currentUser = user
-                        
-                    }
-                }
-            }
-        })
+        DataManager.dm.getCurrentUserInfo()
+
         
         self.updateData()
     }
@@ -87,12 +76,12 @@ class FeedVC: UIViewController {
     }
     func postWasSwiped( wasLiked: Bool){
         DataManager.dm.adjustLikesForCurrentPost(addLike: wasLiked)
+        DataManager.dm.addPostToSeenPosts()
         nextPost()
     }
     
     func configurePost(post: Post, img: UIImage? = nil) {
 
-      
         self.postCaption.text = post.shortDescript
         self.postTitle.text = post.name
         //self.postStage.text = post.prodStage

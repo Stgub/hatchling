@@ -25,6 +25,9 @@ class DataManager{
     func adjustLikesForCurrentPost(addLike: Bool){
         _currentPost.adjustLikes(addLike: addLike)
     }
+    func addPostToSeenPosts(){
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.seenPosts).child(_currentPost.postKey).setValue(true)
+    }
     func setImg(img: UIImage, forKey: NSString ){
          imageCache.setObject(img, forKey: forKey)
     }
@@ -130,6 +133,22 @@ class DataManager{
             }
         })
     }
+    
+    func getUsersSeenPosts(withCompletionBlock:@escaping ([String]) -> Void){
+        var usersSeenPosts:[String] = []
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.seenPosts).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    let key = snap.key
+                    print("Chuck: like key- \(key)")
+                    usersSeenPosts.append(key)
+                }
+                withCompletionBlock(usersSeenPosts)
+            }
+        })
+    }
+    
     /**
      Gets the image requested. First it looksed in the local stored cache, if not there it downloads it from firebase and then saves it to local cache
      @param imgUrl - firebase url asscoiated with the img
@@ -181,6 +200,7 @@ class DataManager{
 
     func loadPosts(keys:[String], returnBlock:@escaping (_ returnedPosts:[Post]) -> Void){
         var returnedPosts:[Post] = []
+        
             DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: {
                 (snapshot) in
                 if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -201,30 +221,57 @@ class DataManager{
             )
         
     }
-    /**
-     Gets the current posts fromt the database
-     @param: The function to run once posts have been added, can take no input
-     */
-    func getPosts(returnBlock:   @escaping (  ) -> Void ){
-        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
+    func getCurrentUserInfo(){
+        DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                print("Chuck: got snapshots of posts")
                 for snap in snapshots {
-                    print("SNAP: \(snap)")
-    
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let post = Post(postKey: key, postData: postDict)
-                        self._feedPosts.append(post)
+                    if let userDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key //What kind of key is this?
+                        let user = User(userKey: key , userData: userDict)
+                        print("Chuck: Added current user")
+                        currentUser = user
+                        
                     }
                 }
-                print("Chuck: after snap for loop")
-                returnBlock() // executes the input function
-
             }
         })
     }
+    
+    
+    /**
+     Gets the current posts from the database
+     Also gets seen posts and does not get posts that are in seen posts
+     @param: The function to run once posts have been added, can take no input
+     */
+    func getPosts(returnBlock:   @escaping (  ) -> Void ){
+        self.getUsersSeenPosts(withCompletionBlock: {
+            (postsKeys) in
+            
+            DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    print("Chuck: got snapshots of posts")
+                    for snap in snapshots {
+                        print("SNAP: \(snap)")
+                        
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let key = snap.key
+                            if !postsKeys.contains(key) {
+                                let post = Post(postKey: key, postData: postDict)
+                                self._feedPosts.append(post)
+                            }
+                        }
+                    }
+                    print("Chuck: after snap for loop")
+                    returnBlock() // executes the input function
+                    
+                }
+            })
+            
+        })
 
+    }
+
+    
     
     func nextPost() -> Post?{
         if let _ = _currentPost {

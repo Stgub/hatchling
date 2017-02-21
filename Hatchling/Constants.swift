@@ -15,7 +15,7 @@ let KEY_UID = "uid"
 
 struct hatchlingStoryboards {
     static let  main = "Main"
-    static let logOrSignIn = "SignOrLogin"
+    static let logOrSignIn = "SignOrLogIn"
     static let createProduct = "CreateProduct"
 
 }

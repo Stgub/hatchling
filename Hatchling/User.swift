@@ -17,6 +17,7 @@ struct userDataTypes {
     static let birthday = "birthday"
     static let likes = "likes"
     static let posts = "posts"
+    static let seenPosts = "seenPosts"
 }
 
 class User{

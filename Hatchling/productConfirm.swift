@@ -74,7 +74,6 @@ class productConfirm: UIViewController, hasDataDict {
     var logoUrl = ""
     func postProudctImg(){
         let productImg = dataDict[postDataTypes.productImg] as! UIImage
-        dataDict.removeValue(forKey: postDataTypes.productImg)
     
         if let productImgData = UIImageJPEGRepresentation(productImg, 0.2) {
             
@@ -84,7 +83,7 @@ class productConfirm: UIViewController, hasDataDict {
             
             DataService.ds.REF_POST_IMAGES.child(imgUid).put(productImgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
-                    print("Chuck: Unable to upload image to Firebasee torage")
+                    print("Chuck: Unable to upload image to Firebasee storage - \(error)")
                 } else {
                     print("Chuck: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
@@ -93,7 +92,9 @@ class productConfirm: UIViewController, hasDataDict {
                          self.productUrl = url
                         //postLogoImg(imgUrl: url)
                         self.dataDict[postDataTypes.productUrl] = url as AnyObject
+                        self.dataDict.removeValue(forKey: postDataTypes.productImg)
                         self.postLogoImg()
+
                     }
                 }
             }
@@ -102,7 +103,6 @@ class productConfirm: UIViewController, hasDataDict {
     
     func postLogoImg(){
         let logoImg = dataDict[postDataTypes.logoImg] as! UIImage
-        dataDict.removeValue(forKey: postDataTypes.logoImg)
 
         if let logoImgData = UIImageJPEGRepresentation(logoImg, 0.2) {
             
@@ -112,13 +112,14 @@ class productConfirm: UIViewController, hasDataDict {
             
             DataService.ds.REF_POST_IMAGES.child(imgUid).put(logoImgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
-                    print("Chuck: Unable to upload image to Firebasee torage")
+                    print("Chuck: Unable to upload image to Firebasee storage - \(error)")
                 } else {
                     print("Chuck: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
                     if let url = downloadURL {
                         self.dataDict[postDataTypes.logoUrl] = url as AnyObject
                         self.logoUrl = url
+                        self.dataDict.removeValue(forKey: postDataTypes.logoImg)
                         self.postToFirebase()
                     }
                 }
@@ -141,6 +142,10 @@ class productConfirm: UIViewController, hasDataDict {
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
         let postId = firebasePost.key
         DataService.ds.REF_USER_CURRENT.child(userDataTypes.posts).child(postId).setValue(true)
+        //Add post to seen post so user does not get their own posts 
+        DataService.ds.REF_USER_CURRENT.child(userDataTypes.seenPosts).child(postId).setValue(true)
+        
+
         firebasePost.setValue(dataDict)
         presentMainTabVC(sender: self)
     }
